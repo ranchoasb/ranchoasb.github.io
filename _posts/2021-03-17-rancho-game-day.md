@@ -1,9 +1,16 @@
 ---
 layout: post
-title:  "Rancho Game Day on March 22nd"
-author: sal
-categories: [ UpcommingEvents]
-image: assets/images/3.jpg
+title:  "Rancho Game Day: March Minecraft!"
+author: Claire Wen, Melody Yu
+categories: [ UpcomingEvents]
+image: assets/images/gamedaymarch.jpg
 tags: featured
 ---
-The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be this 1863 edition of Red Riding Hood, cut into the shape of the protagonist herself with the troublesome wolf curled at her feet. Produced by the Boston-based publisher Louis Prang, this is the first in their “Doll Series”, a set of five “die-cut” books, known also as shape books — the other titles being Robinson Crusoe, Goody Two-Shoes (also written by Red Riding Hood author Lydia Very), Cinderella, and King Winter.
+On March 22nd, join the Game Day Committee for an IVA Minecraft Build Battle event! The committee has been working hard to connect IVA members of Rancho, and on their March event students will be welcome to join in Minecraft for some fun.
+
+Join other middle schoolers to engage in a Minecraft build battle in Rancho Game Day. With various themes such as futuristic, Pokemon, farmhouses, and much more! Prizes include Minecraft stickers and Amazon gift cards.
+
+
+Attendance form for PE/Bedrock: https://forms.gle/f5bJ2BLfE1gvfbuT8
+
+Attendance form for Java: https://forms.gle/NYDq3F7VdQ7jMrfP9
