@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "March Madness Bracket Challenge"
-categories: [ UpcommingEvents ]
+categories: [ UpcomingEvents ]
 image: assets/images/6.jpg
 tags: featured
 ---
