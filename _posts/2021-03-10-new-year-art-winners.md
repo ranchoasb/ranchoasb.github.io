@@ -13,6 +13,10 @@ Best Overall - Quinne Davis, with her stunning cello performance
 Most Original - Cameron Weng, with his stylistic and creative artwork of meditation  
 Most Inspirational - Sarah Chen, with her colorful calligraphy  
 
-Cameron Weng, winner of the category "Most Original" gives a statement on his drawing. "I already had a new year's resolution planned out and a drawing would just solidify the plan. I really think that the style in which I drew this piece reflects the way I feel while meditating." The calm and peaceful background of the piece seems to agree, too.
+Cameron Weng, winner of the category "Most Original" gives a statement on his drawing.
+
+>I already had a new year's resolution planned out and a drawing would just solidify the plan. I really think that the style in which I drew this piece reflects the way I feel while meditating.
+
+The calm and peaceful background of the piece seems to agree, too.
 
 Congrats to all participants!
