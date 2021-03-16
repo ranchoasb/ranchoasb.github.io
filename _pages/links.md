@@ -1,5 +1,5 @@
 ---
-title: "Covid-19 Useful Links"
+title: "Useful Links"
 layout: page-image
 permalink: "/links"
 image: "/assets/images/rsj.jpg"
