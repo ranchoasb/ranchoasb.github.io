@@ -14,8 +14,8 @@ For a list of all ASB activities and news events, please access Rancho's Events 
 
 We would like to thank the following people for contributions to the website:
 
-Melody Yu, for creating, managing, and being the webmaster
+**Melody Yu**, for creating, managing, and being the webmaster
 
-Sophia Zhou, for providing artwork seen throughout the website
+**Sophia Zhou**, for providing artwork seen throughout the website
 
-Ally Kim, for helping with the formatting of the Website
+**Ally Kim**, for helping with the formatting of the Website

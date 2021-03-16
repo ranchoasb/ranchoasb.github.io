@@ -4,6 +4,8 @@ layout: default
 permalink: "/announcements"
 ---
 
+![](/assets/images/banner.jpeg)
+
 <div class="container">
     <div class="row justify-content-center">
 
