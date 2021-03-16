@@ -2,9 +2,9 @@
 title: "Categories"
 layout: page-image
 permalink: "/announcements"
+image: "/assets/images/banner.jpeg"
 ---
 
-![](/assets/images/banner.jpeg)
 
 <div class="container">
     <div class="row justify-content-center">

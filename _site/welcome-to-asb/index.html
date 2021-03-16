@@ -111,7 +111,7 @@ var documents = [{
     "id": 3,
     "url": "http://localhost:4000/announcements",
     "title": "Categories",
-    "body": "       Announcements:     {% assign pages_list = site. categories[ Announcements ] %}    {% for post in pages_list %}    {% if post. title != null %}     {% if group == null or group == post. group %}      {% include main-loop-card. html %}     {% endif %}    {% endif %}    {% endfor %}    {% assign pages_list = nil %}    {% assign group = nil %}  "
+    "body": "      Announcements:     {% assign pages_list = site. categories[ Announcements ] %}    {% for post in pages_list %}    {% if post. title != null %}     {% if group == null or group == post. group %}      {% include main-loop-card. html %}     {% endif %}    {% endif %}    {% endfor %}    {% assign pages_list = nil %}    {% assign group = nil %}  "
     }, {
     "id": 4,
     "url": "http://localhost:4000/categories.html",
