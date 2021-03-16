@@ -2,9 +2,9 @@
 layout: post
 title:  "Announcing New Year Resolution Art Contest Winners "
 author: Melody Yu
-categories: [ Announcements ]
+categories: [ Announcements, News]
 image: assets/images/art_contestwinner.png
-tags: [sticky]
+tags: featured
 ---
 
 The results are out! Thank you to everyone who participated. Students were asked to display their New Year's Resolution in the form of artistic expression. We had many great entries, but in the end, the category winners were:
