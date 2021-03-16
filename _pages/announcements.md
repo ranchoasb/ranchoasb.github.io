@@ -1,21 +1,19 @@
 ---
 title: "Categories"
 layout: default
-permalink: "/categories.html"
+permalink: "/announcements"
 ---
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
 
-        {% for category in site.categories %}
-        <h4 class="font-weight-bold spanborder text-capitalize" id="{{ category[0] | downcase }}"><span>{{ category[0] }}</span></h4>
 
-        {% assign pages_list = category[1] %}
+        <h4 class="font-weight-bold spanborder text-capitalize"><span>Announcements</span></h4>
+
+        {% assign pages_list = site.categories["Announcements"] %}
         {% for post in pages_list %}
         {% if post.title != null %}
           {% if group == null or group == post.group %}
-
             {% include main-loop-card.html %}
           {% endif %}
         {% endif %}
@@ -23,13 +21,6 @@ permalink: "/categories.html"
         {% assign pages_list = nil %}
         {% assign group = nil %}
 
-        {% endfor %}
-
-        </div>
-
-            <div class="col-md-4">
-        {% include sidebar-featured.html %}
-    </div>
 
     </div>
 </div>
