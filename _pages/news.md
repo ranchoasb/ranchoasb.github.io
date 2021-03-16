@@ -1,6 +1,6 @@
 ---
-title: "Categories"
-layout: default
+title: "News"
+layout: page-image
 permalink: "/news"
 image: "/assets/images/banner.jpeg"
 ---
