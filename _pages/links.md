@@ -2,7 +2,7 @@
 title: "Useful Links"
 layout: page-image
 permalink: "/links"
-image: "/assets/images/rsj.jpg"
+image: "/assets/images/banner.jpeg"
 ---
 
 Below is the list of useful links related with Covid-19:
