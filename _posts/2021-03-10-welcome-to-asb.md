@@ -3,7 +3,7 @@ layout: post
 title:  "Welcome to the Rancho ASB Official Website!"
 author: Melody Yu
 categories: [ Announcements, News ]
-image: assets/images/ra-defualt-sq_0.jpg
+image: assets/images/logorancho.jpeg
 tags: [sticky]
 ---
 
