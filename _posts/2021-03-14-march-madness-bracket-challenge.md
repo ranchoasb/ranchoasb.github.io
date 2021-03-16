@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "March Madness Bracket Challenge"
+title:  "3/17 March Madness Bracket Challenge"
 categories: [ Announcements ]
 image: assets/images/marchmadness.jpg
 tags: featured
