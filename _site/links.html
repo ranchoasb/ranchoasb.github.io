@@ -143,7 +143,7 @@ var documents = [{
     "id": 10,
     "url": "http://localhost:4000/news",
     "title": "Categories",
-    "body": "      News:     {% assign pages_list = site. categories[ News ] %}    {% for post in pages_list %}    {% if post. title != null %}     {% if group == null or group == post. group %}      {% include main-loop-card. html %}     {% endif %}    {% endif %}    {% endfor %}    {% assign pages_list = nil %}    {% assign group = nil %}  "
+    "body": "      {% assign pages_list = site. categories[ News ] %}    {% for post in pages_list %}    {% if post. title != null %}     {% if group == null or group == post. group %}      {% include main-loop-card. html %}     {% endif %}    {% endif %}    {% endfor %}    {% assign pages_list = nil %}    {% assign group = nil %}  "
     }, {
     "id": 11,
     "url": "http://localhost:4000/tags.html",
