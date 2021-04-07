@@ -11,4 +11,4 @@ Take a moment to join the club (link below) to be able to play in the tournament
 https://lichess.org/team/rancho-san-joaquin-chess-tournament  
 
 WINNERS:
-Ishaan Vannadil scored first place, and Yufei Chen came in a close second. Congradulations!
+Ishaan Vannadil scored first place, and Yufei Chen came in a close second. Congratulations!
