@@ -11,7 +11,6 @@ On March 22nd, join the Game Day Committee for an IVA Minecraft Build Battle eve
 
 Join other middle schoolers to engage in a Minecraft build battle in Rancho Game Day. With various themes such as futuristic, Pokemon, farmhouses, and much more! Prizes include Minecraft stickers and Amazon gift cards.
 
-
-[Attendance form for PE/Bedrock](https://forms.gle/f5bJ2BLfE1gvfbuT8)
-
-[Attendance form for Java](https://forms.gle/NYDq3F7VdQ7jMrfP9)
+WINNERS:
+Bedrock: Dhruv Koyali
+Java: Will Lim and David Kim

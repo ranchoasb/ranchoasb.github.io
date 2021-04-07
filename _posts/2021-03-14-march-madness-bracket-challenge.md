@@ -14,6 +14,6 @@ For anyone who is not familiar with NCAA, it is a tournament where college baske
 The deadline for bracket submissions is 3/17. Students are encouraged to participate, please share this with your friends! Check out the poster attached. It contains a QR code that also links to the google form. Thank you all for your time, have fun!   
 
 
-The Results:
+THE WINNERS:
 
-Brynn Sneed and Sarina Rabiee are both tied in first place with 85 points!
+ASB has completed reviewing all the bracket challenge entries! There is a tie for first place between Brynn Sneed and Sarina Rabiee, both winning with 85 points.
