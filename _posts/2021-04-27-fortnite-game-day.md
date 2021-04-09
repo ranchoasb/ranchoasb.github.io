@@ -3,7 +3,7 @@ layout: post
 title:  "Rancho Game Day: Fortnite!"
 author: Ally Kim
 categories: [ Announcements ]
-# image: assets/images/marchmadness.jpg
+image: assets/images/fortnite.jpeg
 tags: featured
 ---
 
