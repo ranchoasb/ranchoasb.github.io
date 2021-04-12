@@ -11,7 +11,6 @@ Students organize school-wide activities, promote school spirit and a positive s
 
 For a list of all ASB activities and news events, please access Rancho's Events and News pages from the website's homepage.
 
-
 We would like to thank the following people for contributions to the website:
 
 **Melody Yu**, for creating, managing, and being the webmaster of the website, editing articles, and getting quotes from students.
