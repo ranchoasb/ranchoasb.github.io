@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Be Nice To People"
-categories: [ Announcements ]
+categories: [ News ]
 image: assets/images/bntp.jpg
 ---
 
