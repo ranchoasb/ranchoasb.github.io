@@ -2,7 +2,7 @@
 layout: post
 title:  "Announcing New Year Resolution Art Contest Winners "
 author: Melody Yu
-categories: [ Announcements, News]
+categories: [ News]
 image: assets/images/art_contestwinner.png
 tags: featured
 ---
