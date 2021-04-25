@@ -2,7 +2,7 @@
 layout: post
 title:  "Teacher Interview Spotlights"
 author: Sarah Hong
-categories: [ Announcements, News ]
+categories: [ Current, News ]
 image: assets/images/interviewspotlight.png
 tags: featured
 ---

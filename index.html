@@ -55,9 +55,9 @@ description: "A homepage for RSJMS ASB developed by Melody Yu."
 
     <div class="col-md-8 main-loop">
 
-        <h4 class="font-weight-bold spanborder"><span>Announcements</span></h4>
+        <h4 class="font-weight-bold spanborder"><span>Current Events</span></h4>
 
-        {% assign pages_list = site.categories["Announcements"] %}
+        {% assign pages_list = site.categories["Current"] %}
         {% for post in pages_list limit:4%}
             {% include main-loop-card.html %}
         {% endfor %}
