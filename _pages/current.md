@@ -1,7 +1,7 @@
 ---
-title: "Announcements"
+title: "Current Events"
 layout: page-image
-permalink: "/announcements"
+permalink: "/current"
 image: "/assets/images/banner.jpeg"
 ---
 
@@ -9,7 +9,7 @@ image: "/assets/images/banner.jpeg"
 <div class="container">
     <div class="row justify-content-center">
 
-        {% assign pages_list = site.categories["Announcements"] %}
+        {% assign pages_list = site.categories["Current"] %}
         {% for post in pages_list %}
         {% if post.title != null %}
           {% if group == null or group == post.group %}
