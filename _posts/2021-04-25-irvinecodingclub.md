@@ -7,6 +7,6 @@ image: assets/images/icc_poster.png
 tags: featured
 ---
 
-Are you interested in coding?  Join [Irvine Coding Club](irvinecoding.club) to meet students with the same passion. 
+Are you interested in coding?  Join [Irvine Coding Club](https://irvinecoding.club) to meet students with the same passion. 
 
 [Apply here!](https://forms.gle/Ky4S6YLkkursGyZn6)
