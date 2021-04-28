@@ -1,7 +1,7 @@
 ---
-title: "Opportunities"
+title: "Activities"
 layout: page-image
-permalink: "/opp"
+permalink: "/activities"
 image: "/assets/images/banner.jpeg"
 ---
 
@@ -15,7 +15,7 @@ Below is the list of useful links related with Covid-19:
 
 <div class="container">
     <div class="row justify-content-center">
-        {% assign pages_list = site.categories["Opportunities"] %}
+        {% assign pages_list = site.categories["Activities"] %}
         {% for post in pages_list %}
         {% if post.title != null %}
           {% if group == null or group == post.group %}
