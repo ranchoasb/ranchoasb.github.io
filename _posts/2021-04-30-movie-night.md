@@ -13,4 +13,4 @@ Join fellow students and friends to watch Pixar and Disney short films on https:
 [Sign up for a breakout room with your friends here!](https://docs.google.com/document/d/1mIUdNUpiqOVMWp-KI3b0y20qJUqh7AY2XdYqiwVuToU/edit?usp=sharing)
 
 
-![jpg](movienight.jpg)
+![jpg](/assets/images/movienight.jpg)
