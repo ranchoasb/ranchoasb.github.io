@@ -2,7 +2,7 @@
 layout: post
 title:  "Rancho Game Day: April Chess!"
 author: Ally Kim, Melody Yu
-categories: [ News ]
+categories: [  ]
 image: assets/images/chess.jpeg
 tags: featured
 ---

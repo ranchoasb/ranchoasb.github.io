@@ -7,7 +7,7 @@ image: assets/images/minecraft2.jpg
 tags: featured
 ---
 
-Due to popular demand, for May ASB is holding two game days! On May 22, the Minecraft PvP Game Day
+Due to popular demand, for May ASB is holding two game days! On May 22, the Minecraft PvP Game Day will be held.
 
 Join other students in a tournament to prove your Minecraft skills! ASB is hosting a Hypixel Bridge tournament for Java players, and duels for Bedrock players. Winners will receive Amazon gift cards and other prizes!
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "3/17 March Madness Bracket Challenge"
 author: Evan Zhong, Kenneth Chen
-categories: [ News ]
+categories: [  ]
 image: assets/images/marchmadness.jpg
 tags: featured
 ---

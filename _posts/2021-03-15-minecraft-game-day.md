@@ -2,7 +2,7 @@
 layout: post
 title:  "Rancho Game Day: March Minecraft!"
 author: Claire Wen, Melody Yu
-categories: [ News ]
+categories: [  ]
 image: assets/images/gamedaymarch.png
 tags: featured
 ---

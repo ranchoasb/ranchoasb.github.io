@@ -2,7 +2,7 @@
 layout: post
 title:  "ASB Donation Competition"
 author: Sarah
-categories: [ Current, News ]
+categories: [  ]
 image: assets/images/clothing.jpg
 tags: featured
 ---
