@@ -2,7 +2,7 @@
 layout: post
 title:  "Rancho School Start!"
 author: Melody Yu
-categories: [ Current, News ]
+categories: [ ]
 tags: featured
 ---
 
