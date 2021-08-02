@@ -3,7 +3,7 @@ layout: post
 title:  "Camp Rancho"
 author: Lucas Melville
 categories: [ Current, News ]
-image: assets/images/camp_flyer_rancho.pdf
+image: assets/images/camp_flyer_rancho-1.png
 tags: featured
 ---
 
@@ -12,4 +12,4 @@ Join us on Aughust 10th for all 7th Graders, and Aughust 11th for all 8th Grader
 
 [Click here to RSVP a spot at the camp!](https://docs.google.com/forms/d/18ZSU9cmSW07BU3niPm-NNcMjnH1GMziQEFejwkuaT0s/viewform?edit_requested=true)
 
-![pdf](/assets/images/camp_rancho_flyer.pdf)
+![png](/assets/images/camp_rancho_flyer-1.png)
