@@ -2,7 +2,7 @@
 layout: post
 title:  "Among Us Game Day"
 author: Claire Wen
-categories: [ Current, News ]
+categories: 
 image: assets/images/amongusmay.png
 tags: featured
 ---
