@@ -2,7 +2,7 @@
 layout: post
 title:  "Minecraft PvP Game Day"
 author: Claire Wen
-categories: [ Current, News ]
+categories: 
 image: assets/images/minecraft2.jpg
 tags: featured
 ---
