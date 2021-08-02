@@ -2,7 +2,7 @@
 layout: post
 title:  "Rancho Movie Night!"
 author: Claire Wen
-categories: [ Current, News ]
+categories: 
 image: assets/images/movienight.jpg
 tags: featured
 ---
