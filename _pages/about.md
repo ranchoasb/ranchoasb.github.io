@@ -20,3 +20,5 @@ We would like to thank the following people for contributions to the website:
 **Claire Wen**, for writing articles and sections.
 
 **Sophia Zhou**, for providing artwork seen throughout the website.
+
+**Lucas Melville**, for working on updating the website for the 2021-2022 school year.
