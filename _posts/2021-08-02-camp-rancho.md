@@ -3,7 +3,7 @@ layout: post
 title:  "Camp Rancho"
 author: Lucas Melville
 categories: [ Current, News ]
-image: /assets/images/camp_rancho_flyer_updated.jpeg
+image: assets/images/camp_rancho_flyer_updated.jpeg
 tags: featured
 ---
 
