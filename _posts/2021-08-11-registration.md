@@ -4,7 +4,6 @@ title:  "Rancho Registration"
 author: Lucas Melville
 categories: [ Current, News ]
 image: assets/images/8_Reg_Rancho.PNG
-tags: featured
 ---
 
 Registration is here! Come on by rancho to drop off registration papers for 8th graders on 8/12/2021. The times are 8:30 AM - 9:40 AM for last names starting with A-H. Last names from  
