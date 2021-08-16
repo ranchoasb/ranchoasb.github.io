@@ -3,7 +3,7 @@ layout: post
 title:  "7th Grade Start!"
 author: Lucas Melville
 categories: [ Current, News ]
-image: assets/images/7th-first-day.png
+image: assets/images/7th-first-day.PNG
 tags: featured
 ---
 
