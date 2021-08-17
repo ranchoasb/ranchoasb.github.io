@@ -10,4 +10,4 @@ tags: featured
 Hello everyone! Big day coming up! Thursday, August 19th is the first day of school for all 7TH GRADERS ONLY! Please bring a pencil and a notebook, as well as a lunch. The cafeteria will be open for 
  snack and lunch if needed. School will start at 8:30 AM and end at 2:55 PM. The special bell schedual for Thusday is posted below. See you there!
  
- ![png](/assets/images/7th-bell-schedule.png) 
+ ![PNG](/assets/images/7th_bell_schedule.PNG) 
