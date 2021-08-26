@@ -12,4 +12,4 @@ Today's news is from the PTA! They have asked all of you to encourage your paren
   Rancho mask, Rancho bag, or a window sticker! Make sure you get to it!
  
  
- ![PNG](assets/images/PTAAnnouncement.PNG)
+ ![PNG](/assets/images/PTAAnnouncement.PNG)
