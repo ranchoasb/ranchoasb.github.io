@@ -4,7 +4,7 @@ title:  "Tutorial Info And Links"
 author: Lucas Melville
 categories: [ Current, News ]
 image: 
-tags: featured
+tags: [sticky]
 ---
 
 Click the link below for a google doc that shows when your teachers are having tutorial, and what grades are applicable. You will also find a link to check-in to tutorial. If you are already in your classroom, click the bottom link for the check-in form.
