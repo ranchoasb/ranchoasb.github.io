@@ -3,7 +3,7 @@ layout: post
 title:  "Tutorial Info And Links"
 author: Lucas Melville
 categories: [ Current, News ]
-image: 
+image: /assets/images/logorancho.jpeg
 tags: [sticky]
 ---
 
