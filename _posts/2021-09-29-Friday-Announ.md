@@ -28,7 +28,7 @@ Hello Rancho! Today we have a few reminders, and some fun upcoming events! Click
  
  **Our fifth big update** is a big yearly upcoming event... Our first school dance! The dance is on **October 29th IMMEDIATELY AFTER SCHOOL until 5:30 PM**. The theme is Halloween/Spooky/Masquerade. We have lots of ideas
   for entertainment, food, and drinks. So far, there is not a price set on the dance, but there will be one. If you are looking forward to ASB events including this one, you can still buy
-   the ASB Membership Card for $15. With the card, you have access to all of ASB's events throughout the year!
+   the ASB Membership Card for $15 on MySchoolBucks.com. With the card, you have access to all of ASB's events throughout the year!
  
  **Our sixth update** is on Tug-Of-War! Below are the winners so far for 7th and 8th grade. You can also see who your class is competing against next!
  
