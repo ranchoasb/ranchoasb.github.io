@@ -2,9 +2,9 @@
 layout: post
 title:  "Friday 12/3 News!"
 author: Lucas Melville
-categories: 
+categories: [ Current, News ]
 image: 
-tags: 
+tags: featured 
 ---
 
 Hello Rancho! Today, we are excited to share some cool new events coming up! Please read the following:
@@ -19,7 +19,7 @@ From December 6th - December 14th, ASB will be selling winter wishes on the outd
  
  **Canned Food Drive!**
  
- From December 6th to December 10th, Rancho is having a canned food drive for the South County Outreach charity. Drop off the cans in a bag labeled with your 
+ From December 3rd to December 10th, Rancho is having a canned food drive for the South County Outreach charity. Drop off the cans in a bag labeled with your 
  Advisement teacher’s name in the library. Each 7th and 8th grade advisement class that donates the most cans will receive a customized trophy! (One trophy per grade!)
  
  ![png](/assets/images/Canned-Food-Trophie.png)
