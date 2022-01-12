@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Rancho's Art Festial!"
+title:  "Rancho's Art Festival!"
 author: Lucas Melville
 categories: [ Current, News ]
 image: assets/images/Art-Festival.jpg
