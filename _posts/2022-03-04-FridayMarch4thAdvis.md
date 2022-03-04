@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Friday 3/4 Addvisement"
+title:  "Friday 3/4 Advisement"
 author: Lucas Melville
 categories: [ Current, News ]
 image:
