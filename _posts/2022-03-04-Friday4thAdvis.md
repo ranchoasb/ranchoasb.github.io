@@ -2,9 +2,9 @@
 layout: post
 title:  "Friday 3/4 Addvisement"
 author: Lucas Melville
-categories: [ Current, News ]
+categories: []
 image:
-tags: featured
+tags: 
 ---
 
 Hello Rancho! Here is the slideshow for today's advisement. This includes updates for the Cosmic Carnival, Rancho's Got Talent, and The Great Kindness Challenge!
