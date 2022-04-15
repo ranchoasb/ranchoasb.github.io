@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Rancho's Got Talent Update!"
+title:  "Rancho's Got Talent Date Change!"
 author: Forrest Zeng
 categories: [ Current, News ]
 Image: RGTUpdate2.png
