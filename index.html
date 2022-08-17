@@ -1,104 +1,381 @@
----
-title: "Rancho ASB Website"
-layout: default
-pagination:
-    enabled: true
-description: "A homepage for RSJMS ASB developed by Melody Yu."
----
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <title>Rancho ASB Website | Rancho S.J. Middle School ASB</title>
 
-<div class="container">
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Rancho ASB">
+    <meta name="description" content="A homepage for Rancho plebeians.">
 
-{% if page.url == "/" %}
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png">
 
-<!-- Begin post excerpts, let's highlight the first 4 posts on top -->
-<div class="row remove-site-content-margin">
+    <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
+    <base href="https://timanana.github.io/Rancho-ASB-Website-V2/">
+</head>
 
-    <!-- latest post -->
-    {% assign latest_post = site.posts[0] %}
+<body>
+    <!-- ======================= Header START -->
+    <header class="navbar-light fixed-top header-static bg-mode">
 
+        <!-- Logo Nav START -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <!-- Logo START -->
+                <a class="navbar-brand" href="">
+                    <img class="light-mode-item navbar-brand-item" src="assets/images/navbar.png" alt="logo">
+                    <img class="dark-mode-item navbar-brand-item" src="assets/images/navbar.png" alt="logo">
+                </a>
+                <!-- Logo END -->
 
-</div>
+                <!-- Responsive navbar toggler -->
+                <button class="navbar-toggler ms-auto icon-md btn btn-light p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-animation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
 
-<!-- Sticky - add sticky tag to the post you want to highlight here - tags: [sticky] -->
-{% for post in site.posts %}
-{% if post.tags contains "sticky" %}
-<div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
-    <div class="pl-4 pr-0 h-100 tofront">
-        <div class="row justify-content-between">
-            <div class="col-md-6 pt-6 pb-6 pr-lg-4 align-self-center">
-                <h1 class="mb-3">{{post.title}}</h1>
-                <p class="mb-3 lead">
-                    {{ post.excerpt | strip_html | strip_newlines | truncate: 136 }}
-                </p>
-                <a href="{{site.baseurl}}{{post.url}}" class="btn btn-dark">Read More</a>
+                <!-- Main navbar START -->
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+
+                    <!-- Nav Search START -->
+                    <div class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0">
+                        <div class="nav-item w-100">
+                            <div class="rounded position-relative">
+                                <input class="form-control ps-5 bg-light" placeholder="Search..." aria-label="Search" id="searchinput">
+                                <button class="btn bg-transparent px-2 py-0 position-absolute top-50 start-0 translate-middle-y" onclick="search()">
+                                    <div style="transform:rotate(270deg);font-size:2rem!important">⌕</div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0" style="margin-left:10px;font-weight:600"><a href="javascript:void(0)" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchoptionsmodal" id="searchoptionslink">Search Options</a></div>
+
+                    <div id="navbarhtml"></div>
+                </div>
+                <!-- Main navbar END -->
             </div>
-            <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url({{site.baseurl}}/{{ post.image }});">
+        </nav>
+        <!-- Logo Nav END -->
+    </header>
+    <!-- ======================= Header END -->
+
+    <!-- **************** MAIN CONTENT START **************** -->
+    <main>
+
+        <!-- Container START -->
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- Sidenav START -->
+                <div class="col-lg-3" style="margin-top:-56px">
+
+                    <!-- Navbar START-->
+                    <nav class="navbar navbar-expand-lg mx-0 sticky-top">
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasSideNavbar" style="margin-top:80px">
+                            <!-- Offcanvas header -->
+                            <div class="offcanvas-header">
+                                <button type="button" class="btn-close text-reset ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+
+                            <!-- Offcanvas body -->
+                            <div class="offcanvas-body d-block px-2 px-lg-0">
+                                <!-- Card START -->
+                                <div class="card overflow-hidden">
+                                    <!-- Cover image -->
+                                    <div class="h-50px" style="background-image:url(assets/images/bg/01.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                                    <!-- Card body START -->
+                                    <div class="card-body pt-0">
+                                        <div class="text-center">
+                                            <!-- Rancho logo -->
+                                            <div class="avatar avatar-lg mt-n5 mb-3">
+                                                <img class="avatar-img rounded border border-white border-3" src="assets/images/avatar/rancho.png" style="background-color:#1c1641">
+                                            </div>
+                                            <!-- Info -->
+                                            <h5 class="mb-0">Rancho ASB</h5>
+                                            <small>Rancho San Joaquin Middle School</small>
+                                            <p class="mt-3">A group of students who organize school-wide activities, promote school spirit and a positive school culture, develop leadership and communication skills, and work to benefit the Rancho student body.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card END -->
+
+                                <!-- Copyright -->
+                                <p class="small text-center mt-3">©<span id="copyrightyear"></span> Rancho San Joaquin Middle School, Irvine, California</p>
+                            </div>
+                        </div>
+                    </nav>
+                    <!-- Navbar END-->
+                </div>
+                <!-- Sidenav END -->
+
+                <!-- Main content START -->
+                <div class="col-md-8 col-lg-6 vstack gap-4" id="maincontent">
+                    <div class="card-link disposable">
+                        <div class="card">
+                            <!-- Card header START -->
+                            <div class="card-header">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <!-- Info -->
+                                        <div>
+                                            <h6 class="card-title mb-0 placeholder-glow" style="display:block;width:500px"><span class="placeholder col-6"></span></h6>
+                                            <p class="small mb-0 placeholder-glow"><span class="placeholder col-4"></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card header END -->
+
+                            <!-- Card body START -->
+                            <div class="card-body">
+                                <p class="mb-0 placeholder-glow">
+                                    <span class="placeholder col-2"></span>
+                                    <span class="placeholder col-3"></span>
+                                    <span class="placeholder col-6"></span>
+                                    <span class="placeholder col-3"></span>
+                                    <span class="placeholder col-3"></span>
+                                    <span class="placeholder col-2"></span>
+                                    <span class="placeholder col-6"></span>
+                                    <span class="placeholder col-2"></span>
+                                    <span class="placeholder col-5"></span>
+                                    <span class="placeholder col-2"></span>
+                                    <span class="placeholder col-5"></span>
+                                    <span class="placeholder col-5"></span>
+                                    <span class="placeholder col-2"></span>
+                                    <span class="placeholder col-6"></span>
+                                    <span class="placeholder col-2"></span>
+                                    <span class="placeholder col-4"></span>
+                                    <span class="placeholder col-3"></span>
+                                    <span class="placeholder col-5"></span>
+                                    <span class="placeholder col-4"></span>
+                                    <span class="placeholder col-4"></span>
+                                </p>
+                            </div>
+                            <!-- Card body END -->
+
+                            <!-- Card footer START -->
+                            <div class="card-footer border-0 d-flex justify-content-between align-items-center">
+                                <p class="mb-0 placeholder-glow" style="display:block;width:300px"><span class="placeholder col-5"></span></p>
+                                <button class="btn btn-primary-soft btn-sm disabled placeholder col-4"></button> <!-- maybe we need a col -->
+                            </div>
+                            <!-- Card footer END -->
+                        </div>
+                    </div>
+
+                    <div class="card-link disposable">
+                        <div class="card">
+                            <!-- Card header START -->
+                            <div class="card-header">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <!-- Info -->
+                                        <div>
+                                            <h6 class="card-title mb-0 placeholder-glow" style="display:block;width:500px"><span class="placeholder col-6"></span></h6>
+                                            <p class="small mb-0 placeholder-glow"><span class="placeholder col-4"></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card header END -->
+
+                            <!-- Card body START -->
+                            <div class="card-body">
+                                <p class="mb-0 placeholder-glow">
+                                    <span class="placeholder col-4"></span>
+                                    <span class="placeholder col-2"></span>
+                                    <span class="placeholder col-3"></span>
+                                    <span class="placeholder col-4"></span>
+                                    <span class="placeholder col-2"></span>
+                                    <span class="placeholder col-6"></span>
+                                    <span class="placeholder col-2"></span>
+                                    <span class="placeholder col-4"></span>
+                                    <span class="placeholder col-6"></span>
+                                    <span class="placeholder col-4"></span>
+                                    <span class="placeholder col-4"></span>
+                                    <span class="placeholder col-3"></span>
+                                    <span class="placeholder col-5"></span>
+                                    <span class="placeholder col-4"></span>
+                                    <span class="placeholder col-6"></span>
+                                    <span class="placeholder col-3"></span>
+                                    <span class="placeholder col-3"></span>
+                                    <span class="placeholder col-3"></span>
+                                    <span class="placeholder col-4"></span>
+                                    <span class="placeholder col-2"></span>
+                                </p>
+                            </div>
+                            <!-- Card body END -->
+
+                            <!-- Card footer START -->
+                            <div class="card-footer border-0 d-flex justify-content-between align-items-center">
+                                <p class="mb-0 placeholder-glow" style="display:block;width:300px"><span class="placeholder col-5"></span></p>
+                                <button class="btn btn-primary-soft btn-sm disabled placeholder col-4"></button>
+                            </div>
+                            <!-- Card footer END -->
+                        </div>
+                    </div>
+
+                    <div class="card-link disposable">
+                        <div class="card">
+                            <!-- Card header START -->
+                            <div class="card-header">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <!-- Info -->
+                                        <div>
+                                            <h6 class="card-title mb-0 placeholder-glow" style="display:block;width:500px"><span class="placeholder col-6"></span></h6>
+                                            <p class="small mb-0 placeholder-glow"><span class="placeholder col-4"></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card header END -->
+
+                            <!-- Card body START -->
+                            <div class="card-body">
+                                <p class="mb-0 placeholder-glow">
+                                    <span class="placeholder col-6"></span>
+                                    <span class="placeholder col-3"></span>
+                                    <span class="placeholder col-3"></span>
+                                    <span class="placeholder col-2"></span>
+                                    <span class="placeholder col-5"></span>
+                                    <span class="placeholder col-2"></span>
+                                    <span class="placeholder col-5"></span>
+                                    <span class="placeholder col-3"></span>
+                                    <span class="placeholder col-6"></span>
+                                    <span class="placeholder col-2"></span>
+                                    <span class="placeholder col-4"></span>
+                                    <span class="placeholder col-6"></span>
+                                    <span class="placeholder col-3"></span>
+                                    <span class="placeholder col-6"></span>
+                                    <span class="placeholder col-6"></span>
+                                    <span class="placeholder col-5"></span>
+                                    <span class="placeholder col-4"></span>
+                                    <span class="placeholder col-4"></span>
+                                    <span class="placeholder col-5"></span>
+                                    <span class="placeholder col-3"></span>
+                                </p>
+                            </div>
+                            <!-- Card body END -->
+
+                            <!-- Card footer START -->
+                            <div class="card-footer border-0 d-flex justify-content-between align-items-center">
+                                <p class="mb-0 placeholder-glow" style="display:block;width:300px"><span class="placeholder col-5"></span></p>
+                                <button class="btn btn-primary-soft btn-sm disabled placeholder col-4"></button> <!-- maybe we need a col -->
+                            </div>
+                            <!-- Card footer END -->
+                        </div>
+                    </div>
+
+                    <!-- Load more button START -->
+                    <a role="button" class="btn btn-loader btn-primary-soft disabled" aria-pressed="false" disabled id="loadmorebutton">
+                        <span class="load-text">Load more</span>
+                        <div class="load-icon">
+                            <div class="spinner-grow spinner-grow-sm" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Load more button END -->
+
+                </div>
+                <!-- Main content END -->
+
+                <!-- Right sidebar START -->
+                <div class="col-lg-3" style="margin-top:-56px">
+                    <div class="row g-4 sticky-top">
+                        <!-- Card follow START -->
+                        <div class="col-sm-6 col-lg-12" style="margin-top:80px">
+                            <div class="card">
+                                <!-- Card header START -->
+                                <div class="card-header pb-0 border-0">
+                                    <h5 class="card-title mb-0">It is currently</h5>
+                                </div>
+                                <!-- Card header END -->
+                                <!-- Card body START -->
+                                <div class="card-body">
+                                    <span id="time"></span>
+                                </div>
+                                <!-- Card body END -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right sidebar END -->
+
+            </div> <!-- Row END -->
+        </div>
+        <!-- Container END -->
+
+    </main>
+
+    <div class="modal" tabindex="-1" id="searchresultsmodal">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Search results</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="searchresultsbody"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-{% endif %}
-{% endfor %}
-
-
-
-
-
-{% endif %} <!--endif page url is / -->
-
-
-
-<!-- Now the rest of the posts with the usual loop but with an offset:4 on the first page so we can skeep the first 4 posts displayed above -->
-
-<div class="row mt-3">
-
-    <div class="col-md-8 main-loop">
-
-        <h4 class="font-weight-bold spanborder"><span>Current Events</span></h4>
-
-        {% assign pages_list = site.categories["Current"] %}
-        {% for post in pages_list limit:4%}
-            {% include main-loop-card.html %}
-        {% endfor %}
-
-        <div class="mt-5">
-         <!-- Pagination links -->
-            {% if paginator.total_pages > 1 %}
-            <ul class="pagination">
-              {% if paginator.previous_page %}
-                <li class="page-item"><a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li>
-              {% else %}
-                <li class="page-item disabled"><span class="prev page-link">&laquo;</span></li>
-              {% endif %}
-
-              {% for page in (1..paginator.total_pages) %}
-                {% if page == paginator.page %}
-                <li class="page-item disabled"><span class="webjeda page-link">{{ page }}</span></li>
-                {% elsif page == 1 %}
-                <li class="page-item"><a class="page-link" href="{{site.baseurl}}/">{{ page }}</a></li>
-                {% else %}
-                <li class="page-item"><a class="page-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
-                {% endif %}
-              {% endfor %}
-
-              {% if paginator.next_page %}
-                <li class="page-item"><a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
-              {% else %}
-                <li class="page-item disabled"><span class="next page-link">&raquo;</span></li>
-              {% endif %}
-            </ul>
-            {% endif %}
+    
+    <div class="modal" tabindex="-1" id="searchoptionsmodal">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Search Options</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="searchoptionsbody">
+                    <div class="mb-3">
+                        <ul class="list-group">
+                            <li class="list-group-item search-options-no-bounds">
+                                <input class="form-check-input me-1" type="checkbox" id="beforesearchoptioncheck">
+                                <label for="beforesearchoption">Before:</label><input class="form-control" type="text" autocomplete="off" id="beforesearchoption" style="margin-top:5px" disabled readonly>
+                            </li>
+                            <li class="list-group-item search-options-no-bounds">
+                                <input class="form-check-input me-1" type="checkbox" id="aftersearchoptioncheck">
+                                <label for="aftersearchoption">After:</label><input class="form-control" type="text" autocomplete="off" id="aftersearchoption" style="margin-top:5px" disabled readonly>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sortbysearchresults" class="form-label">Sort by</label>
+                        <select class="form-select" aria-label="Sort search results by..." id="sortbysearchresults">
+                            <option value="relevanceascending" selected>Relevance (ascending)</option>
+                            <option value="relevancedescending">Relevance (descending)</option>
+                            <option value="dateascending">Date (ascending)</option>
+                            <option value="datedescending">Date (descending)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
-
     </div>
+    <!-- **************** MAIN CONTENT END **************** -->
 
-    <div class="col-md-4">
-        {% include sidebar-featured.html %}
-    </div>
+    <!-- Bootstrap JS -->
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/fuse/fuse.js"></script>
+    <script src="https://unpkg.com/js-datepicker"></script>
+    <script src="assets/js/script.js"></script>
 
-</div>
+</body>
 
-
-
-</div>
+</html>
