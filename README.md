@@ -1,1 +1,2 @@
-# Home page for Rancho SJMS ASB
+# Rancho ASB
+A homepage for the Rancho San Joaquin Middle School Associated Student Body website.
