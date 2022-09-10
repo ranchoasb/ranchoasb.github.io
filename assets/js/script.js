@@ -12,11 +12,12 @@ window.onload = () => {
   
   function nextschoolday() {
     let cdate = new Date();
+    cdate.setDate(cdate.getDate() + 1);
     
     while (true) {
       if (cdate.getYear() >= 2023 && cdate.getMonth() >= 5 && cdate.getDate() >= 3) return null; // no more school
       
-      if (!["weekend", "dayoff"].includes(cdate.toLocaleDateString())) {
+      if (!["weekend", "dayoff"].includes(daydata[cdate.toLocaleDateString()])) {
         return formatdate(cdate);
       }
       cdate.setDate(cdate.getDate() + 1);
