@@ -44,7 +44,7 @@ window.onload = () => {
         "promotion": `Tomorrow is the eighth grade promotion! Seventh graders should not come to school. School starts at 8:30 AM and ends at 12:30 PM. Go to your advisement class first.`,
         "dayoff": `Tomorrow is a day off! Your next school day is on ${next}.`,
         "monday": `Tomorrow is Monday, a late start! School starts at 8:55 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:55 PM. Classes are 52 minutes long.`,
-        "tuesday": `Tomorrow is Tuesday, a reverse day! Go to your sixth period class first. School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at da4:00 PM. Classes are 57 minutes long.`,
+        "tuesday": `Tomorrow is Tuesday, a reverse day! Go to your sixth period class first. School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 4:00 PM. Classes are 57 minutes long.`,
         "wednesday": `Tomorrow is Wednesday! School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 4:00 PM. Classes are 57 minutes long.`,
         "thursday": `Tomorrow is Thursday, a late start reverse day! Go to your sixth period class first. School starts at 8:55 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:55 PM. Classes are 52 minutes long.`,
         "friday": `Tomorrow is Friday! Remember to attend advisement, which is after third period. School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:56 PM. Classes are 53 minutes long.`
