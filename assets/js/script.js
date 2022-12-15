@@ -47,7 +47,7 @@ window.onload = () => {
         "friday": `Today is Friday! Remember to attend advisement, which is after third period. School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:56 PM. Classes are 53 minutes long.`
       };
       
-      today.textContent = today_displays[daydata[today_date.toLocaleDateString()]]+((today_date.getDay()==5&&daydata[today_date.toLocaleDateString()]=="minimum")?" There will not be advisement.":""));
+      today.textContent = today_displays[daydata[today_date.toLocaleDateString()]]+((today_date.getDay()==5&&daydata[today_date.toLocaleDateString()]=="minimum")?" There will not be advisement.":"");
     }
     
     let tomorrow_date = new Date();
