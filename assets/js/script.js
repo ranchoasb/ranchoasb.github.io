@@ -122,7 +122,7 @@ window.onload = () => {
     }
   }
   
-  fetch("https://script.google.com/macros/s/AKfycbzZtYu_kEXFPXRWgWfCp8qPsP4g3ae7BrGO6f0UjsxqHr2tbKxsBs5Aq8VhS0E-5mlz/exec").then(e => e.json()).then(response => {
+  fetch("https://script.google.com/macros/s/AKfycbxPzXSiO8MrHHLaSm0_YBG4ubiokddr3M8WLICqIH8fDfcYCks2KFBfANW0HnU2LnY5/exec?query=posts").then(e => e.json()).then(response => {
     data = response;
     datalen = data.length;
     
