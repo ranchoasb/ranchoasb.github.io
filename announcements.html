@@ -34,7 +34,7 @@
     </main>
     <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script><script src="https://unpkg.com/js-datepicker"></script>
     <script src="assets/js/navbar.js"></script>
-    <script>fetch("https://script.google.com/macros/s/AKfycbxPzXSiO8MrHHLaSm0_YBG4ubiokddr3M8WLICqIH8fDfcYCks2KFBfANW0HnU2LnY5/exec?query=announcements").then(e=>e.text()).then(data=>{accordion.outerHTML=data});datepicker(date,{onHide:()=>{[...document.querySelector(".accordion").children].forEach(announcement=>(announcement.style.display=announcement.dataset.date==new Date(date.value).toLocaleDateString()?"block":"none"))}});</script>
+    <script>fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=announcements").then(e=>e.text()).then(data=>{accordion.outerHTML=data});datepicker(date,{onHide:()=>{[...document.querySelector(".accordion").children].forEach(announcement=>(announcement.style.display=announcement.dataset.date==new Date(date.value).toLocaleDateString()?"block":"none"))}});</script>
     <script src="assets/js/viewcount.js"></script>
   </body>
 </html>
