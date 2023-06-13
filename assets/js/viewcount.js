@@ -1,3 +1,3 @@
 addEventListener("load", () => {
-  if (!document.referrer.startsWith("https://ranchoasb.org")) fetch("https://script.google.com/macros/s/AKfycbxPzXSiO8MrHHLaSm0_YBG4ubiokddr3M8WLICqIH8fDfcYCks2KFBfANW0HnU2LnY5/exec?query=ping", {mode: "no-cors"});
+  if (!document.referrer.startsWith("https://ranchoasb.org")) fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=ping", {mode: "no-cors"});
 });
