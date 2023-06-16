@@ -12,11 +12,11 @@ window.onload = () => {
   function nextschoolday() {
     let cdate = new Date();
     cdate.setDate(cdate.getDate() + 1);
-    console.log(cdate.getYear());
+    console.log(cdate.getFullYear());
     console.log(cdate.getMonth());
     console.log(cdate.getDate());
     while (true) {
-      if (cdate.getYear() >= 2023 && cdate.getMonth() >= 5 && cdate.getDate() >= 3) return 0; // no more school
+      if (cdate.getFullYear() >= 2023 && cdate.getMonth() >= 5 && cdate.getDate() >= 3) return 0; // no more school
       
       if (!["weekend", "dayoff"].includes(daydata[cdate.toLocaleDateString()])) {
         return formatdate(cdate);
@@ -30,7 +30,7 @@ window.onload = () => {
     
     let today_displays;
     
-    if (today_date.getYear() > 2023 || (today_date.getYear() == 2023 && today_date.getMonth() > 5 || (today_date.getMonth() == 5 && today_date.getDate() >= 3))) {
+    if (today_date.getFullYear() > 2023 || (today_date.getFullYear() == 2023 && today_date.getMonth() > 5 || (today_date.getMonth() == 5 && today_date.getDate() >= 3))) {
       today.textContent = "There is no more school!"
     } else {
       today_displays = {
