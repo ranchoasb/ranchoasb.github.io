@@ -12,9 +12,6 @@ window.onload = () => {
   function nextschoolday() {
     let cdate = new Date();
     cdate.setDate(cdate.getDate() + 1);
-    console.log(cdate.getFullYear());
-    console.log(cdate.getMonth());
-    console.log(cdate.getDate());
     while (true) {
       if (cdate.getFullYear() >= 2023 && cdate.getMonth() >= 5 && cdate.getDate() >= 3) return 0; // no more school
       
