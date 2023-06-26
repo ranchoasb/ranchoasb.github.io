@@ -4803,7 +4803,7 @@ textarea.form-control-lg {
 	}
 }
 
-@media (min-width:1100px) {
+@media (min-width:1180px) {
 	.navbar-expand-lg {
 		-ms-flex-wrap: nowrap;
 		flex-wrap: nowrap;
