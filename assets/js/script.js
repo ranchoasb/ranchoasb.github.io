@@ -213,8 +213,8 @@ window.onload = () => {
     let datepickerinput = this.nextElementSibling.nextElementSibling;
     datepickerinput.disabled = !datepickerinput.disabled;
   });
-
-  function goToPost(id) {
-    document.querySelector("#"+id).scrollIntoView({behavior:"smooth"});
-  }
 };
+
+function goToPost(id) {
+  document.querySelector("#"+id).scrollIntoView({behavior:"smooth"});
+}
