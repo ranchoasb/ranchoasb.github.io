@@ -216,5 +216,5 @@ window.onload = () => {
 };
 
 function goToPost(id) {
-  document.querySelector("#x"+id).scrollIntoView({behavior:"smooth"});
+  window.scrollTo({ top: document.querySelector("#x"+id).offsetTop+document.querySelector(".header").offsetHeight, behavior: 'smooth' })
 }
