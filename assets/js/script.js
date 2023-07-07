@@ -216,5 +216,5 @@ window.onload = () => {
 };
 
 function goToPost(id) {
-  window.scrollTo({ top: document.querySelector("#x"+id).offsetTop-document.querySelector("header").offsetHeight-1.5rem, behavior: 'smooth' })
+  window.scrollTo({ top: document.querySelector("#x"+id).offsetTop-document.querySelector("header").offsetHeight-window.getComputedStyle(document.querySelector("#maincontent")).getPropertyValue("gap"), behavior: 'smooth' })
 }
