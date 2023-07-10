@@ -6598,7 +6598,7 @@ textarea.form-control-lg {
 	border-radius: 0;
 }
 
-@media (max-width:575.98px) {
+@media (max-width:var(--screen-sm)) {
 	.modal-fullscreen-sm-down {
 		width: 100vw;
 		max-width: none;
@@ -6625,7 +6625,7 @@ textarea.form-control-lg {
 	}
 }
 
-@media (max-width:767.98px) {
+@media (max-width:var(--screen-md)) {
 	.modal-fullscreen-md-down {
 		width: 100vw;
 		max-width: none;
@@ -6652,7 +6652,7 @@ textarea.form-control-lg {
 	}
 }
 
-@media (max-width:991.98px) {
+@media (max-width:var(--screen-lg)) {
 	.modal-fullscreen-lg-down {
 		width: 100vw;
 		max-width: none;
@@ -6679,7 +6679,7 @@ textarea.form-control-lg {
 	}
 }
 
-@media (max-width:1199.98px) {
+@media (max-width:var(--screen-xl)) {
 	.modal-fullscreen-xl-down {
 		width: 100vw;
 		max-width: none;
@@ -6706,7 +6706,7 @@ textarea.form-control-lg {
 	}
 }
 
-@media (max-width:1399.98px) {
+@media (max-width:var(--screen-xxl)) {
 	.modal-fullscreen-xxl-down {
 		width: 100vw;
 		max-width: none;
@@ -14476,7 +14476,7 @@ textarea.form-control-lg {
 	min-width: 22rem;
 }
 
-@media (max-width:575.98px) {
+@media (max-width:var(--screen-sm)) {
 	.dropdown-menu-size-md {
 		min-width: 16rem;
 	}
@@ -14698,7 +14698,7 @@ textarea.form-control-lg {
 	}
 }
 
-@media (max-width:991.98px) {
+@media (max-width:var(--screen-lg)) {
 	.nav-sidenav {
 		width: 270px;
 		left: 0;
@@ -14781,7 +14781,7 @@ textarea.form-control-lg {
 	}
 }
 
-@media (max-width:991.98px) {
+@media (max-width:var(--screen-lg)) {
 	.sidebar-end {
 		width: 270px;
 		right: 0;
@@ -14862,7 +14862,7 @@ header {
 	color: #0f6fec;
 }
 
-@media (max-width:991.98px) {
+@media (max-width:var(--screen-lg)) {
 	.navbar-dark .navbar-nav .nav-link {
 		color: #676a79;
 	}
@@ -14879,7 +14879,7 @@ header {
 	width: auto;
 }
 
-@media (max-width:991.98px) {
+@media (max-width:var(--screen-lg)) {
 	.navbar-brand {
 		padding-top: 10px;
 		padding-bottom: 10px;
@@ -14938,7 +14938,7 @@ header {
 	}
 }
 
-@media (max-width:575.98px) {
+@media (max-width:var(--screen-sm)) {
 	.navbar-expand-sm .navbar-collapse {
 		-webkit-box-shadow: 0 10px 30px rgba(83,88,93,.2);
 		box-shadow: 0 10px 30px rgba(83,88,93,.2);
@@ -15027,7 +15027,7 @@ header {
 	}
 }
 
-@media (max-width:767.98px) {
+@media (max-width:var(--screen-md)) {
 	.navbar-expand-md .navbar-collapse {
 		-webkit-box-shadow: 0 10px 30px rgba(83,88,93,.2);
 		box-shadow: 0 10px 30px rgba(83,88,93,.2);
@@ -15116,7 +15116,7 @@ header {
 	}
 }
 
-@media (max-width:991.98px) {
+@media (max-width:var(--screen-lg)) {
 	.navbar-expand-lg .navbar-collapse {
 		-webkit-box-shadow: 0 10px 30px rgba(83,88,93,.2);
 		box-shadow: 0 10px 30px rgba(83,88,93,.2);
@@ -15207,7 +15207,7 @@ header {
 	}
 }
 
-@media (max-width:1199.98px) {
+@media (max-width:var(--screen-xl)) {
 	.navbar-expand-xl .navbar-collapse {
 		-webkit-box-shadow: 0 10px 30px rgba(83,88,93,.2);
 		box-shadow: 0 10px 30px rgba(83,88,93,.2);
@@ -15296,7 +15296,7 @@ header {
 	}
 }
 
-@media (max-width:1399.98px) {
+@media (max-width:var(--screen-xxl)) {
 	.navbar-expand-xxl .navbar-collapse {
 		-webkit-box-shadow: 0 10px 30px rgba(83,88,93,.2);
 		box-shadow: 0 10px 30px rgba(83,88,93,.2);
@@ -15501,7 +15501,7 @@ header {
 	}
 }
 
-@media (max-width:991.98px) {
+@media (max-width:var(--screen-lg)) {
 	.navbar.navbar-icon .navbar-collapse {
 		width: 100%;
 		margin: 0 auto;
@@ -15730,7 +15730,7 @@ section {
 	padding-bottom: 1.5rem;
 }
 
-@media (max-width:767.98px) {
+@media (max-width:var(--screen-md)) {
 	section {
 		padding-top: 4rem;
 		padding-bottom: 3rem;
@@ -15940,7 +15940,7 @@ section {
 	opacity: 1;
 }
 
-@media (max-width:575.98px) {
+@media (max-width:var(--screen-sm)) {
 	.nav-search .dropdown-menu {
 		width: 100%;
 	}
@@ -16211,7 +16211,7 @@ section {
 	position: absolute;
 }
 
-@media (max-width:575.98px) {
+@media (max-width:var(--screen-sm)) {
 	.ticket-border {
 		padding-left: 0;
 		border: 0;
@@ -17091,7 +17091,7 @@ html[data-theme=dark] .light-mode-item {
 	background-image: url(images/mockup/app-placeholder3.jpg);
 }
 
-@media (max-width:575.98px) {
+@media (max-width:var(--screen-sm)) {
 	.iphone-x,.iphone-x.iphone-x-small {
 		width: 260px;
 		height: 540px;
@@ -17363,7 +17363,7 @@ html[data-theme=dark] .light-mode-item {
 	border-radius: .4rem;
 }
 
-@media (max-width:575.98px) {
+@media (max-width:var(--screen-sm)) {
 	.dayContainer,.flatpickr-calendar,.flatpickr-days {
 		width: 100%;
 		min-width: 100%;
