@@ -599,7 +599,7 @@ progress {
 	margin-left: auto;
 }
 
-@media (min-width:px) {
+@media (min-width:var(--screen-sm)) {
 	.container,.container-sm {
 		max-width: 96%;
 	}
@@ -890,7 +890,7 @@ progress {
 	--bs-gutter-y: 3rem;
 }
 
-@media (min-width:px) {
+@media (min-width:var(--screen-sm)) {
 	.col-sm {
 		-webkit-box-flex: 1;
 		-ms-flex: 1 0 0%;
@@ -4033,7 +4033,7 @@ textarea.form-control-lg {
 	left: auto;
 }
 
-@media (min-width:px) {
+@media (min-width:var(--screen-sm)) {
 	.dropdown-menu-sm-start {
 		--bs-position: start;
 	}
@@ -4650,7 +4650,7 @@ textarea.form-control-lg {
 	overflow-y: auto;
 }
 
-@media (min-width:px) {
+@media (min-width:var(--screen-sm)) {
 	.navbar-expand-sm {
 		-ms-flex-wrap: nowrap;
 		flex-wrap: nowrap;
@@ -5339,7 +5339,7 @@ textarea.form-control-lg {
 	margin-bottom: .75rem;
 }
 
-@media (min-width:px) {
+@media (min-width:var(--screen-sm)) {
 	.card-group {
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -5973,7 +5973,7 @@ textarea.form-control-lg {
 	border-left-width: 1px;
 }
 
-@media (min-width:px) {
+@media (min-width:var(--screen-sm)) {
 	.list-group-horizontal-sm {
 		-webkit-box-orient: horizontal;
 		-webkit-box-direction: normal;
@@ -6542,7 +6542,7 @@ textarea.form-control-lg {
 	margin: .25rem;
 }
 
-@media (min-width:px) {
+@media (min-width:var(--screen-sm)) {
 	.modal-dialog {
 		max-width: 500px;
 		margin: 1.75rem auto;
@@ -7610,7 +7610,7 @@ textarea.form-control-lg {
 	z-index: 1020;
 }
 
-@media (min-width:px) {
+@media (min-width:var(--screen-sm)) {
 	.sticky-sm-top {
 		position: sticky;
 		top: 0;
@@ -9292,7 +9292,7 @@ textarea.form-control-lg {
 	visibility: hidden!important;
 }
 
-@media (min-width:px) {
+@media (min-width:var(--screen-sm)) {
 	.float-sm-start {
 		float: left!important;
 	}
@@ -14907,7 +14907,7 @@ header {
 	transform: rotate(90deg);
 }
 
-@media (min-width:px) {
+@media (min-width:var(--screen-sm)) {
 	.navbar-expand-sm .navbar-nav .dropdown-menu {
 		top: 120%;
 		visibility: hidden;
