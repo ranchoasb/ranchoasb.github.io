@@ -76,34 +76,8 @@ window.onload = () => {
     let today_date = new Date();
     today.textContent = get_schedule_for_day(today_date);
     
-    let tomorrow_date = new Date();
-    tomorrow_date.setDate(today_date.getDate() + 1);
-    
-    let next = nextschoolday();
-    
-    let tomorrow_displays;
-    
-    if (!next) {
-      tomorrow.textContent = "There is no more school!"
-    } else {
-      tomorrow_displays = {
-        "weekend": `Tomorrow is a weekend! Your next school day is on ${next}.`,
-        "minimum": `Tomorrow is a minimum day! School starts at 8:25 AM and ends at 12:30 PM, unless you have Extended Day, in which case it ends at 1:10 PM. Classes are 37 minutes long.`,
-        "firstday7": `Tomorrow is the first day for seventh graders! School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:38 PM. Classes are 35 minutes long.`,
-        "firstday8": `Tomorrow is the first day for eighth graders! School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:48 PM. Classes are 45 minutes long.`,
-        "minimumblock": `Tomorrow is a minimum block day! School starts at 8:25 AM and ends at 12:30 PM${tomorrow_date.getDate()%2?", unless you have Extended Day, in which case it ends at 1:50 PM.":"."} Classes are 77 minutes long. Tomorrow, you will attend only your ${tomorrow_date.getDate() % 2 ? "odd" : "even"} period classes${tomorrow_date.getDate()%2?", as well as Extended Day if you have it.":"."}`,
-        "promotion": `Tomorrow is the eighth grade promotion! Seventh graders should not come to school. School starts at 8:30 AM and ends at 12:30 PM. Go to your advisement class first.`,
-        "dayoff": `Tomorrow is a day off! Your next school day is on ${next}.`,
-        "monday": `Tomorrow is Monday, a late start! School starts at 8:55 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:55 PM. Classes are 52 minutes long.`,
-        "tuesday": `Tomorrow is Tuesday, a reverse day! Go to your sixth period class first. School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 4:00 PM. Classes are 57 minutes long.`,
-        "wednesday": `Tomorrow is Wednesday! School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 4:00 PM. Classes are 57 minutes long.`,
-        "thursday": `Tomorrow is Thursday, a late start reverse day! Go to your sixth period class first. School starts at 8:55 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:55 PM. Classes are 52 minutes long.`,
-        "friday": `Tomorrow is Friday! Remember to attend advisement, which is after third period. School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:56 PM. Classes are 53 minutes long.`,
-        "specialelectphoto": `Tomorrow will be a special Friday schedule. During the 57-minute advisement, seventh graders will be voting for ASB officers for next year, and eighth graders will be taking a panoramic photo! Classes are 47 minutes long, with the schedule going first period, advisement, snack, second and third period, lunch, and then the rest of the periods. School still ends at 3:00, or 3:50 for students with Extended Day.`
-      };
-      
-      tomorrow.textContent = tomorrow_displays[daydata[tomorrow_date.toLocaleDateString()]]+((tomorrow_date.getDay()==5&&daydata[tomorrow_date.toLocaleDateString()]=="minimum")?" There will not be advisement.":"");
-    }
+    let tomorrowDate = new Date(new Date() + 86400000);
+    tomorrow.textContent = get_schedule_for_day(tomorrow_date);
   }
   
   show();
