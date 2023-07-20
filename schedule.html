@@ -109,7 +109,7 @@
         return result;
       }
     </script>
-    <script>datepicker(date,{onHide:get_schedule_for_day(date.value)});</script>
+    <script>datepicker(date,{onHide:function(){console.log(date)});</script>
     <script src="viewcount.js"></script>
   </body>
 </html>
