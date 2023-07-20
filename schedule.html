@@ -87,8 +87,7 @@
       }
     
       //gets schedule for any day
-      function get_schedule_for_day(d){
-        console.log(d);
+      function get_schedule_for_day(d=new Date()){
         let month = d.getMonth()+1;
         let day = d.getDate();
         let year = d.getFullYear();
