@@ -1,52 +1,80 @@
 window.onload = () => {
   copyrightyear.textContent = new Date().getFullYear();
 
-  let daydata = {"8/18/2022":"firstday7","8/19/2022":"firstday8","8/20/2022":"weekend","8/21/2022":"weekend","8/22/2022":"monday","8/23/2022":"tuesday","8/24/2022":"wednesday","8/25/2022":"minimumblock","8/26/2022":"minimumblock","8/27/2022":"weekend","8/28/2022":"weekend","8/29/2022":"monday","8/30/2022":"tuesday","8/31/2022":"wednesday","9/1/2022":"thursday","9/2/2022":"minimum","9/3/2022":"weekend","9/4/2022":"weekend","9/5/2022":"dayoff","9/6/2022":"tuesday","9/7/2022":"wednesday","9/8/2022":"thursday","9/9/2022":"friday","9/10/2022":"weekend","9/11/2022":"weekend","9/12/2022":"monday","9/13/2022":"tuesday","9/14/2022":"wednesday","9/15/2022":"thursday","9/16/2022":"friday","9/17/2022":"weekend","9/18/2022":"weekend","9/19/2022":"monday","9/20/2022":"tuesday","9/21/2022":"wednesday","9/22/2022":"thursday","9/23/2022":"friday","9/24/2022":"weekend","9/25/2022":"weekend","9/26/2022":"monday","9/27/2022":"tuesday","9/28/2022":"wednesday","9/29/2022":"thursday","9/30/2022":"friday","10/1/2022":"weekend","10/2/2022":"weekend","10/3/2022":"monday","10/4/2022":"tuesday","10/5/2022":"wednesday","10/6/2022":"thursday","10/7/2022":"friday","10/8/2022":"weekend","10/9/2022":"weekend","10/10/2022":"dayoff","10/11/2022":"minimumblock","10/12/2022":"minimumblock","10/13/2022":"thursday","10/14/2022":"friday","10/15/2022":"weekend","10/16/2022":"weekend","10/17/2022":"monday","10/18/2022":"tuesday","10/19/2022":"wednesday","10/20/2022":"thursday","10/21/2022":"friday","10/22/2022":"weekend","10/23/2022":"weekend","10/24/2022":"monday","10/25/2022":"tuesday","10/26/2022":"wednesday","10/27/2022":"thursday","10/28/2022":"friday","10/29/2022":"weekend","10/30/2022":"weekend","10/31/2022":"monday","11/1/2022":"tuesday","11/2/2022":"wednesday","11/3/2022":"thursday","11/4/2022":"friday","11/5/2022":"weekend","11/6/2022":"weekend","11/7/2022":"monday","11/8/2022":"tuesday","11/9/2022":"wednesday","11/10/2022":"thursday","11/11/2022":"dayoff","11/12/2022":"weekend","11/13/2022":"weekend","11/14/2022":"monday","11/15/2022":"tuesday","11/16/2022":"wednesday","11/17/2022":"thursday","11/18/2022":"friday","11/19/2022":"weekend","11/20/2022":"weekend","11/21/2022":"monday","11/22/2022":"tuesday","11/23/2022":"dayoff","11/24/2022":"dayoff","11/25/2022":"dayoff","11/26/2022":"weekend","11/27/2022":"weekend","11/28/2022":"monday","11/29/2022":"tuesday","11/30/2022":"wednesday","12/1/2022":"thursday","12/2/2022":"friday","12/3/2022":"weekend","12/4/2022":"weekend","12/5/2022":"monday","12/6/2022":"tuesday","12/7/2022":"wednesday","12/8/2022":"thursday","12/9/2022":"friday","12/10/2022":"weekend","12/11/2022":"weekend","12/12/2022":"monday","12/13/2022":"tuesday","12/14/2022":"wednesday","12/15/2022":"thursday","12/16/2022":"minimum","12/17/2022":"weekend","12/18/2022":"weekend","12/19/2022":"dayoff","12/20/2022":"dayoff","12/21/2022":"dayoff","12/22/2022":"dayoff","12/23/2022":"dayoff","12/24/2022":"weekend","12/25/2022":"weekend","12/26/2022":"dayoff","12/27/2022":"dayoff","12/28/2022":"dayoff","12/29/2022":"dayoff","12/30/2022":"dayoff","12/31/2022":"weekend","1/1/2023":"weekend","1/2/2023":"dayoff","1/3/2023":"tuesday","1/4/2023":"wednesday","1/5/2023":"thursday","1/6/2023":"friday","1/7/2023":"weekend","1/8/2023":"weekend","1/9/2023":"monday","1/10/2023":"tuesday","1/11/2023":"wednesday","1/12/2023":"thursday","1/13/2023":"minimum","1/14/2023":"weekend","1/15/2023":"weekend","1/16/2023":"dayoff","1/17/2023":"tuesday","1/18/2023":"wednesday","1/19/2023":"thursday","1/20/2023":"friday","1/21/2023":"weekend","1/22/2023":"weekend","1/23/2023":"monday","1/24/2023":"tuesday","1/25/2023":"wednesday","1/26/2023":"thursday","1/27/2023":"friday","1/28/2023":"weekend","1/29/2023":"weekend","1/30/2023":"monday","1/31/2023":"tuesday","2/1/2023":"wednesday","2/2/2023":"thursday","2/3/2023":"friday","2/4/2023":"weekend","2/5/2023":"weekend","2/6/2023":"monday","2/7/2023":"tuesday","2/8/2023":"wednesday","2/9/2023":"thursday","2/10/2023":"friday","2/11/2023":"weekend","2/12/2023":"weekend","2/13/2023":"monday","2/14/2023":"tuesday","2/15/2023":"wednesday","2/16/2023":"thursday","2/17/2023":"dayoff","2/18/2023":"weekend","2/19/2023":"weekend","2/20/2023":"dayoff","2/21/2023":"tuesday","2/22/2023":"wednesday","2/23/2023":"thursday","2/24/2023":"friday","2/25/2023":"weekend","2/26/2023":"weekend","2/27/2023":"monday","2/28/2023":"tuesday","3/1/2023":"wednesday","3/2/2023":"thursday","3/3/2023":"friday","3/4/2023":"weekend","3/5/2023":"weekend","3/6/2023":"monday","3/7/2023":"tuesday","3/8/2023":"wednesday","3/9/2023":"thursday","3/10/2023":"friday","3/11/2023":"weekend","3/12/2023":"weekend","3/13/2023":"monday","3/14/2023":"tuesday","3/15/2023":"wednesday","3/16/2023":"thursday","3/17/2023":"friday","3/18/2023":"weekend","3/19/2023":"weekend","3/20/2023":"monday","3/21/2023":"tuesday","3/22/2023":"wednesday","3/23/2023":"thursday","3/24/2023":"friday","3/25/2023":"weekend","3/26/2023":"weekend","3/27/2023":"monday","3/28/2023":"tuesday","3/29/2023":"minimum","3/30/2023":"thursday","3/31/2023":"minimum","4/1/2023":"weekend","4/2/2023":"weekend","4/3/2023":"dayoff","4/4/2023":"dayoff","4/5/2023":"dayoff","4/6/2023":"dayoff","4/7/2023":"dayoff","4/8/2023":"weekend","4/9/2023":"weekend","4/10/2023":"monday","4/11/2023":"tuesday","4/12/2023":"wednesday","4/13/2023":"thursday","4/14/2023":"friday","4/15/2023":"weekend","4/16/2023":"weekend","4/17/2023":"monday","4/18/2023":"tuesday","4/19/2023":"wednesday","4/20/2023":"thursday","4/21/2023":"specialelectphoto","4/22/2023":"weekend","4/23/2023":"weekend","4/24/2023":"monday","4/25/2023":"tuesday","4/26/2023":"wednesday","4/27/2023":"thursday","4/28/2023":"friday","4/29/2023":"weekend","4/30/2023":"weekend","5/1/2023":"monday","5/2/2023":"tuesday","5/3/2023":"wednesday","5/4/2023":"thursday","5/5/2023":"friday","5/6/2023":"weekend","5/7/2023":"weekend","5/8/2023":"monday","5/9/2023":"tuesday","5/10/2023":"wednesday","5/11/2023":"thursday","5/12/2023":"friday","5/13/2023":"weekend","5/14/2023":"weekend","5/15/2023":"monday","5/16/2023":"tuesday","5/17/2023":"wednesday","5/18/2023":"thursday","5/19/2023":"friday","5/20/2023":"weekend","5/21/2023":"weekend","5/22/2023":"monday","5/23/2023":"tuesday","5/24/2023":"wednesday","5/25/2023":"thursday","5/26/2023":"minimum","5/27/2023":"weekend","5/28/2023":"weekend","5/29/2023":"dayoff","5/30/2023":"tuesday","5/31/2023":"wednesday","6/1/2023":"minimum","6/2/2023":"promotion"};
-  function formatdate(d) {
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    
-    return `${days[d.getDay()]}, ${months[d.getMonth()]} ${d.getDate().toString().padStart(2, "0")}, ${d.getFullYear()}`;
+  const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const monthNames = ["Month numbers start from 1, not 0", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const first7 = [[8, 24]]; // first day of 7th grade
+  const first8 = [[8, 25]]; // first day of 8th grade
+  const min = [[9, 7], [9, 8], [10, 11], [10, 12], [12, 22], [1, 12], [3, 8], [3, 28], [3, 29], [5, 24], [6, 6]]; // minimum days
+  const promotion = [[6, 7]]; // 8th grade promotion
+  const dayoff = [[9, 4], [11, 10], [1, 15], [2, 19], [5, 27]]; // days off
+  const breaks = [[11, 22], [12, 25], [4, 1]]; // the first day of thanksgiving, winter, and spring break
+  // defining when thanksgiving break is
+  for (let i = 0; i < 3; i++){
+    dayoff.push([breaks[0][0], breaks[0][1]+i]);
+  }
+  // defining when winter break is
+  for (let i = 0; i < 5; i++){
+    dayoff.push([breaks[1][0], breaks[1][1]+i]);
+    dayoff.push([breaks[2][0], breaks[2][1]+i]);
+  }
+  // defining when summer break is
+  for (let i = 7; i < 12; i++){
+    dayoff.push([breaks[1][0], breaks[1][1]+i]);
   }
   
-  function nextschoolday() {
-    let cdate = new Date();
-    cdate.setDate(cdate.getDate() + 1);
-    while (true) {
-      if (cdate.getFullYear() >= 2023 && cdate.getMonth() >= 5 && cdate.getDate() >= 3) return 0; // no more school
-      
-      if (!["weekend", "dayoff"].includes(daydata[cdate.toLocaleDateString()])) {
-        return formatdate(cdate);
+  const specialDays = [first7, first8, min, promotion, dayoff];
+  const specialDayNames = ["first7", "first8", "min", "promotion", "dayoff"];
+  // introduce the day type
+  const info = {first7: "the first day for seventh graders! Eigth graders should not come to school.", first8: "the first day for eigth graders!", min: "a minimum day!", promotion: "the eigth grade promotion! Seventh graders should not come to school.", dayoff: "a day off!", sunday: "a weekend!", monday: "a regular Monday!", tuesday: "a regular Tuesday, a late start reverse day!", wednesday: "a regular Wednesday!", thursday: "a regular Thursday, a late start reverse day!", friday: "a regular Friday!", saturday: "a weekend!"};
+  // anything related to the schedule
+  const periods = {monday: " Remember to attend advisement, which is after third period.", tuesday: " Go to your sixth period class first.", thursday: " Go to your sixth period class first.", first7: " Go to your advisement class first.", first8: " Go to your advisement class first."};
+  // when school starts if it's not the usual 8:25 AM
+  const start = {tuesday: "8:55 AM", thursday: "8:55 AM", promotion: "8:30 AM"};
+  // when school ends if it's not the usual 3:00 PM
+  const end = {min: "12:30 PM", promotion: "12:30 PM"};
+  // when extended days ends if it's not the usual 4:00 PM
+  const extended = {monday: ", unless you have Extended Day, in which case it ends at 3:56 PM", tuesday: ", unless you have Extended Day, in which case it ends at 3:55 PM", thursday: ", unless you have Extended Day, in which case it ends at 3:55 PM", min: ", unless you have Extended Day, in which case it ends at 1:10 PM", first7: ", unless you have Extended Day, in which case it ends at 3:38 PM", first8: ", unless you have Extended Day, in which case it ends at 3:48 PM"};
+  // how long periods last
+  const period_length = {monday: "53", tuesday: "52", thursday: "52", min: "37", first7: "35", first8: "45"};
+
+  // returns the day type
+  function dayType(month, day, dayName){
+    for (let i = 0; i < specialDays.length; i++){
+      for (j of specialDays[i]){
+        if (j[0] == month && j[1] == day){
+          return specialDayNames[i];
+        }
       }
-      cdate.setDate(cdate.getDate() + 1);
     }
+    return dayName.toLowerCase();
+  }
+
+  //gets schedule for any day
+  function get_schedule_for_day(d){
+    let month = d.getMonth()+1;
+    let day = d.getDate();
+    let year = d.getFullYear();
+    let dayName = dayNames[d.getDay()];
+    let type = dayType(month, day, dayName);
+    let result = "";
+  
+    result = `${dayName}, ${monthNames[month]} ${day}, ${year} is ${info[type]}`;
+    if (type != "saturday" && type != "sunday" && type != "dayoff"){
+      result += `${periods[type] ?? ""} School starts at ${start[type] ?? "8:25 AM"} and ends at ${end[type] ?? "3:00 PM"}${extended[type] ?? ""}.`;
+      if (type != "promotion"){
+        result += ` Classes are ${period_length[type] ?? "57"} minutes long.`;
+      }
+    }
+    if (dayName == "monday" && type == "min"){
+      result += ` There will not be advisement.`;
+    }
+    return result;
   }
   
   function show() {
     let today_date = new Date();
-    
-    let today_displays;
-    
-    if (today_date.getFullYear() > 2023 || (today_date.getFullYear() == 2023 && today_date.getMonth() > 5 || (today_date.getMonth() == 5 && today_date.getDate() >= 3))) {
-      today.textContent = "There is no more school!"
-    } else {
-      today_displays = {
-        "weekend": `Today is a weekend!`,
-        "minimum": `Today is a minimum day! School starts at 8:25 AM and ends at 12:30 PM, unless you have Extended Day, in which case it ends at 1:10 PM. Classes are 37 minutes long.`,
-        "firstday7": `Today is the first day for seventh graders! School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:38 PM. Classes are 35 minutes long.`,
-        "firstday8": `Today is the first day for eighth graders! School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:48 PM. Classes are 45 minutes long.`,
-        "minimumblock": `Today is a minimum block day! School starts at 8:25 AM and ends at 12:30 PM${today_date.getDate()%2?", unless you have Extended Day, in which case it ends at 1:50 PM.":"."} Classes are 77 minutes long. Today, you will attend only your ${today_date.getDate() % 2 ? "odd" : "even"} period classes${today_date.getDate()%2?", as well as Extended Day if you have it.":"."}`,
-        "promotion": `Today is the eighth grade promotion! Seventh graders should not come to school. School starts at 8:30 AM and ends at 12:30 PM. Go to your advisement class first.`,
-        "dayoff": `Today is a day off!`,
-        "monday": `Today is Monday, a late start! School starts at 8:55 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:55 PM. Classes are 52 minutes long.`,
-        "tuesday": `Today is Tuesday, a reverse day! Go to your sixth period class first. School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 4:00 PM. Classes are 57 minutes long.`,
-        "wednesday": `Today is Wednesday! School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 4:00 PM. Classes are 57 minutes long.`,
-        "thursday": `Today is Thursday, a late start reverse day! Go to your sixth period class first. School starts at 8:55 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:55 PM. Classes are 52 minutes long.`,
-        "friday": `Today is Friday! Remember to attend advisement, which is after third period. School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:56 PM. Classes are 53 minutes long.`,
-        "specialelectphoto": `Today is a special Friday schedule. During our 57-minute advisement, seventh graders will be voting for ASB officers for next year, and eighth graders will be taking a panoramic photo! Classes are 47 minutes long, with the schedule going first period, advisement, snack, second and third period, lunch, and then the rest of the periods. School still ends at 3:00, or 3:50 for students with Extended Day.`
-      };
-      
-      today.textContent = today_displays[daydata[today_date.toLocaleDateString()]]+((today_date.getDay()==5&&daydata[today_date.toLocaleDateString()]=="minimum")?" There will not be advisement.":"");
+    today.textContent = get_schedule_for_day(today_date);
     }
     
     let tomorrow_date = new Date();
