@@ -1,6 +1,5 @@
 window.onload = () => {
-  try {copyrightyear.textContent = new Date().getFullYear();}
-  catch(err){}
+  copyrightyear.textContent = new Date().getFullYear();
 
   const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const monthNames = ["Month numbers start from 1, not 0", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
