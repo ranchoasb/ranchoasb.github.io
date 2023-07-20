@@ -87,7 +87,7 @@
       }
     
       //gets schedule for any day
-      function get_schedule_for_day(d=new Date()){
+      function get_schedule_for_day(d){
         console.log(d);
         let month = d.getMonth()+1;
         let day = d.getDate();
@@ -108,8 +108,7 @@
         }
         return result;
       }
-    </script>
-    <script>datepicker(date, {onHide:get_schedule_for_day(datepicker("getDate"))});</script>
+    </script>datepicker(date,{onHide:get_schedule_for_day(date.value)});</script>
     <script src="viewcount.js"></script>
   </body>
 </html>
