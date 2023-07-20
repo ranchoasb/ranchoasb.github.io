@@ -88,7 +88,6 @@
     
       //gets schedule for any day
       function get_schedule_for_day(d){
-        console.log(d);
         let month = d.getMonth()+1;
         let day = d.getDate();
         let year = d.getFullYear();
@@ -106,10 +105,10 @@
         if (dayName == "monday" && type == "min"){
           result += ` There will not be advisement.`;
         }
-        return result;
+        document.getElementById("schedule").textContent=result;
       }
     </script>
-    <script>datepicker(date,{onHide:function(){try{get_schedule_for_day(new Date(date.value))}catch{}}});</script>
+    <script>datepicker(date,{onHide:function(){try{get_schedule_for_day(new Date(date.value));}catch{}}});</script>
     <script src="viewcount.js"></script>
   </body>
 </html>
