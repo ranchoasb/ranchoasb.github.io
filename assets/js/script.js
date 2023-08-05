@@ -26,7 +26,7 @@ window.onload = () => {
   const specialDays = [first7, first8, min, promotion, dayoff];
   const specialDayNames = ["first7", "first8", "min", "promotion", "dayoff"];
   // introduce the day type
-  const info = {first7: "the first day for seventh graders! Eigth graders should not come to school.", first8: "the first day for eigth graders!", min: "a minimum day!", promotion: "the eigth grade promotion! Seventh graders should not come to school.", dayoff: "a day off!", sunday: "a weekend!", monday: "a regular Monday!", tuesday: "a regular Tuesday, a late start reverse day!", wednesday: "a regular Wednesday!", thursday: "a regular Thursday, a late start reverse day!", friday: "a regular Friday!", saturday: "a weekend!"};
+  const info = {first7: "the first day for seventh graders! Eighth graders should not come to school.", first8: "the first day for eighth graders!", min: "a minimum day!", promotion: "the eighth grade promotion! Seventh graders should not come to school.", dayoff: "a day off!", sunday: "a weekend!", monday: "a regular Monday!", tuesday: "a regular Tuesday, a late start reverse day!", wednesday: "a regular Wednesday!", thursday: "a regular Thursday, a late start reverse day!", friday: "a regular Friday!", saturday: "a weekend!"};
   // anything related to the schedule
   const periods = {monday: " Remember to attend advisement, which is after third period.", tuesday: " Go to your sixth period class first.", thursday: " Go to your sixth period class first.", first7: " Go to your advisement class first.", first8: " Go to your advisement class first."};
   // when school starts if it's not the usual 8:25 AM
