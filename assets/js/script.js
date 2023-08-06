@@ -76,7 +76,7 @@ window.onload = () => {
     let today_date = new Date();
     today.textContent = get_schedule_for_day(today_date);
     
-    let tomorrow_date = new Date(new Date() + 86400000);
+    let tomorrow_date = new Date(new Date().getTime() + 86400000);
     tomorrow.textContent = get_schedule_for_day(tomorrow_date);
   }
   
