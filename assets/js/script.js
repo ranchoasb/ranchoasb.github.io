@@ -38,7 +38,7 @@ window.onload = () => {
     }
   }
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=announcements").then(e=>e.text()).then(response => {
-    announcements.textContent=`<iframe src=${reponse.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf("sharing")+7).replace("edit","present")} title="Advisement Presentation"></iframe>`;
+    announcements.textContent=`<iframe src=${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf("sharing")+7).replace("edit","present")} title="Advisement Presentation"></iframe>`;
   });
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=posts").then(e => e.json()).then(response => {
     data = response;
