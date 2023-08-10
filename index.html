@@ -474,6 +474,8 @@
         }
         document.getElementById("schedule").textContent=result;
       }
+
+      get_schedule_for_day(new Date());
     </script>
     <script>datepicker(date,{dateSelected:new Date(), onHide:function(){try{get_schedule_for_day(new Date(date.value));}catch(err){console.log(err)}}});</script>
 </body>
