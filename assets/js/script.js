@@ -71,13 +71,6 @@ window.onload = () => {
     }
     return result;
   }
-  
-  function show(date) {
-    schedule.textContent = get_schedule_for_day(date);
-    
-    let tomorrow_date = new Date(new Date().getTime() + 86400000);
-    tomorrow.textContent = get_schedule_for_day(tomorrow_date);
-  }
 
   let data;
   let datalen;
