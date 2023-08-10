@@ -42,6 +42,7 @@ window.onload = () => {
       announcements.innerHTML+=`<u><a href="${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf("sharing")+7).replace("edit","preview")}">Announcements for ${response.slice(response.indexOf("data-date=")+11,response.indexOf("/2023"))}</a></u><br>`
       response.replace("https://", "");
       response.replace("sharing", "");
+      response.replace("data-date", "");
       response.replace("/2023", "");
     }
     announcements.innerHTML+='<br>Older announcements can be found <a href="announcements">here.</a>'
