@@ -490,6 +490,7 @@
 
       get_schedule_for_day(new Date());
     </script>
+    <!-- note to self: do something about sometimes showing today or tomorrow for the datepicker input instead of the normal month day year format -->
     <script>datepicker(date,{dateSelected:new Date(), onHide:function(){try{get_schedule_for_day(new Date(date.value));}catch(err){console.log(err)}}});</script>
 </body>
 
