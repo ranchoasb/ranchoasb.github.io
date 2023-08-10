@@ -413,6 +413,14 @@
     <script src="assets/js/script.js"></script>
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/viewcount.js"></script>
+    <script>
+        function show(date) {
+            schedule.textContent = get_schedule_for_day(date);
+            
+            let tomorrow_date = new Date(new Date().getTime() + 86400000);
+            tomorrow.textContent = get_schedule_for_day(tomorrow_date);
+        }
+    </script>
     <script>datepicker(date,{onHide:function(){try{show(new Date(date.value));}catch(err){console.log(err)}}});</script>
 </body>
 
