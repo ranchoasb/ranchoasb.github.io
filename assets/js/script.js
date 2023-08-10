@@ -40,11 +40,11 @@ window.onload = () => {
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=announcements").then(e=>e.text()).then(response => {
     console.log(response);
     for(let i=0;i<3;i++){
-      announcements.innerHTML+=`<a href="${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf("sharing")+7).replace("edit","preview")}">Advisement Announcements for IDK</a><br>`
+      document.getElementById("announcements").innerHTML+=`<a href="${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf("sharing")+7).replace("edit","preview")}">Advisement Announcements for IDK</a><br>`
       response.replace("https://", "");
       response.replace("sharing", "");
     }
-    announcements.innerHTML+="Older announcements can be found <a href="announcements">here.</a>"
+    document.getElementById("announcements").innerHTML+="Older announcements can be found <a href="announcements">here.</a>"
   });
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=posts").then(e => e.json()).then(response => {
     data = response;
