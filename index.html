@@ -413,7 +413,7 @@
     <script src="assets/js/script.js"></script>
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/viewcount.js"></script>
-    <script>datepicker(date,{onHide:function(){try{show(new Date(date.value));}catch{}}});</script>
+    <script>datepicker(date,{onHide:function(){try{show(new Date(date.value));}catch(err){console.log(err)}}});</script>
 </body>
 
 </html>
