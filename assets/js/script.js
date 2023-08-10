@@ -44,7 +44,6 @@ window.onload = () => {
       response.replace("https://", "");
       response.replace("sharing", "");
     }
-    document.getElementById("announcements").innerHTML+="Older announcements can be found <a href="announcements">here.</a>"
   });
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=posts").then(e => e.json()).then(response => {
     data = response;
