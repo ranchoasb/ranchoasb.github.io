@@ -51,6 +51,7 @@ window.onload = () => {
     }
     announcements.innerHTML+='<br>Older announcements can be found <a href="announcements">here.</a>'
   });
+  fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=upcomingEvents").then(e=>e.text()).then(response=>{console.log(response);upcomingEvents.innerHTML=response;});
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=posts").then(e => e.json()).then(response => {
     data = response;
     datalen = data.length;
