@@ -33,7 +33,7 @@ window.onload = () => {
     dataindex += toload;
     
     if (nomore) {
-      loadmorebutton.insert adjacent HTML("beforebegin", `<div class="card"><div class="alert alert-info mb-0" role="alert">Nothing else to load.</div></div>`);
+      loadmorebutton.insertAdjacentHTML("beforebegin", `<div class="card"><div class="alert alert-info mb-0" role="alert">Nothing else to load.</div></div>`);
       loadmorebutton.remove();
     }
   }
