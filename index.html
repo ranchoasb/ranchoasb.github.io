@@ -462,33 +462,39 @@
         }
         return dayName.toLowerCase();
       }
-    
-      //gets schedule for any day
+        
+      // gets schedule for any day
       function get_schedule_for_day(d){
-        let month = d.getMonth()+1;
-        let day = d.getDate();
-        let year = d.getFullYear();
-        let dayName = dayNames[d.getDay()];
-        let type = dayType(month, day, dayName);
-        let result = "";
-      
-        result = `${dayName}, ${monthNames[month]} ${day}, ${year} is ${info[type]}`;
-        if (type != "saturday" && type != "sunday" && type != "dayoff"){
-          result += `${periods[type] ?? ""} School starts at ${start[type] ?? "8:25 AM"} and ends at ${end[type] ?? "3:00 PM"}${extended[type] ?? ""}.`;
-          if (type != "promotion"){
-            result += ` Classes are ${period_length[type] ?? "57"} minutes long.`;
+        if (d < 1692860400000) {
+          document.getElementById("schedule").textContent = "The 2023 to 2024 school year has not started yet!";
+        } else if (d > 1717743600000) {
+          document.getElementById("schedule").textContent = "The 2023 to 2024 school year has concluded.";
+        } else {
+          let month = d.getMonth()+1;
+          let day = d.getDate();
+          let year = d.getFullYear();
+          let dayName = dayNames[d.getDay()];
+          let type = dayType(month, day, dayName);
+          let result = "";
+
+          result = `${dayName}, ${monthNames[month]} ${day}, ${year} is ${info[type]}`;
+          if (type != "saturday" && type != "sunday" && type != "dayoff"){
+            result += `${periods[type] ?? ""} School starts at ${start[type] ?? "8:25 AM"} and ends at ${end[type] ?? "3:00 PM"}${extended[type] ?? ""}.`;
+            if (type != "promotion"){
+              result += ` Classes are ${period_length[type] ?? "57"} minutes long.`;
+            }
           }
+          if (dayName == "monday" && type == "min"){
+            result += ` There will not be advisement.`;
+          }
+          document.getElementById("schedule").textContent = result;
         }
-        if (dayName == "monday" && type == "min"){
-          result += ` There will not be advisement.`;
-        }
-        document.getElementById("schedule").textContent=result;
       }
 
       get_schedule_for_day(new Date());
     </script>
-    <!-- note to self: do something about sometimes showing today or tomorrow for the datepicker input instead of the normal month day year format -->
-    <script>datepicker(date,{dateSelected:new Date(), onHide:function(){try{get_schedule_for_day(new Date(date.value));}catch(err){console.log(err)}}});</script>
+
+    <script>datepicker(date,{formatter:(i,d,_)=>{let t=new Date();t.setHours(0);t.setMinutes(0);t.setSeconds(0);t.setMilliseconds(0);i.value=(+t==+d)?"Today":((+t==(+d-24*60*60*1000))?"Tomorrow":d.toLocaleDateString())},dateSelected:new Date(),onHide:function(){try{get_schedule_for_day(new Date(date.value))}catch(err){console.log(err)}}});</script>
 </body>
 
 </html>
