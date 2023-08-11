@@ -45,6 +45,7 @@ window.onload = () => {
       response = response.replace("sharing", "");
       response = response.replace("data-date", "");
       response = response.replace("/2023", "");
+      response = response.replace("/2023", "");
       console.log(response)
     }
     announcements.innerHTML+='<br>Older announcements can be found <a href="announcements">here.</a>'
