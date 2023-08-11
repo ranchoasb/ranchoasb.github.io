@@ -41,7 +41,7 @@ window.onload = () => {
     console.log(response);
     for(let i=0;i<3;i++){
       console.log(`<u><a href="${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf("sharing")+7)}">Announcements for ${response.slice(response.indexOf("data-date=")+11,response.indexOf('/2023"><'))}</a></u><br>`);
-      announcements.innerHTML+=`<u><a href="${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf("sharing")+7)}">Announcements for ${response.slice(response.indexOf("data-date=")+11,response.indexOf('/2023"><'))}</a></u><br>`
+      announcements.innerHTML+=`<u><a href="${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf(">",response.indexOf("https://docs.google.com/presentation/d/"))+7)}">Announcements for ${response.slice(response.indexOf("data-date=")+11,response.indexOf('/2023"><'))}</a></u><br>`
       response = response.replace("https://", "");
       response = response.replace("sharing", "");
       response = response.replace("data-date", "");
