@@ -490,7 +490,7 @@
 
     <script>datepicker(date,{formatter:(i,d,_)=>{let t=new Date(); t.setHours(0); t.setMinutes(0); t.setSeconds(0); t.setMilliseconds(0);
                                                  i.value=(+t==+d)?"Today":((+t==(+d-24*60*60*1000))?"Tomorrow":d.toLocaleDateString())},
-                       dateSelected:new Date(),onHide:function(){try{get_schedule_for_day(new Date(date.value))}catch{if(date.value=="Today"){get_schedule_for_day(new Date)}else if(date.value=="Tomorrow"){get_schedule_for_day(new Date(new Date().getTime() + 86400000);)}}}});</script>
+                       dateSelected:new Date(),onHide:function(){try{get_schedule_for_day(new Date(date.value))}catch{if(date.value=="Today"){get_schedule_for_day(new Date)}else if(date.value=="Tomorrow"){get_schedule_for_day(new Date(new Date().getTime() + 86400000);)}}})});</script>
 </body>
 
 </html>
