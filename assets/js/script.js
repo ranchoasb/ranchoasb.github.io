@@ -38,6 +38,7 @@ window.onload = () => {
     }
   }
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=announcements").then(e=>e.text()).then(response => {
+    console.log(response);
     for(let i=0;i<3;i++){
       announcements.innerHTML+=`<u><a href="${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf("sharing")+7)}">Announcements for ${response.slice(response.indexOf("data-date=")+11,response.indexOf("/2023"))}</a></u><br>`
       response = response.replace("https://", "");
