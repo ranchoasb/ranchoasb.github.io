@@ -46,6 +46,7 @@ window.onload = () => {
         response = response.replace("data-date", "");
         response = response.replace("/2023", "");
         response = response.replace("/2023", "");
+      }
       catch (err) {
         break;
       }
