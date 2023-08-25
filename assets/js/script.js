@@ -38,16 +38,24 @@ window.onload = () => {
     }
   }
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=announcements").then(e=>e.text()).then(response => {
-    for(let i=0;i<3;i++){
-      announcements.innerHTML+=`<u><a href="${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf(">",response.indexOf("https://docs.google.com/presentation/d/"))-1)}">${response.slice(response.indexOf("data-date=")+11,response.indexOf('/2023"><'))} Announcements</a></u><br>`
-      response = response.replace("https://", "");
-      response = response.replace("sharing", "");
-      response = response.replace("data-date", "");
-      response = response.replace("/2023", "");
-      response = response.replace("/2023", "");
-      console.log(response)
+    for(let i=0;i<3;i++) {
+      try {
+        announcements.innerHTML+=`<u><a href="${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf(">",response.indexOf("https://docs.google.com/presentation/d/"))-1)}">${response.slice(response.indexOf("data-date=")+11,response.indexOf('/2023"><'))} Announcements</a></u><br>`
+        response = response.replace("https://", "");
+        response = response.replace("sharing", "");
+        response = response.replace("data-date", "");
+        response = response.replace("/2023", "");
+        response = response.replace("/2023", "");
+      catch (err) {
+        break;
+      }
     }
-    announcements.innerHTML+='<br>Older announcements can be found <a href="announcements">here.</a>'
+    if (announcements.innerHTML != '') {
+      announcements.innerHTML+='<br>Older announcements can be found <a href="announcements">here.</a>';
+    }
+    else {
+      announcements.innerHTML+='No advisement announcements for now.';
+    }
   });
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=upcomingEvents").then(e=>e.text()).then(response=>{console.log(response);upcomingEvents.innerHTML=response;});
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=posts").then(e => e.json()).then(response => {
