@@ -38,18 +38,18 @@ window.onload = () => {
     }
   }
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=announcements").then(e=>e.text()).then(response => {
-    for(let i=0;i<Math.min(3,response.match(/Advisement Announcements for /g));i++) {
-      announcements.innerHTML+=`<u><a href="${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf(">",response.indexOf("https://docs.google.com/presentation/d/"))-1)}">${response.slice(response.indexOf("data-date=")+11,response.indexOf('/2023"><'))} Announcements</a></u><br>`
-      response = response.replace("https://", "");
-      response = response.replace("sharing", "");
-      response = response.replace("data-date", "");
-      response = response.replace("/2023", "");
-      response = response.replace("/2023", "");
-    }
-    if (announcements.innerHTML != '') {
+    try{
+      for(let i=0;i<Math.min(3,response.match(/Advisement Announcements for /g).length);i++) {
+        announcements.innerHTML+=`<u><a href="${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf(">",response.indexOf("https://docs.google.com/presentation/d/"))-1)}">${response.slice(response.indexOf("data-date=")+11,response.indexOf('/2023"><'))} Announcements</a></u><br>`
+        response = response.replace("https://", "");
+        response = response.replace("sharing", "");
+        response = response.replace("data-date", "");
+        response = response.replace("/2023", "");
+        response = response.replace("/2023", "");
+      }
       announcements.innerHTML+='<br>Older announcements can be found <a href="announcements">here.</a>';
     }
-    else {
+    catch {
       announcements.innerHTML+='No advisement announcements for now.';
     }
   });
