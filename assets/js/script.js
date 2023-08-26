@@ -53,7 +53,7 @@ window.onload = () => {
       announcements.innerHTML+='No advisement announcements for now.';
     }
   });
-  fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=upcomingEvents").then(e=>e.text()).then(response=>{
+  fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=upcomingEvents").then(response=>{
     console.log(response[0]);
     console.log(response[0][0]);
     upcomingEvents.innerHTML=response.map(
