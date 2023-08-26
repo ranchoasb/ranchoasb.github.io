@@ -56,7 +56,7 @@ window.onload = () => {
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=upcomingEvents").then(e=>e.text()).then(response=>{
     console.log(response);
     upcomingEvents.innerHTML=response.map(
-      i=>new Date(i[0])>new Date(+new Date()-86400000)?i[1]:"";
+      i=>new Date(i[0])>new Date(+new Date()-86400000)?i[1]:""
     ).join("");});
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=posts").then(e => e.json()).then(response => {
     data = response;
