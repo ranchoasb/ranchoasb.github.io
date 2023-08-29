@@ -472,9 +472,8 @@
           let dayName = dayNames[d.getDay()];
           let type = dayType(month, day, dayName);
           let result = "";
-
+          console.log(type);
           if (type == "custom"){
-             console.log(custom.indexOf([month, day]));
              document.getElementById("schedule").textContent = customText[custom.indexOf([month, day])];
              return 0;
           }
