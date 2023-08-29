@@ -474,7 +474,7 @@
           let result = "";
 
           if (type == "custom"){
-             document.getElementById("schedule").textContent = customText[customDays.indexOf([month, day])];
+             document.getElementById("schedule").textContent = customText[custom.indexOf([month, day])];
              return 0;
           }
           result = `${dayName}, ${monthNames[month]} ${day}, ${year} is ${info[type]}`;
