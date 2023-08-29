@@ -409,7 +409,10 @@
     <script src="assets/js/viewcount.js"></script>
     <script>
       const custom = [[8, 29], [8, 30], [8,31], [9, 1]]; // days on which you want custom text to appear
-      const customText = ['idk', 'idk', 'idk', 'idk']; // custom text you want to appear
+      const customText = ['Tuesday, August 29, 2023 is a late start reverse day! Go to your sixth period class first. Unlike normal Tuesdays, there will be advisement after third period. School starts at 8:55 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:51 PM. Classes are 48 minutes long.',
+                          'Wednesday, August 30, 2023 is a Wednesday with a Monday schedule! School starts at 8:25 AM and ends at 3:00 PM. Remember to attend advisement, which is after fourth period. School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:56 PM. Classes are 53 minutes long.',
+                          'Thursday, August 31, 2023 is a late start reverse day! Go to your sixth period class first. Unlike normal Thursdays, there will be advisement after third period. School starts at 8:55 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:51 PM. Classes are 48 minutes long.',
+                          'Friday, September 1, 2023 is a Wednesday with a Monday schedule! School starts at 8:25 AM and ends at 3:00 PM. Remember to attend advisement, which is after fourth period. School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:56 PM. Classes are 53 minutes long.']; // custom text you want to appear
       const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
       const monthNames = ["Month numbers start from 1, not 0", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       const first7 = [[8, 24]]; // first day of 7th grade
@@ -473,8 +476,7 @@
           let type = dayType(month, day, dayName);
           let result = "";
           if (type == "custom"){
-             console.log(custom.indexOf([month, day]))
-             document.getElementById("schedule").textContent = customText[custom.indexOf([month, day])];
+             document.getElementById("schedule").textContent = customText[custom.findIndex(row=>JSON.stringify(row)===JSON.stringify([month,day]))];
              return 0;
           }
           result = `${dayName}, ${monthNames[month]} ${day}, ${year} is ${info[type]}`;
