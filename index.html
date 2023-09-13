@@ -421,11 +421,11 @@
         dateSelected: new Date(),
         onHide: function () {
           if (date.value == "Today") {
-            fetch(`https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=schedule&date=${new Date().getMonth()+1}/${new Date().getDate()}/${new Date().getFullYear()}`).then(e=>e.text()).then(response => {schedule.textContent=response;});
+            fetch(`https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=schedule&date=${new Date().getMonth()+1}/${new Date().getDate()}/${new Date().getFullYear()}`).then(e=>e.text()).then(response=>{schedule.textContent=response;});
           } else if (date.value == "Tomorrow") {
-            fetch(`https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=schedule&date=${new Date(new Date().getTime() + 86400000).getMonth()+1}/${new Date(new Date().getTime() + 86400000).getDate()}/${new Date(new Date().getTime() + 86400000).getFullYear()}`).then(e=>e.text()).then(response => {schedule.textContent=response;});
+            fetch(`https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=schedule&date=${new Date(new Date().getTime() + 86400000).getMonth()+1}/${new Date(new Date().getTime() + 86400000).getDate()}/${new Date(new Date().getTime() + 86400000).getFullYear()}`).then(e=>e.text()).then(response=>{schedule.textContent=response;});
           } else {
-            fetch(`https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=schedule&date=${date.value}`).then(e=>e.text()).then(response => {schedule.textContent=response;});
+            fetch(`https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=schedule&date=${date.value}`).then(e=>e.text()).then(response=>{schedule.textContent=response;});
           }
         },
       });
