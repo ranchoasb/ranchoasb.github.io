@@ -126,28 +126,7 @@
 
       get_schedule_for_day(new Date());
     </script>
-    <script>
-      datepicker(date, {
-        formatter: (i, d, _) => {
-          let t = new Date();
-          t.setHours(0);
-          t.setMinutes(0);
-          t.setSeconds(0);
-          t.setMilliseconds(0);
-          i.value = +t === +d ? "Today" : +t === +d - 24 * 60 * 60 * 1000 ? "Tomorrow" : d.toLocaleDateString();
-        },
-        dateSelected: new Date(),
-        onHide: function () {
-          if (date.value == "Today") {
-            fetch(`https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=schedule&date=${new Date().getMonth()+1}/${new Date().getDate()}/${new Date().getFullYear()}`).then(e=>e.text()).then(response => {schedule.textContent=response;});
-          } else if (date.value == "Tomorrow") {
-            fetch(`https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=schedule&date=${new Date(new Date().getTime() + 86400000).getMonth()+1}/${new Date(new Date().getTime() + 86400000).getDate()}/${new Date(new Date().getTime() + 86400000).getFullYear()}`).then(e=>e.text()).then(response => {schedule.textContent=response;});
-          } else {
-            fetch(`https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=schedule&date=${date.value}`).then(e=>e.text()).then(response => {schedule.textContent=response;});
-          }
-        },
-      });
-    </script>
+    <script>datepicker(date,{onHide:function(){try{get_schedule_for_day(new Date(date.value));}catch{}}});</script>
     <script src="viewcount.js"></script>
   </body>
 </html>
