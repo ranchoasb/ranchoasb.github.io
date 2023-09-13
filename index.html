@@ -407,6 +407,99 @@
     <script src="assets/js/script.js"></script>
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/viewcount.js"></script>
+    <script>
+      fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=schedule&date=9/9/23").then(e=>e.text()).then(response => {console.log(response)});
+      const custom = [[8, 29], [8, 30], [8,31], [9, 1], [9, 5], [9, 6]]; // days on which you want custom text to appear
+      const customText = ['Tuesday, August 29, 2023 is a late start reverse day! Go to your sixth period class first. Unlike normal Tuesdays, there will be advisement after third period. School starts at 8:55 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:51 PM. Classes are 48 minutes long.',
+                          'Wednesday, August 30, 2023: Remember to attend advisement, which is after fourth period. School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:56 PM. Classes are 53 minutes long.',
+                          'Thursday, August 31, 2023 is a late start reverse day! Go to your sixth period class first. Unlike normal Thursdays, there will be advisement after third period. School starts at 8:55 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:51 PM. Classes are 48 minutes long.',
+                          'Friday, September 1, 2023: Remember to attend advisement, which is after fourth period. School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:56 PM. Classes are 53 minutes long.',
+                          'Tuesday, September 5, 2023 is a late start reverse day! Go to your sixth period class first. Unlike normal Tuesdays, there will be advisement after third period. School starts at 8:55 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:51 PM. Classes are 48 minutes long.',
+                          'Wednesday, September 6, 2023: Remember to attend advisement, which is after fourth period. School starts at 8:25 AM and ends at 3:00 PM, unless you have Extended Day, in which case it ends at 3:56 PM. Classes are 53 minutes long.'];
+      // custom text you want to appear
+      const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      const monthNames = ["Month numbers start from 1, not 0", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      const first7 = [[8, 24]]; // first day of 7th grade
+      const first8 = [[8, 25]]; // first day of 8th grade
+      const min = [[9, 7], [9, 8], [10, 11], [10, 12], [12, 22], [1, 12], [3, 8], [3, 28], [3, 29], [5, 24], [6, 6]]; // minimum days
+      const promotion = [[6, 7]]; // 8th grade promotion
+      const dayoff = [[9, 4], [11, 10], [1, 15], [2, 19], [5, 27]]; // days off
+      const breaks = [[11, 22], [12, 25], [4, 1]]; // the first day of thanksgiving, winter, and spring break
+      // defining when thanksgiving break is
+      for (let i = 0; i < 3; i++){
+        dayoff.push([breaks[0][0], breaks[0][1]+i]);
+      }
+      // defining when winter break is
+      for (let i = 0; i < 5; i++){
+        dayoff.push([breaks[1][0], breaks[1][1]+i]);
+        dayoff.push([breaks[2][0], breaks[2][1]+i]);
+      }
+      // defining when summer break is
+      for (let i = 7; i < 12; i++){
+        dayoff.push([breaks[1][0], breaks[1][1]+i]);
+      }
+      
+      const specialDays = [custom, first7, first8, min, promotion, dayoff];
+      const specialDayNames = ["custom", "first7", "first8", "min", "promotion", "dayoff"];
+      // introduce the day type
+      const info = {first7: "the first day for seventh graders! Eighth graders should not come to school.", first8: "the first day for eighth graders!", min: "a minimum day!", promotion: "the eighth grade promotion! Seventh graders should not come to school.", dayoff: "a day off!", sunday: "a weekend!", monday: "a regular Monday!", tuesday: "a regular Tuesday, a late start reverse day!", wednesday: "a regular Wednesday!", thursday: "a regular Thursday, a late start reverse day!", friday: "a regular Friday!", saturday: "a weekend!"};
+      // anything related to the schedule
+      const periods = {monday: " Remember to attend advisement, which is after fourth period.", tuesday: " Go to your sixth period class first.", thursday: " Go to your sixth period class first.", first7: " Go to your advisement class first.", first8: " Go to your advisement class first."};
+      // when school starts if it's not the usual 8:25 AM
+      const start = {tuesday: "8:55 AM", thursday: "8:55 AM", promotion: "8:30 AM"};
+      // when school ends if it's not the usual 3:00 PM
+      const end = {min: "12:30 PM", promotion: "12:30 PM"};
+      // when extended days ends if it's not the usual 4:00 PM
+      const extended = {monday: ", unless you have Extended Day, in which case it ends at 3:56 PM", tuesday: ", unless you have Extended Day, in which case it ends at 3:55 PM", thursday: ", unless you have Extended Day, in which case it ends at 3:55 PM", min: ", unless you have Extended Day, in which case it ends at 1:10 PM", first7: ", unless you have Extended Day, in which case it ends at 3:38 PM", first8: ", unless you have Extended Day, in which case it ends at 3:48 PM"};
+      // how long periods last
+      const period_length = {monday: "53", tuesday: "52", thursday: "52", min: "37", first7: "35", first8: "45"};
+    
+      // returns the day type
+      function dayType(month, day, dayName){
+        for (let i = 0; i < specialDays.length; i++){
+          for (j of specialDays[i]){
+            if (j[0] == month && j[1] == day){
+              return specialDayNames[i];
+            }
+          }
+        }
+        return dayName.toLowerCase();
+      }
+        
+      // gets schedule for any day
+      function get_schedule_for_day(d){
+        if (d < 1692860400000) {
+          document.getElementById("schedule").textContent = "The 2023 to 2024 school year has not started yet!";
+        } else if (d > 1717743600000) {
+          document.getElementById("schedule").textContent = "The 2023 to 2024 school year has concluded.";
+        } else {
+          let month = d.getMonth()+1;
+          let day = d.getDate();
+          let year = d.getFullYear();
+          let dayName = dayNames[d.getDay()];
+          let type = dayType(month, day, dayName);
+          let result = "";
+          if (type == "custom"){
+             document.getElementById("schedule").textContent = customText[custom.findIndex(row=>JSON.stringify(row)===JSON.stringify([month,day]))];
+             return 0;
+          }
+          result = `${dayName}, ${monthNames[month]} ${day}, ${year} is ${info[type]}`;
+          if (type != "saturday" && type != "sunday" && type != "dayoff"){
+            result += `${periods[type] ?? ""} School starts at ${start[type] ?? "8:25 AM"} and ends at ${end[type] ?? "3:00 PM"}${extended[type] ?? ""}.`;
+            if (type != "promotion"){
+              result += ` Classes are ${period_length[type] ?? "57"} minutes long.`;
+            }
+          }
+          if (dayName == "monday" && type == "min"){
+            result += ` There will not be advisement.`;
+          }
+          document.getElementById("schedule").textContent = result;
+          return 0;
+        }
+      }
+
+      get_schedule_for_day(new Date());
+    </script>
 
     <script>
       datepicker(date, {
@@ -420,12 +513,14 @@
         },
         dateSelected: new Date(),
         onHide: function () {
-          if (date.value == "Today") {
-            fetch(`https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=schedule&date=${new Date().getMonth()+1}/${new Date().getDate()}/${new Date().getFullYear()}`).then(e=>e.text()).then(response=>{schedule.textContent=response;});
-          } else if (date.value == "Tomorrow") {
-            fetch(`https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=schedule&date=${new Date(new Date().getTime() + 86400000).getMonth()+1}/${new Date(new Date().getTime() + 86400000).getDate()}/${new Date(new Date().getTime() + 86400000).getFullYear()}`).then(e=>e.text()).then(response=>{schedule.textContent=response;});
-          } else {
-            fetch(`https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=schedule&date=${date.value}`).then(e=>e.text()).then(response=>{schedule.textContent=response;});
+          try {
+            get_schedule_for_day(new Date(date.value));
+          } catch {
+            if (date.value == "Today") {
+              get_schedule_for_day(new Date());
+            } else if (date.value == "Tomorrow") {
+              get_schedule_for_day(new Date(new Date().getTime() + 86400000));
+            }
           }
         },
       });
