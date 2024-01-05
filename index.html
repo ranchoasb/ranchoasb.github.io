@@ -426,16 +426,16 @@
       const breaks = [[11, 22], [12, 25], [4, 1]]; // the first day of thanksgiving, winter, and spring break
       // defining when thanksgiving break is
       for (let i = 0; i < 3; i++){
-        dayoff.push([breaks[0][0], breaks[0][1]+i]);
+        dayoff.push([new Date(new Date(breaks[0][0].toString()+"/"+breaks[0][1].toString()).getTime()+864E5*i).getMonth()+1, new Date(new Date(breaks[0][0].toString()+"/"+breaks[0][1].toString()).getTime()+864E5*i).getDate()]);
       }
-      // defining when winter break is
+      // defining first week of winter break and defining spring break
       for (let i = 0; i < 5; i++){
-        dayoff.push([breaks[1][0], breaks[1][1]+i]);
-        dayoff.push([breaks[2][0], breaks[2][1]+i]);
+        dayoff.push([new Date(new Date(breaks[1][0].toString()+"/"+breaks[1][1].toString()).getTime()+864E5*i).getMonth()+1, new Date(new Date(breaks[1][0].toString()+"/"+breaks[1][1].toString()).getTime()+864E5*i).getDate()]);
+        dayoff.push([new Date(new Date(breaks[1][0].toString()+"/"+breaks[1][1].toString()).getTime()+864E5*i).getMonth()+1, new Date(new Date(breaks[1][0].toString()+"/"+breaks[1][1].toString()).getTime()+864E5*i).getDate()]);
       }
-      // defining when summer break is
+      // defining second week of winter break and defining spring break
       for (let i = 7; i < 12; i++){
-        dayoff.push([breaks[1][0], breaks[1][1]+i]);
+        dayoff.push([new Date(new Date(breaks[1][0].toString()+"/"+breaks[1][1].toString()).getTime()+864E5*i).getMonth()+1, new Date(new Date(breaks[1][0].toString()+"/"+breaks[1][1].toString()).getTime()+864E5*i).getDate()]);
       }
       
       const specialDays = [custom, first7, first8, min, promotion, dayoff];
