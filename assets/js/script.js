@@ -42,8 +42,8 @@ window.onload = () => {
     try{
       let schoolYear = new Date().getMonth() >= 7 ? new Date().getFullYear() : new Date().getFullYear() - 1;
       for(let i=0;i<Math.min(3,response.match(/Advisement Announcements for /g).length);i++) {
-        announcements.innerHTML+=`<u><a href="${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf(">",response.indexOf("https://docs.google.com/presentation/d/"))-1)}">${response.slice(response.indexOf("data-date=")+11,response.indexOf('>')-6)} Announcements</a></u><br>`
         response = response.slice(response.indexOf('<div id="panel',1));
+        announcements.innerHTML+=`<u><a href="${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf(">",response.indexOf("https://docs.google.com/presentation/d/"))-1)}">${response.slice(response.indexOf("data-date=")+11,response.indexOf('>',response.indexOf("data-date="))-6)} Announcements</a></u><br>`
       }
       announcements.innerHTML+='<br>Older announcements can be found <a href="announcements">here.</a>';
     }
