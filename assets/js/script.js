@@ -40,9 +40,8 @@ window.onload = () => {
 
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=announcements").then(e=>e.text()).then(response => {
     try{
-      let schoolYear = new Date().getMonth() >= 7 ? new Date().getFullYear() : new Date().getFullYear() - 1;
       for(let i=0;i<Math.min(3,response.match(/Advisement Announcements for /g).length);i++) {
-        response = response.slice(response.indexOf('<div id="panel',1));
+        response = response.slice(response.indexOf('<div class="accordion-item"',1));
         announcements.innerHTML+=`<u><a href="${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf(">",response.indexOf("https://docs.google.com/presentation/d/"))-1)}">${response.slice(response.indexOf("data-date=")+11,response.indexOf('>',response.indexOf("data-date="))-6)} Announcements</a></u><br>`
       }
       announcements.innerHTML+='<br>Older announcements can be found <a href="announcements">here.</a>';
