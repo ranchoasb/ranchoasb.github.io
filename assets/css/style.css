@@ -4427,24 +4427,6 @@ textarea.form-control-lg {
 	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }
 
-.nav-link:after{
-  content: '';
-  position: absolute;
-  width: 0; height: 3px;
-  display: block;
-  margin-top: 5px;
-  right: 0;
-  background: #fff;
-  transition: width .2s ease;
-  -webkit-transition: width .2s ease;
-}
- 
-.nav-link:hover:after{
-  width: 100%;
-  left: 0;
-  background: #fff;
-}
-
 @media (prefers-reduced-motion:reduce) {
 	.nav-link {
 		-webkit-transition: none;
