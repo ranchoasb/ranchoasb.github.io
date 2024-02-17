@@ -22,7 +22,7 @@ window.onload = () => {
       
       let title = row.title;
       
-      let date = row.time;
+      let date = row.time=="N/A" ? "N/A" : row.time;
 
       let description = row.description;
       let category = row.category;
