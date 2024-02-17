@@ -24,6 +24,8 @@ window.onload = () => {
       
       let date = new Date(row.time).toLocaleDateString();
 
+      let modal = row.modal;
+
       let description = row.description;
       let category = row.category;
       
