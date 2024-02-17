@@ -1,4 +1,7 @@
 window.onload = () => {
+  let upcomingEventsCarousel = document.querySelector('#upcomingEventsCarousel');
+  let carousel = new bootstrap.Carousel(upcomingEventsCarousel);
+  
   copyrightyear.textContent = new Date().getFullYear();
 
   let data;
