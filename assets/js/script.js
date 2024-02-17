@@ -1,6 +1,4 @@
 window.onload = () => {
-  let upcomingEventsCarousel = document.querySelector('#upcomingEventsCarousel');
-  let carousel = new bootstrap.Carousel(upcomingEventsCarousel);
   
   copyrightyear.textContent = new Date().getFullYear();
 
@@ -39,6 +37,9 @@ window.onload = () => {
       loadmorebutton.insertAdjacentHTML("beforebegin", `<div class="card"><div class="alert alert-info mb-0" role="alert">Nothing else to load.</div></div>`);
       loadmorebutton.remove();
     }
+
+    let upcomingEventsCarousel = document.querySelector('#upcomingEventsCarousel');
+    let carousel = new bootstrap.Carousel(upcomingEventsCarousel);
   }
 
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=announcements").then(e=>e.text()).then(response => {
