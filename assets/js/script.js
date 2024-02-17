@@ -22,7 +22,7 @@ window.onload = () => {
       
       let title = row.title;
       let date = row.time;
-      let dateVisible = row.timeVisible;
+      let dateVisible = +row.timeVisible;
       let description = row.description;
       let category = row.category;
       let trigger = +row.triggersModal;
