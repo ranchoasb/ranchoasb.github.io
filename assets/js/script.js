@@ -38,8 +38,7 @@ window.onload = () => {
       loadmorebutton.remove();
     }
 
-    let upcomingEventsCarousel = document.querySelector('#upcomingEventsCarousel');
-    let carousel = new bootstrap.Carousel(upcomingEventsCarousel);
+    new bootstrap.Carousel(document.querySelector('#upcomingEventsCarousel')).cycle()
   }
 
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=announcements").then(e=>e.text()).then(response => {
