@@ -1,7 +1,7 @@
 :root {
 	--bs-blue: #0d6efd;
 	--bs-indigo: #6610f2;
-	--bs-purple: #6f42c1;
+	--bs-purple: #6f42c1;.
 	--bs-pink: #d63384;
 	--bs-red: #dc3545;
 	--bs-orange: #fd7e14;
@@ -7154,8 +7154,9 @@ textarea.form-control-lg {
 	-webkit-box-flex: 0;
 	-ms-flex: 0 1 auto;
 	flex: 0 1 auto;
-	width: 30px;
-	height: 3px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
 	padding: 0;
 	margin-right: 3px;
 	margin-left: 3px;
