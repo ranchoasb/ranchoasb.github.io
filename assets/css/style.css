@@ -1,3 +1,5 @@
+/* this css file is just a copy of bootstrap v5.3. however, some areas have been edited for the website. these areas are marked as "/* edited */". */
+
 :root {
 	--bs-blue: #0d6efd;
 	--bs-indigo: #6610f2;
@@ -5275,6 +5277,11 @@ textarea.form-control-lg {
 	border-bottom: 1px solid rgba(0,0,0,.09);
 }
 
+/* edited */
+.card-header.pb-0.border-0 {
+	padding: 0.3rem 1.25rem;
+}
+
 .card-header:first-child {
 	border-radius: calc(.4rem - 1px) calc(.4rem - 1px) 0 0;
 }
@@ -8526,6 +8533,14 @@ textarea.form-control-lg {
 	margin-bottom: 0!important;
 }
 
+/* edited */
+.h5.card-title.mb-0 {
+	color: #fff;
+	font-size: 24px;
+	font-family: "Itim", cursive;
+	text-align: center;
+}
+
 .mb-1 {
 	margin-bottom: .25rem!important;
 }
@@ -8861,7 +8876,8 @@ textarea.form-control-lg {
 }
 
 .pb-0 {
-	padding-bottom: 0!important;
+	background-color: #2f5ba5;
+	/* padding-bottom: 0!important; */
 }
 
 .pb-1 {
