@@ -424,7 +424,7 @@
       const first8 = [[8, 25]]; // first day of 8th grade
       const min = [[9, 7], [9, 8], [10, 11], [10, 12], [12, 22], [1, 12], [3, 8], [3, 28], [3, 29], [5, 24], [6, 6]]; // minimum days
       const promotion = [[6, 7]]; // 8th grade promotion
-      const dayoff = [[9, 4], [10, 16], [11, 10], [1, 15], [2, 16], [2, 19], [5, 27]]; // days off
+      const dayoff = [[9, 4], [10, 16], [11, 10], [1, 15], [2, 16], [2, 19], [3, 11], [5, 27]]; // days off
       const breaks = [[11, 22], [12, 25], [4, 1]]; // the first day of thanksgiving, winter, and spring break
       // defining when thanksgiving break is
       for (let i = 0; i < 3; i++){
@@ -433,7 +433,7 @@
       // defining first week of winter break and defining spring break
       for (let i = 0; i < 5; i++){
         dayoff.push([new Date(new Date(breaks[1][0].toString()+"/"+breaks[1][1].toString()).getTime()+864E5*i).getMonth()+1, new Date(new Date(breaks[1][0].toString()+"/"+breaks[1][1].toString()).getTime()+864E5*i).getDate()]);
-        dayoff.push([new Date(new Date(breaks[1][0].toString()+"/"+breaks[1][1].toString()).getTime()+864E5*i).getMonth()+1, new Date(new Date(breaks[1][0].toString()+"/"+breaks[1][1].toString()).getTime()+864E5*i).getDate()]);
+        dayoff.push([new Date(new Date(breaks[2][0].toString()+"/"+breaks[1][1].toString()).getTime()+864E5*i).getMonth()+1, new Date(new Date(breaks[1][0].toString()+"/"+breaks[1][1].toString()).getTime()+864E5*i).getDate()]);
       }
       // defining second week of winter break and defining spring break
       for (let i = 7; i < 12; i++){
