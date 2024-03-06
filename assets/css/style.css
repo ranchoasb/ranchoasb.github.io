@@ -5278,8 +5278,9 @@ textarea.form-control-lg {
 }
 
 /* edited */
-.card-header.pb-0.border-0 {
+.card-header.border-0 {
 	padding: 0.3rem 1.25rem;
+	background-color: #034C8A;
 }
 
 .card-header:first-child {
@@ -8875,10 +8876,8 @@ h5.card-title.mb-0 {
 	padding-right: 3rem!important;
 }
 
-/* edited */
 .pb-0 {
-	background-color: #0046bb;
-	/* padding-bottom: 0!important; */
+	padding-bottom: 0!important;
 }
 
 .pb-1 {
