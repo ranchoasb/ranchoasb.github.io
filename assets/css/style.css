@@ -1,4 +1,4 @@
-/* this css file is just a copy of bootstrap v5.3. however, some areas have been edited for the website. these areas are commented on as edited. edited portions only kept track of since 3/4/2024 */
+/* this css file is just a copy of bootstrap v5.3. however, some CSS rules have been edited for the website. these rules are commented on as edited. edited rules only kept track of since 3/4/2024 */
 
 :root {
 	--bs-blue: #0d6efd;
@@ -5281,6 +5281,7 @@ textarea.form-control-lg {
 .card-header.border-0 {
 	padding: 0.3rem 1.25rem;
 	background-color: #034C8A;
+	border-radius: calc(1rem - 1px) calc(1rem - 1px) 0 0;
 }
 
 .card-header:first-child {
