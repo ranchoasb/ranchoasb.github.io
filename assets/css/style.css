@@ -5277,15 +5277,15 @@ textarea.form-control-lg {
 	border-bottom: 1px solid rgba(0,0,0,.09);
 }
 
+.card-header:first-child {
+	border-radius: calc(.4rem - 1px) calc(.4rem - 1px) 0 0;
+}
+
 /* edited */
 .card-header.border-0 {
 	padding: 0.3rem 1.25rem;
 	background-color: #034C8A;
 	border-radius: calc(1rem - 1px) calc(1rem - 1px) 0 0;
-}
-
-.card-header:first-child {
-	border-radius: calc(.4rem - 1px) calc(.4rem - 1px) 0 0;
 }
 
 .card-footer {
