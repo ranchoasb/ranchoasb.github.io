@@ -5285,7 +5285,7 @@ textarea.form-control-lg {
 .card-header.border-0 {
     display: flex;
     padding: 0.3rem 1.25rem;
-    background-color: #0064a4;
+    background-color: rgb(28, 69, 135);
     border-radius: calc(1rem - 1px) calc(1rem - 1px) 0 0;
     height: 3.125rem;
     align-content: center;
