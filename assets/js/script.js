@@ -1,10 +1,4 @@
 window.onload = () => {
-  var items = document.querySelectorAll('.carousel-item');
-        items.forEach(function(item) {
-            var width = item.offsetWidth; // Get the current width
-            var height = (9 / 16) * width; // Calculate the height as 9/16 of the width
-            item.style.height = height + 'px'; // Set the new height
-  });
   
   copyrightyear.textContent = new Date().getFullYear();
 
@@ -45,6 +39,12 @@ window.onload = () => {
     }
 
     new bootstrap.Carousel(document.querySelector('#upcomingEventsCarousel')).cycle()
+    var items = document.querySelectorAll('.carousel-item');
+        items.forEach(function(item) {
+            var width = item.offsetWidth; // Get the current width
+            var height = (9 / 16) * width; // Calculate the height as 9/16 of the width
+            item.style.height = height + 'px'; // Set the new height
+    });
   }
 
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=announcements").then(e=>e.text()).then(response => {
