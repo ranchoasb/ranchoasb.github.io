@@ -1,4 +1,9 @@
 window.onload = () => {
+  $('.carousel-item').each(function() {
+            var width = $(this).width(); // Get the current width
+            var height = (9 / 16) * width; // Calculate the height as 9/16 of the width
+            $(this).css('height', height + 'px'); // Set the new height
+        });
   
   copyrightyear.textContent = new Date().getFullYear();
 
