@@ -7038,8 +7038,11 @@ textarea.form-control-lg {
 	}
 }
 
+/* edited */
 .carousel-item-next,.carousel-item-prev,.carousel-item.active {
-	display: block;
+	display: flex;
+	align-content: center;
+	justify-content: center;
 }
 
 .active.carousel-item-end,.carousel-item-next:not(.carousel-item-start) {
