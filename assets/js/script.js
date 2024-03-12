@@ -45,7 +45,7 @@ window.onload = () => {
         console.warn('No active carousel item found.');
     }
     var activeWidth = activeItem.offsetWidth; // Get the width of the active item
-    var desiredHeight = (12 / 16) * activeWidth; // Calculate the desired height
+    var desiredHeight = (10 / 16) * activeWidth; // Calculate the desired height
 
     // Set the height for all carousel items
     var items = document.querySelectorAll('.carousel-item');
