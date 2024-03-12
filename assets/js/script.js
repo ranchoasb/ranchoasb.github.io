@@ -39,11 +39,18 @@ window.onload = () => {
     }
 
     new bootstrap.Carousel(document.querySelector('#upcomingEventsCarousel')).cycle()
+    // Find the active carousel item
+    var activeItem = document.querySelector('.active.carousel-item');
+    if (!activeItem) {
+        console.warn('No active carousel item found.');
+    }
+    var activeWidth = activeItem.offsetWidth; // Get the width of the active item
+    var desiredHeight = (9 / 16) * activeWidth; // Calculate the desired height
+
+    // Set the height for all carousel items
     var items = document.querySelectorAll('.carousel-item');
-        items.forEach(function(item) {
-            var width = item.offsetWidth; // Get the current width
-            var height = (9 / 16) * width; // Calculate the height as 9/16 of the width
-            item.style.height = height + 'px'; // Set the new height
+    items.forEach(function(item) {
+        item.style.height = desiredHeight + 'px';
     });
   }
 
