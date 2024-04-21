@@ -40,7 +40,10 @@ window.onload = () => {
       loadmorebutton.remove();
     }
 
-    new bootstrap.Carousel(document.querySelector('#upcomingEventsCarousel')).cycle()
+    for (element of document.querySelectorAll('.carousel')){
+      new bootstrap.Carousel(element).cycle()
+    }
+    
     // Find the active carousel item
     var activeItem = document.querySelector('.active.carousel-item');
     if (!activeItem) {
