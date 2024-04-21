@@ -5,7 +5,8 @@ window.onload = () => {
   let data;
   let datalen;
   let dataindex = 0;
-
+  let carouselId = 0;
+  
   let fuse;
 
   function load() {
@@ -29,6 +30,21 @@ window.onload = () => {
       let hideBody = +row.hideBody;
       let hideFooter = +row.hideFooter;
       let hideModal = +row.hideModal;
+      let carousel = +row.carousel;
+
+      if (carousel){
+        carouselImgs = description.split(" ");
+        description = `<div id="carousel${carouselId}" class="carousel carousel-dark slide" data-bs-ride="carousel"><div class="carousel-indicators">`;
+        for (int i = 0; i < carouselImgs.length; i++){
+          description += `<button type="button" data-bs-target="#carousel${carouselId}" data-bs-slide-to="${i}" class="active" aria-current="true" aria-label="Slide ${i+1}"></button>`;
+        }
+        description += `</div><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="3000"><img src="${carouselImgs[0]}" class="d-block" alt="..."></div>`;
+        for (int i = 1; i < carouselLength.length; i++){
+          description += `<div class="carousel-item" data-bs-interval="3000"><img src="${carouselImgs[i]}" class="d-block" alt="..."></div>`;
+        }
+        description += `</div><button class="carousel-control-prev" type="button" data-bs-target="#carousel${carouselId}" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button><button class="carousel-control-next" type="button" data-bs-target="#upcomingEventsCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button></div>`;
+        carouselId++;
+      }
       
       loadmorebutton.insertAdjacentHTML("beforebegin", `<div class="card-link" ${hideModal?"":`data-bs-toggle="modal" data-bs-target="#rowmodal${index}"`} id="x${title.replaceAll(" ", "-")}"><div class="card">${hideHeader?"":`<div class="card-header"><div class="d-flex align-items-center justify-content-between"><div class="d-flex align-items-center"><div><h6 class="card-title mb-0">${title}</h6><p class="small mb-0">${date}</p></div></div></div></div>`}${hideBody?"":`<div class="card-body"><div class="mb-0">${description}</div></div>`}${hideFooter?"":`<div class="card-footer border-0 d-flex justify-content-between align-items-center"><p class="mb-0">Category: ${category}</p></div>`}</div></div><div class="modal" tabindex="-1" id="rowmodal${index}"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">${title} <small>on ${date}</small></h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p>${description}</p><p><small>Category: ${category}</small></p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>`);
     }
