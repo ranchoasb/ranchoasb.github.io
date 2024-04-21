@@ -35,11 +35,11 @@ window.onload = () => {
       if (carousel){
         carouselImgs = description.split(" ");
         description = `<div id="carousel${carouselId}" class="carousel carousel-dark slide" data-bs-ride="carousel"><div class="carousel-indicators">`;
-        for (int i = 0; i < carouselImgs.length; i++){
+        for (let i = 0; i < carouselImgs.length; i++){
           description += `<button type="button" data-bs-target="#carousel${carouselId}" data-bs-slide-to="${i}" class="active" aria-current="true" aria-label="Slide ${i+1}"></button>`;
         }
         description += `</div><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="3000"><img src="${carouselImgs[0]}" class="d-block" alt="..."></div>`;
-        for (int i = 1; i < carouselLength.length; i++){
+        for (let i = 1; i < carouselLength.length; i++){
           description += `<div class="carousel-item" data-bs-interval="3000"><img src="${carouselImgs[i]}" class="d-block" alt="..."></div>`;
         }
         description += `</div><button class="carousel-control-prev" type="button" data-bs-target="#carousel${carouselId}" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button><button class="carousel-control-next" type="button" data-bs-target="#upcomingEventsCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button></div>`;
