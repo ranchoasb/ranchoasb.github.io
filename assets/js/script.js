@@ -33,7 +33,7 @@ window.onload = () => {
       let carousel = +row.carousel;
 
       if (carousel){
-        carouselImgs = description.split(" ");
+        carouselImgs = description.split("/\s+/");
         description = `<div id="carousel${carouselId}" class="carousel carousel-dark slide" data-bs-ride="carousel"><div class="carousel-indicators"><button type="button" data-bs-target="#carousel${carouselId}" data-bs-slide-to="${0}" class="active" aria-current="true" aria-label="Slide ${1}"></button>`;
         for (let i = 1; i < carouselImgs.length; i++){
           description += `<button type="button" data-bs-target="#carousel${carouselId}" data-bs-slide-to="${i}" class="active" aria-current="true" aria-label="Slide ${i+1}"></button>`;
