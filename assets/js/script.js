@@ -83,7 +83,7 @@ window.onload = () => {
       }
       announcements.innerHTML+='<br>Older announcements can be found <a href="announcements">here.</a>';
     }
-    catch {
+    catch(err) {
       announcements.innerHTML+='No advisement announcements for now.';
     }
   });
@@ -196,7 +196,7 @@ function goToPost(id) {
     try {
       window.scrollTo({ top: document.querySelector("#x"+id).offsetTop-document.querySelector("header").offsetHeight-10, behavior: 'smooth' });
     }
-    catch {
+    catch(err) {
       load();
       goToPost(id);
     }
