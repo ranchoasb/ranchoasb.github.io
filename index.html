@@ -471,10 +471,10 @@
         
       // gets schedule for any day
       function get_schedule_for_day(d){
-        if (d < 1692860400000) {
-          document.getElementById("schedule").textContent = "The 2023 to 2024 school year has not started yet!";
-        } else if (d > 1717743600000) {
-          document.getElementById("schedule").textContent = "The 2023 to 2024 school year has concluded.";
+        if (d < 1724167200000) {
+          document.getElementById("schedule").textContent = "The 2024 to 2025 school year has not started yet!";
+        } else if (d > 1749207600000) {
+          document.getElementById("schedule").textContent = "The 2024 to 2025 school year has concluded.";
         } else {
           let month = d.getMonth()+1;
           let day = d.getDate();
