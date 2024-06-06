@@ -61,29 +61,29 @@ window.onload = () => {
     }
     
     // Find the active carousel item
-    var activeItem = document.querySelector('.active.carousel-item');
+    let activeItem = document.querySelector('.active.carousel-item');
     if (!activeItem) {
         console.warn('No active carousel item found.');
     }
-    var activeWidth = activeItem.offsetWidth; // Get the width of the active item
-    var desiredHeight = (10 / 16) * activeWidth; // Calculate the desired height
+    let activeWidth = activeItem.offsetWidth; // Get the width of the active item
+    let desiredHeight = (10 / 16) * activeWidth; // Calculate the desired height
 
     // Set the height for all carousel items
-    var items = document.querySelectorAll('.carousel-item');
+    let items = document.querySelectorAll('.carousel-item');
     items.forEach(function(item) {
         item.style.height = desiredHeight + 'px';
     });
   }
 
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=announcements").then(e=>e.text()).then(response => {
-    try{
+    try {
       for(let i=0;i<Math.min(3,response.match(/Advisement Announcements for /g).length);i++) {
         response = response.slice(response.indexOf('<div class="accordion-item"',1));
         announcements.innerHTML+=`<u><a href="${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf(">",response.indexOf("https://docs.google.com/presentation/d/"))-1)}">${response.slice(response.indexOf("data-date=")+11,response.indexOf('>',response.indexOf("data-date="))-6)} Announcements</a></u><br>`
       }
       announcements.innerHTML+='<br>Older announcements can be found <a href="announcements">here.</a>';
     }
-    catch {
+    catch(err) {
       announcements.innerHTML+='No advisement announcements for now.';
     }
   });
@@ -95,6 +95,7 @@ window.onload = () => {
     ).join("");});
   fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=posts").then(e => e.json()).then(response => {
     data = response;
+    var titles = data.map(item => item.title);
     datalen = data.length;
     
     document.querySelectorAll(".disposable").forEach(e => e.remove());
@@ -191,5 +192,16 @@ window.onload = () => {
 };
 
 function goToPost(id) {
-  window.scrollTo({ top: document.querySelector("#x"+id).offsetTop-document.querySelector("header").offsetHeight-10, behavior: 'smooth' })
+  if (titles.includes(id)) {
+    try {
+      window.scrollTo({ top: document.querySelector("#x"+id).offsetTop-document.querySelector("header").offsetHeight-10, behavior: 'smooth' });
+    }
+    catch(err) {
+      load();
+      goToPost(id);
+    }
+  }
+  else {
+    console.log("Couldn't find post!");
+  }
 }
