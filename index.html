@@ -87,6 +87,7 @@
                     <div id="navbarhtml"></div>
                     <script>
                         function onSignIn(googleUser) {
+                            alert ("hi");
                             var profile = googleUser.getBasicProfile();
                             const elem = document.getElementById("loginbutton");
                             elem.innerHTML = '<a href="#" onclick="signOut();">Logout</a>';
@@ -94,7 +95,9 @@
                             if (profile.gethd()=='iusd.org'){
                                 domainIUSD = true;
                                 alert("Welcome");
-                          }
+                            }
+                            window.location.href = "https://ranchoasb.org";
+                        }
                         function signOut() {
                             var auth2 = gapi.auth2.getAuthInstance();
                             auth2.signOut().then(function () {
@@ -102,7 +105,9 @@
                             domainIUSD = false;
                             const elem = document.getElementById("loginbutton");
                             elem.innerHTML = '<a href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?redirect_uri=storagerelay%3A%2F%2Fhttps%2Franchoasb.org%3Fid%3Dauth982270&response_type=permission id_token&scope=email profile openid&openid.realm&include_granted_scopes=true&client_id=786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com&ss_domain=https%3A%2F%2Franchoasb.org&fetch_basic_profile=true&gsiwebsdk=2&service=lso&o2v=1&ddm=0&flowName=GeneralOAuthFlow" id="loginbutton">Login</a>'
+                            window.location.href = "https://ranchoasb.org";
                             }
+                        }
                         
                     </script>
                     <div class="g-signin2" style="margin-right:10px;font-weight:600" data-onsuccess="onSignIn">
