@@ -22,6 +22,23 @@
 </head>
 
 <body>
+    <script>
+        function init() {
+            gapi.load('auth2', function() {
+          });
+        }
+        GoogleAuth = gapi.auth2.init();
+        if (GoogleAuth.isSignedIn.get()){
+            const elem = document.getElementById("loginbutton");
+            elem.innerHTML = '<a href="#" onclick="signOut();">Logout</a>';
+            if (profile.gethd()=='iusd.org'){
+            var domainIUSD = true;
+            }
+            else {
+                var domainIUSD = false;
+            }
+        }
+    </script>
     <!-- ======================= Header START -->
     <header class="navbar-light fixed-top header-static bg-mode">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,10 +83,6 @@
                     <script>
                         function onSignIn(googleUser) {
                             var profile = googleUser.getBasicProfile();
-                            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-                            console.log('Name: ' + profile.getName());
-                            console.log('Image URL: ' + profile.getImageUrl());
-                            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
                             const elem = document.getElementById("loginbutton");
                             elem.innerHTML = '<a href="#" onclick="signOut();">Logout</a>';
                             alert("Hi");
@@ -85,25 +98,7 @@
                             const elem = document.getElementById("loginbutton");
                             elem.innerHTML = '<a href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?redirect_uri=storagerelay%3A%2F%2Fhttps%2Franchoasb.org%3Fid%3Dauth982270&response_type=permission id_token&scope=email profile openid&openid.realm&include_granted_scopes=true&client_id=786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com&ss_domain=https%3A%2F%2Franchoasb.org&fetch_basic_profile=true&gsiwebsdk=2&service=lso&o2v=1&ddm=0&flowName=GeneralOAuthFlow" id="loginbutton">Login</a>'
                             }
-                        function init() {
-                            gapi.load('auth2', function() {
-                          });
-                        }
-                        var settings = {
-                            client_id : '786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com' 
-                            ux_mode : 'redirect' 
-                            redirect_uri : 'https://ranchoasb.org' 
-                        }
-                        GoogleAuth = gapi.auth2.init(settings);
-                        if (GoogleAuth.isSignedIn.get()){
-                            const elem = document.getElementById("loginbutton");
-                            elem.innerHTML = '<a href="#" onclick="signOut();">Logout</a>';
-                        }
-                        if (profile.gethd()=='iusd.org'){
-                            var domainIUSD = true;
-                        }
-                        else {
-                            var domainIUSD = false;
+                        
                     </script>
                     <div class="g-signin2" style="margin-right:10px;font-weight:600" data-onsuccess="onSignIn">
                     <a href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?redirect_uri=storagerelay%3A%2F%2Fhttps%2Franchoasb.org%3Fid%3Dauth982270&response_type=permission id_token&scope=email profile openid&openid.realm&include_granted_scopes=true&client_id=786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com&ss_domain=https%3A%2F%2Franchoasb.org&fetch_basic_profile=true&gsiwebsdk=2&service=lso&o2v=1&ddm=0&flowName=GeneralOAuthFlow" id="loginbutton">
