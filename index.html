@@ -79,6 +79,7 @@
                             elem.innerHTML = '<a href="#" onclick="signOut();">Logout</a>';
                             if (profile.gethd()=='iusd.org'){
                                 domainIUSD = true;
+                                alert("Welcome");
                           }
                         function signOut() {
                             var auth2 = gapi.auth2.getAuthInstance();
