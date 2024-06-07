@@ -24,6 +24,7 @@
 <body>
     <script>
         var domanIUSD=false;
+        import * as jose from 'jose';
     </script>
     <!-- ======================= Header START -->
     <header class="navbar-light fixed-top header-static bg-mode">
@@ -81,7 +82,6 @@
                         Login
                     </div>
                     <script>
-                        import * as jose from 'jose';
                         function decodeJwtResponse(token) {
                             var base64Url = token.split(".")[1];
                             var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
