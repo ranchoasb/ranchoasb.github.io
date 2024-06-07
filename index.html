@@ -17,9 +17,56 @@
 
     <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com">
 </head>
 
 <body>
+    <div class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0" style="margin-right:10px;font-weight:600" data-onsuccess="onSignIn">
+    <a href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?redirect_uri=storagerelay%3A%2F%2Fhttps%2Franchoasb.org%3Fid%3Dauth982270&response_type=permission id_token&scope=email profile openid&openid.realm&include_granted_scopes=true&client_id=786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com&ss_domain=https%3A%2F%2Franchoasb.org&fetch_basic_profile=true&gsiwebsdk=2&service=lso&o2v=1&ddm=0&flowName=GeneralOAuthFlow" id="loginbutton">
+        Login
+    </a>
+    </div>
+    <script>
+            function onSignIn(googleUser) {
+                var profile = googleUser.getBasicProfile();
+                console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                console.log('Name: ' + profile.getName());
+                console.log('Image URL: ' + profile.getImageUrl());
+                console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+                const elem = document.getElementById("loginbutton");
+                elem.innerHTML = '<a href="#" onclick="signOut();">Logout</a>';
+                if (profile.gethd()=='iusd.org'){
+                    domainIUSD = true;
+              }
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                console.log('User signed out.');
+                domainIUSD = false;
+                const elem = document.getElementById("loginbutton");
+                elem.innerHTML = '<a href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?redirect_uri=storagerelay%3A%2F%2Fhttps%2Franchoasb.org%3Fid%3Dauth982270&response_type=permission id_token&scope=email profile openid&openid.realm&include_granted_scopes=true&client_id=786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com&ss_domain=https%3A%2F%2Franchoasb.org&fetch_basic_profile=true&gsiwebsdk=2&service=lso&o2v=1&ddm=0&flowName=GeneralOAuthFlow" id="loginbutton">Login</a>'
+                }
+            function init() {
+                gapi.load('auth2', function() {
+              });
+            }
+            GoogleAuth = gapi.auth2.init(
+                client_id : '786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com' 
+                ux_mode : 'redirect' 
+                redirect_uri : 'https://ranchoasb.org' 
+            )
+            if (GoogleAuth.isSignedIn.get()){
+                const elem = document.getElementById("loginbutton");
+                elem.innerHTML = '<a href="#" onclick="signOut();">Logout</a>';
+            }
+            if (profile.gethd()=='iusd.org'){
+                var domainIUSD = true;
+            }
+            else {
+                var domainIUSD = false;
+    </script>
+        
     <!-- ======================= Header START -->
     <header class="navbar-light fixed-top header-static bg-mode">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,7 +108,6 @@
                     
                     <div class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0" style="margin-left:10px;font-weight:600"><a href="javascript:void(0)" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchoptionsmodal" id="searchoptionslink">Search Options</a></div>
                     <div id="navbarhtml"></div>
-                    <div class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0" style="margin-right:10px;font-weight:600"><a href="https://ranchoasb.org/login" id="loginbutton">Login</a></div>
                     
                 </div>
                 <!-- Main navbar END -->
