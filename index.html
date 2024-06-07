@@ -82,8 +82,8 @@
                             );
                             return JSON.parse(jsonPayload);
                           }
-                        function handleCredentialReponse(response){
-                            var info = decodeJWTReponse(response.credential);
+                        function handleCredentialResponse(response){
+                            var info = decodeJwtResponse(response.credential);
                             console.log("ID: " + info.sub);
                             console.log('Full Name: ' + info.name);
                             console.log('Given Name: ' + info.given_name);
