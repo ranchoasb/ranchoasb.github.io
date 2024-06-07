@@ -23,19 +23,24 @@
 
 <body>
     <script>
+        var domainIUSD = false;
         function init() {
             gapi.load('auth2', function() {
           });
         }
-        GoogleAuth = gapi.auth2.init();
+        var settings = {}
+        Object.assign(settings, {client_id : '786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com'});
+        Object.assign(settings, {ux_mode : 'redirect'});
+        Object.assign(settings, {redirect_uri: 'https://ranchoasb.org'});
+        GoogleAuth = gapi.auth2.init(settings);
         if (GoogleAuth.isSignedIn.get()){
             const elem = document.getElementById("loginbutton");
             elem.innerHTML = '<a href="#" onclick="signOut();">Logout</a>';
             if (profile.gethd()=='iusd.org'){
-            var domainIUSD = true;
+                domainIUSD = true;
             }
             else {
-                var domainIUSD = false;
+                domainIUSD = false;
             }
         }
     </script>
