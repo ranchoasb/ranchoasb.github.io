@@ -33,6 +33,7 @@
         Object.assign(settings, {ux_mode : 'redirect'});
         Object.assign(settings, {redirect_uri: 'https://ranchoasb.org'});
         GoogleAuth = gapi.auth2.init(settings);
+        
         if (GoogleAuth.isSignedIn.get()){
             const elem = document.getElementById("loginbutton");
             elem.innerHTML = '<a href="#" onclick="signOut();">Logout</a>';
@@ -85,7 +86,7 @@
                     
                     <div class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0" style="margin-left:10px;font-weight:600"><a href="javascript:void(0)" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchoptionsmodal" id="searchoptionslink">Search Options</a></div>
                     <div id="navbarhtml"></div>
-                    <div class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0" style="margin-left:10px;font-weight:600" style="margin-right:10px;font-weight:600" id = "loginbutton" data-onsuccess="onSignIn">
+                    <div class="g-signin2" data-onsuccess="onSignIn">
                         <a href = "https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?redirect_uri=storagerelay%3A%2F%2Fhttps%2Franchoasb.org%3Fid%3Dauth982270&response_type=permission id_token&scope=email profile openid&openid.realm&include_granted_scopes=true&client_id=786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com&ss_domain=https%3A%2F%2Franchoasb.org&fetch_basic_profile=true&gsiwebsdk=2&service=lso&o2v=1&ddm=0&flowName=GeneralOAuthFlow" id="loginbutton">Login</a>
                     </div>
                     <script>
