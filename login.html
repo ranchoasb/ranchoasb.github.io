@@ -12,9 +12,8 @@
       console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
       let email = profile.getEmail();
       let org = email.substr(org.length-9,8);
-      if(org=="iusd.org"){
-        const elem = document.getElementById("loginbutton");
-        elem.innerHTML = '<a href="#" onclick="signOut();">Sign out</a>';
+      const elem = document.getElementById("loginbutton");
+      elem.innerHTML = '<a href="#" onclick="signOut();">Sign out</a>';
       function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
         auth2.signOut().then(function () {
