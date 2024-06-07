@@ -89,11 +89,12 @@
                             gapi.load('auth2', function() {
                           });
                         }
-                        GoogleAuth = gapi.auth2.init(
+                        var settings = {
                             client_id : '786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com' 
                             ux_mode : 'redirect' 
                             redirect_uri : 'https://ranchoasb.org' 
-                        )
+                        }
+                        GoogleAuth = gapi.auth2.init(settings);
                         if (GoogleAuth.isSignedIn.get()){
                             const elem = document.getElementById("loginbutton");
                             elem.innerHTML = '<a href="#" onclick="signOut();">Logout</a>';
