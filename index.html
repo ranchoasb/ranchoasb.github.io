@@ -24,16 +24,8 @@
 <body>
     <script>
         window.onload = function () {
-            google.accounts.id.initialize(
-                {
-                    client_id: '786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com',
-                    callback: 'handleResponse',
-                    hd: '*'
-                }
-            )
-            google.accounts.id.renderButton(
-                div, type: "icon", text: 'signin', shape: 'pill'
-            )
+            var domainIUSD = false;
+            
         }
     </script>
     <!-- ======================= Header START -->
@@ -78,8 +70,39 @@
                     <div class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0" style="margin-left:10px;font-weight:600"><a href="javascript:void(0)" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchoptionsmodal" id="searchoptionslink">Search Options</a></div>
                     <div id="navbarhtml"></div>
                     <!-- Login -->
-
+                    <div 
+                        class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0"
+                        style="margin-left:10px;font-weight:600"
+                        id='g_id_onload'
+                        data-client_id='786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com'
+                        data-login_uri="https://ranchoasb.org"
+                        data-callback="handleCredentialResponse"
+                        data-native_callback="handleCredentialResponse"
+                        data-ux_mode="popup"
+                        data-hd="*">
+                        Login
+                    </div>
                     <script>
+                        function handleCredentialReponse(response){
+                            var info = decodeJWTReponse(response.credential);
+                            console.log("ID: " + info.sub);
+                            console.log('Full Name: ' + info.name);
+                            console.log('Given Name: ' + info.given_name);
+                            console.log('Family Name: ' + info.family_name);
+                            console.log("Image URL: " + info.picture);
+                            console.log("Email: " + info.email);
+                            console.log("hd: " + info.hd);
+                            if (info.hd=="iusd.org"){
+                                domainIUSD=true;
+                            }
+                            let cred = {id: info.email, password: info.};
+                            google.accounts.id.storeCredential(cred);
+                            const elem = document.getElementById("g_id_onload");
+                            elem.outerHTML = '<div class = "nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0" style="margin-left:10px;font-weight:600" id="g_id_onload" onclick="signOut()">Logout</div>';
+                        }
+                        function signOut(){
+                            google.accounts.id.disableAutoSelect();
+                        }
                     </script>
                 </div>
                 <!-- Main navbar END -->
