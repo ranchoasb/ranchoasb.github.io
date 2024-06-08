@@ -17501,3 +17501,35 @@ th[scope='col'] {
 .about {
 	padding: 5px 0px;
 }
+.button1 {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+    color: #0f6fec;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+}
+
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #c4e1fd}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .button1 {
+  background-color: #5ca6f0;
+}
