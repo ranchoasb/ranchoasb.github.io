@@ -94,8 +94,6 @@
                             if (info.hd=="iusd.org"){
                                 domainIUSD=true;
                             }
-                            let cred = {id: info.email, password: info.};
-                            google.accounts.id.storeCredential(cred);
                             const elem = document.getElementById("g_id_onload");
                             elem.outerHTML = '<div class = "nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0" style="margin-left:10px;font-weight:600" id="g_id_onload" onclick="signOut()">Logout</div>';
                         }
