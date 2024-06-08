@@ -95,13 +95,50 @@
                                 domainIUSD=true;
                             }
                             const elem = document.getElementById("g_id_onload");
-                            elem.outerHTML = '<div class = "nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0" style="margin-left:10px;font-weight:600" id="g_id_onload" onclick="signOut()"><img src='+info.picture+'>'+encodeURIComponent(info.given_name)+'</div>';
+                            elem.outerHTML = '<div class="dropdown"><button class="button1"><img src="'+info.picture+'"></button><div class="dropdown-content"><a href="javascript:signOut()">Sign out</a></div></div>';
                         }
                         function signOut(){
                             google.accounts.id.disableAutoSelect();
                             domainIUSD=false;
                         }
                     </script>
+                    <style>
+                        .button1 {
+                        background-color: #5CA6F0;
+                        color: white;
+                        padding: 16px;
+                          font-size: 16px;
+                          border: none;
+                          cursor: pointer;
+                        }
+                        .dropdown {
+                          position: relative;
+                          display: inline-block;
+                        }
+                        
+                        .dropdown-content {
+                          display: none;
+                          position: absolute;
+                          background-color: white;
+                        }
+                        
+                        .dropdown-content a {
+                          color: black;
+                          text-decoration: none;
+                          display: block;
+                        }
+                        
+                        .dropdown-content a:hover {background-color: #c4e1fd}
+                        
+                        .dropdown:hover .dropdown-content {
+                          display: block;
+                        }
+                        
+                        .dropdown:hover .button1 {
+                          background-color: #5ca6f0;
+                        }
+                    </style>
+    
                     <div
                         class="g_id_signin"
                         style="margin-left:10px;font-weight:600"
