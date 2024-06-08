@@ -85,22 +85,22 @@
                           }
                         function handleCredentialResponse(response){
                             var info = decodeJwtResponse(response.credential);
-                            document.cookie = "login=true";
-                            document.cookie = "iss="+info.iss+";Domain=ranchoasb.org";
-                            document.cookie = "nbf="+encodeURIComponent(info.nbf)+";Domain=ranchoasb.org";
-                            document.cookie = "aud="+encodeURIComponent(info.aud)+";Domain=ranchoasb.org";
-                            document.cookie = "sub="+encodeURIComponent(info.sub)+";Domain=ranchoasb.org";
-                            document.cookie = "hd="+encodeURIComponent(info.hd)+";Domain=ranchoasb.org";
-                            document.cookie = "email="+info.email+";Domain=ranchoasb.org";
-                            document.cookie = "email_verified="+encodeURIComponent(info.email_verified)+";Domain=ranchoasb.org";
-                            document.cookie = "azp="+encodeURIComponent(info.azp)+";Domain=ranchoasb.org";
-                            document.cookie = "name="+encodeURIComponent(info.name)+";Domain=ranchoasb.org";
-                            document.cookie = "picture="+info.picture+";Domain=ranchoasb.org";
-                            document.cookie = "given_name="+encodeURIComponent(info.given_name)+";Domain=ranchoasb.org";
-                            document.cookie = "family_name="+encodeURIComponent(info.family_name)+";Domain=ranchoasb.org";
-                            document.cookie = "iat="+encodeURIComponent(info.iat)+";Domain=ranchoasb.org";
-                            document.cookie = "exp="+encodeURIComponent(info.exp)+";Domain=ranchoasb.org";
-                            document.cookie = "jti="+encodeURIComponent(info.jti)+";Domain=ranchoasb.org";
+                            localStorage.setItem("login", JSON.stringify(true));
+                            localStorage.setItem("iss", info.iss);
+                            localStorage.setItem("nbf", JSON.stringify(info.nbf));
+                            localStorage.setItem("aud", encodeURIComponent(info.aud));
+                            localStorage.setItem("sub", encodeURIComponent(info.sub));
+                            localStorage.setItem("hd", encodeURIComponent(info.hd));
+                            localStorage.setItem("email", info.email);
+                            localStorage.setItem("email_verified", JSON.stringify(info.email_verified));
+                            localStorage.setItem("azp", encodeURIComponent(info.azp));
+                            localStorage.setItem("name", encodeURIComponent(info.name));
+                            localStorage.setItem("picture", info.picture);
+                            localStorage.setItem("given_name", encodeURIComponent(info.given_name));
+                            localStorage.setItem("family_name", encodeURIComponent(info.family_name));
+                            localStorage.setItem("iat", JSON.stringify(info.iat));
+                            localStorage.setItem("exp", JSON.stringify(info.exp));
+                            localStorage.setItem("jti", encodeURIComponent(info.jti));
                             console.log("ID: " + info.sub);
                             console.log('Full Name: ' + info.name);
                             console.log('Given Name: ' + info.given_name);
