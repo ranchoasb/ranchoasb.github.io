@@ -17,10 +17,15 @@
           <button class="navbar-toggler ms-auto icon-md btn btn-light p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-animation"><span></span><span></span><span></span></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse"><div id="navbarhtml"></div></div>
+          <div class="collapse navbar-collapse" id="navbarCollapse"><div id="navbarhtml"><div id="login_button"></div></div></div>
         </div>
       </nav>
     </header>
+    <script>
+      const elem=document.getElementById("g_id_signin");
+      const elem1=document.getElementById("login_button");
+      elem1.outerHTML=elem.outerHTML;
+    </script>
     <main>
       <div class="container">
         <h1 class="display-4" style="color:#1c1641">About Rancho ASB</h1>
