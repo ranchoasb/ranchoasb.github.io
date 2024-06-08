@@ -1,20 +1,24 @@
-var login = localStorage.getItem("login");
+window.login = localStorage.getItem("login");
 if (login) {
-  var iss = localStorage.getItem("login");
-  var nbf = localStorage.getItem("login");
-  var sub = localStorage.getItem("login");
-  var hd = localStorage.getItem("login");
-  var email = localStorage.getItem("login");
-  var email_verified = localStorage.getItem("login");
-  var azp = localStorage.getItem("login");
-  var name = localStorage.getItem("login");
-  var picture = localStorage.getItem("login");
-  var given_name = localStorage.getItem("login");
-  var family_name = localStorage.getItem("login");
-  var iat = localStorage.getItem("login");
-  var exp = localStorage.getItem("login");
-  var jti = localStorage.getItem("login");
-  var aud = localStorage.getItem("login");
+  window.iss = localStorage.getItem("login");
+  window.nbf = localStorage.getItem("login");
+  window.sub = localStorage.getItem("login");
+  window.hd = localStorage.getItem("login");
+  window.email = localStorage.getItem("login");
+  window.email_verified = localStorage.getItem("login");
+  window.azp = localStorage.getItem("login");
+  window.name = localStorage.getItem("login");
+  window.picture = localStorage.getItem("login");
+  window.given_name = localStorage.getItem("login");
+  window.family_name = localStorage.getItem("login");
+  window.iat = localStorage.getItem("login");
+  window.exp = localStorage.getItem("login");
+  window.jti = localStorage.getItem("login");
+  window.aud = localStorage.getItem("login");
+  window.nbf = JSON.parse(window.nbf);
+  window.email_verified = JSON.parse(window.email_verified);
+  window.iat = JSON.parse(window.iat);
+  window.exp = JSON.parse(window.exp);
 }
 else {
   var iss = null;
