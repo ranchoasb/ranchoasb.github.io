@@ -95,12 +95,14 @@
                                 domainIUSD=true;
                             }
                             const elem = document.getElementById("g_id_onload");
-                            elem.outerHTML = '<div class="dropdown"><button class="button1" style="margin-left:10px;font-weight:600">'+encodeURIComponent(info.name)+'</button><div class="dropdown-content"><button onclick="signOut">Sign out</button></div></div>';
+                            elem.outerHTML = '<div class="dropdown" id="g_id_onload"><button class="button1" style="margin-left:10px;font-weight:600">'+encodeURIComponent(info.name)+'</button><div class="dropdown-content"><button onclick="signOut">Sign out</button></div></div>';
                         }
                         function signOut(){
                             google.accounts.id.disableAutoSelect();
                             domainIUSD=false;
                             window.location.href="https://ranchoasb.org";
+                            const elem = document.getElementById("g_id_onload");
+                            elem.outerHTML = '<div class="g_id_signin" style="margin-left:10px;font-weight:600" id='g_id_onload' data-client_id='786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com' data-login_uri="https://ranchoasb.org" data-callback="handleCredentialResponse" data-native_callback="handleCredentialResponse" data-ux_mode="popup" data-auto_prompt="true" data-auto_select="true" data-text="signin" data-shape="pill"></div>'
                         }
                     </script>
                     <style>
