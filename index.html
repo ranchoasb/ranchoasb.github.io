@@ -105,6 +105,40 @@
                             elem.outerHTML = '<div class="g_id_signin" style="margin-left:10px;font-weight:600" id="g_id_onload" data-client_id="786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com" data-login_uri="https://ranchoasb.org" data-callback="handleCredentialResponse" data-native_callback="handleCredentialResponse" data-ux_mode="popup" data-auto_prompt="false" data-auto_select="false" data-text="signin" data-shape="pill"></div>'
                         }
                     </script>
+                    <style>
+                        .button1 {
+                          border: none;
+                          cursor: pointer;
+                          background-color: transparent;
+                            color: #0f6fec;
+                        }
+                        .dropdown {
+                          position: relative;
+                          display: inline-block;
+                        }
+                        
+                        .dropdown-content {
+                          display: none;
+                          position: absolute;
+                          background-color: white;
+                        }
+                        
+                        .dropdown-content a {
+                          color: black;
+                          text-decoration: none;
+                          display: block;
+                        }
+                        
+                        .dropdown-content a:hover {background-color: #c4e1fd}
+                        
+                        .dropdown:hover .dropdown-content {
+                          display: block;
+                        }
+                        
+                        .dropdown:hover .button1 {
+                          background-color: #5ca6f0;
+                        }
+                    </style>
                     <div
                         class="g_id_signin"
                         style="margin-left:10px;font-weight:600"
