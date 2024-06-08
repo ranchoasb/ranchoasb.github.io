@@ -84,6 +84,21 @@
                           }
                         function handleCredentialResponse(response){
                             var info = decodeJwtResponse(response.credential);
+                            document.cookie = "iss="+info.iss+";Domain=ranchoasb.org";
+                            document.cookie = "nbf="+encodeURIComponent(info.nbf)+";Domain=ranchoasb.org";
+                            document.cookie = "aud="+encodeURIComponent(info.aud)+";Domain=ranchoasb.org";
+                            document.cookie = "sub="+encodeURIComponent(info.sub)+";Domain=ranchoasb.org";
+                            document.cookie = "hd="+encodeURIComponent(info.hd)+";Domain=ranchoasb.org";
+                            document.cookie = "email="+info.email+";Domain=ranchoasb.org";
+                            document.cookie = "email_verified="+encodeURIComponent(info.email_verified)+";Domain=ranchoasb.org";
+                            document.cookie = "azp="+encodeURIComponent(info.azp)+";Domain=ranchoasb.org";
+                            document.cookie = "name="+encodeURIComponent(info.name)+";Domain=ranchoasb.org";
+                            document.cookie = "picture="+info.picture+";Domain=ranchoasb.org";
+                            document.cookie = "given_name="+encodeURIComponent(info.given_name)+";Domain=ranchoasb.org";
+                            document.cookie = "family_name="+encodeURIComponent(info.family_name)+";Domain=ranchoasb.org";
+                            document.cookie = "iat="+encodeURIComponent(info.iat)+";Domain=ranchoasb.org";
+                            document.cookie = "exp="+encodeURIComponent(info.exp)+";Domain=ranchoasb.org";
+                            document.cookie = "jti="+encodeURIComponent(info.jti)+";Domain=ranchoasb.org";
                             console.log("ID: " + info.sub);
                             console.log('Full Name: ' + info.name);
                             console.log('Given Name: ' + info.given_name);
