@@ -25,6 +25,7 @@
     <script type="module">
         var domanIUSD=false;
         import * as jose from 'jose';
+        document.cookie = "login=false";
     </script>
     <!-- ======================= Header START -->
     <header class="navbar-light fixed-top header-static bg-mode">
@@ -84,6 +85,7 @@
                           }
                         function handleCredentialResponse(response){
                             var info = decodeJwtResponse(response.credential);
+                            document.cookie = "login=true";
                             document.cookie = "iss="+info.iss+";Domain=ranchoasb.org";
                             document.cookie = "nbf="+encodeURIComponent(info.nbf)+";Domain=ranchoasb.org";
                             document.cookie = "aud="+encodeURIComponent(info.aud)+";Domain=ranchoasb.org";
