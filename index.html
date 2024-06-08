@@ -95,7 +95,7 @@
                                 domainIUSD=true;
                             }
                             const elem = document.getElementById("g_id_onload");
-                            elem.outerHTML = '<div class = "nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0" style="margin-left:10px;font-weight:600" id="g_id_onload" onclick="signOut()">Logout'+info.given_name+'</div>';
+                            elem.outerHTML = '<div class = "nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0" style="margin-left:10px;font-weight:600" id="g_id_onload" onclick="signOut()">Logout'+encodeURIComponent(info.given_name)+'</div>';
                         }
                         function signOut(){
                             google.accounts.id.disableAutoSelect();
