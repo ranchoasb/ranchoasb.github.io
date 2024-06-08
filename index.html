@@ -95,7 +95,7 @@
                                 domainIUSD=true;
                             }
                             const elem = document.getElementById("g_id_onload");
-                            elem.outerHTML = '<div class="dropdown"><button class="button1" style="margin-left:10px;font-weight:600">'+encodeURIComponent(info.given_name)+'></button><div class="dropdown-content"><button onclick="signOut">Sign out</button></div></div>';
+                            elem.outerHTML = '<div class="dropdown"><button class="button1" style="margin-left:10px;font-weight:600">'+encodeURIComponent(info.name)+'></button><div class="dropdown-content"><button onclick="signOut">Sign out</button></div></div>';
                         }
                         function signOut(){
                             google.accounts.id.disableAutoSelect();
