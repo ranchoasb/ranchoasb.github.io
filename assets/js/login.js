@@ -1,4 +1,5 @@
 window.login = localStorage.getItem("login");
+window.login = JSON.parse(window.login);
 if (login) {
   window.iss = localStorage.getItem("login");
   window.nbf = localStorage.getItem("login");
