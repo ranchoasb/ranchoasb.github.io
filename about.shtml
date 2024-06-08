@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="assets/images/favicon.png">
     <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css"><link rel="stylesheet" type="text/css" href="assets/css/style.css">
   </head>
-<!--#include virtual="/assets/common.html" -->
+<!--#include virtual="/common.html" -->
   <body>
     <main>
       <div class="container">
