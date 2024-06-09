@@ -1,3 +1,4 @@
+console.log("login.js first line ran");
 window.login = localStorage.getItem("login");
 window.login = JSON.parse(window.login);
 if (login) {
