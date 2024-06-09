@@ -17501,11 +17501,11 @@ th[scope='col'] {
 .about {
 	padding: 5px 0px;
 }
-.singoutbutton {
+.signoutbutton {
   border: none;
   cursor: pointer;
   background-color: transparent;
-    color: #0f6fec;
+  color: #0f6fec;
 }
 .signoutdropdown {
   position: relative;
