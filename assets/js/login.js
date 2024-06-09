@@ -20,6 +20,8 @@ if (login) {
   window.email_verified = JSON.parse(window.email_verified);
   window.iat = JSON.parse(window.iat);
   window.exp = JSON.parse(window.exp);
+  const elem = document.getElementbyId("loginbutton");
+  elem.outerHTML='<div class="signoutdropdown" id="g_id_onload"><button class="signoutbutton" style="margin-left:10px;font-weight:600">'+encodeURIComponent(info.name)+'</button><div class="signoutdropdown-content"><button onclick="signOut()">Sign out</button></div></div>';
 }
 else {
   var iss = null;
@@ -35,4 +37,6 @@ else {
   var iat = null;
   var jti = null;
   var aud = null;
+  const elem = document.getElementbyId("loginbutton");
+  elem.outerHTML='<div class="g_id_signin" style="margin-left:10px;font-weight:600" id="g_id_onload" data-client_id="786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com" data-login_uri="https://ranchoasb.org" data-callback="handleCredentialResponse" data-native_callback="handleCredentialResponse" data-ux_mode="popup" data-auto_prompt="false" data-auto_select="false" data-text="signin" data-shape="pill"></div>';
 }
