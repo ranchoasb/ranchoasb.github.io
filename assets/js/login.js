@@ -21,7 +21,7 @@ if (login) {
   window.iat = JSON.parse(window.iat);
   window.exp = JSON.parse(window.exp);
   const elem = document.getElementbyId("loginbutton");
-  elem.outerHTML='<div class="signoutdropdown" id="g_id_onload"><button class="signoutbutton" style="margin-left:10px;font-weight:600">'+encodeURIComponent(info.name)+'</button><div class="signoutdropdown-content"><button onclick="signOut()">Sign out</button></div></div>';
+  elem.outerHTML='<div class="signoutdropdown" id="g_id_onload"><button class="signoutbutton" style="margin-left:10px;font-weight:600">'+encodeURIComponent(window.name)+'</button><div class="signoutdropdown-content"><button onclick="signOut()">Sign out</button></div></div>';
 }
 else {
   var iss = null;
