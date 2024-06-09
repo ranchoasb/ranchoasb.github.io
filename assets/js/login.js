@@ -1,4 +1,3 @@
-console.log("login.js first line ran");
 window.login = localStorage.getItem("login");
 window.login = JSON.parse(window.login);
 if (login) {
@@ -23,7 +22,6 @@ if (login) {
   window.exp = JSON.parse(window.exp);
   const elem = document.getElementById("loginbutton");
   elem.outerHTML='<div class="signoutdropdown" id="g_id_onload"><button class="signoutbutton" style="margin-left:10px;font-weight:600">'+encodeURIComponent(window.name)+'</button><div class="signoutdropdown-content"><button onclick="signOut()">Sign out</button></div></div>';
-  console.log("login.js ran, and you are logged in");
 }
 else {
   var iss = null;
@@ -41,7 +39,6 @@ else {
   var aud = null;
   const elem = document.getElementById("loginbutton");
   elem.outerHTML='<div class="g_id_signin" style="margin-left:10px;font-weight:600" id="g_id_onload" data-client_id="786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com" data-login_uri="https://ranchoasb.org" data-callback="handleCredentialResponse" data-native_callback="handleCredentialResponse" data-ux_mode="popup" data-auto_prompt="false" data-auto_select="false" data-text="signin" data-shape="pill"></div>';
-  console.log("login.js ran, but you are logged out");
 }
 function decodeJwtResponse(token) {
     var base64Url = token.split(".")[1];
