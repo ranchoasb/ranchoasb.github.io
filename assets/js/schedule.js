@@ -13,7 +13,7 @@ fetch("https://script.google.com/macros/s/AKfycbw8Tx6DcK9vmFS6SCGO7VFrUG2pULVkcX
                   console.log("haha!");
               info.push([rows.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[2], enddate[3], rows.starttime, rows.endtime, rows.periodlength, rows.school, rows.additional]);
       }
-});
+}).then(a => {
 console.log("1: "+info.length);
 const dayNames = ["a Sunday", "a Monday", "a Tuesday", "a Wednesday", "a Thursday", "a Friday", "a Saturday"];
 const monthNames = ["Month numbers start from 1, not 0", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -91,3 +91,4 @@ datepicker(date, {
         },
       });
 get_schedule_for_day(new Date());
+});
