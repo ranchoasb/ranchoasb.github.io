@@ -43,7 +43,7 @@ function get_schedule_for_day(d){
       console.log("hi"+info.length);
     for (let z=0; z<info.length; z++){
       console.log("boo!");
-      console.log(info[z][0]);
+      console.log(info[z]);
         if (info[z][0]==type){
           dayinfo[4]==info[z][7];
           dayinfo[5]==info[z][8];
