@@ -10,6 +10,7 @@ fetch("https://script.google.com/macros/s/AKfycbw8Tx6DcK9vmFS6SCGO7VFrUG2pULVkcX
               const startdate = currentdate.split("/");
               currentdate = startandend[1];
               const enddate = currentdate.split("/");
+                  console.log("haha!");
               info.push([rows.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[2], enddate[3], rows.starttime, rows.endtime, rows.periodlength, rows.school, rows.additional]);
       }
 });
