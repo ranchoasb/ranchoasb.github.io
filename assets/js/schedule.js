@@ -23,13 +23,10 @@ datepicker(date, {
 const info = [];
 fetch("https://script.google.com/macros/s/AKfycbw8Tx6DcK9vmFS6SCGO7VFrUG2pULVkcXbWfrFQdZAQJMoD4C0dNQSK1K3PU_OLO6CU/exec?query=schedule").then(e => e.json()).then(response => {
       let data = response;
-        console.log(data);
       let rows = data.slice(0, data.length);
-        console.log(rows);
       for (let index in rows) {
               let row = rows[index];
               const input = row.date;
-              console.log(input);
               const startandend = input.split("-");
               var currentdate = startandend[0];
               const startdate = currentdate.split("/");
@@ -82,6 +79,7 @@ function get_schedule_for_day(d){
       result+="School begins at "+dayinfo[4]+" and ends at "+dayinfo[5]+". Periods are "+dayinfo[6]+" minutes long. "+dayinfo[8];
     }
     document.getElementById("schedule").textContent = result;
+        console.log(dayinfo);
     return 0;
   }
 }
