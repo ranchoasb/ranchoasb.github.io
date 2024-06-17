@@ -38,7 +38,8 @@ fetch("https://script.google.com/macros/s/AKfycbzQD0q5-QB-VX809oPY-7pUqMStIb0iuR
                 const enddate = currentdate.split("/");
               }
               else {
-                const enddate = ["0", "0", "0000"];
+                currentdate = startandend[0];
+                const enddate = currentdate.split("/");
               }
               info.push([rows.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[2], enddate[3], rows.starttime, rows.endtime, rows.periodlength, rows.school, rows.additional]);
       }
@@ -67,7 +68,7 @@ function get_schedule_for_day(d){
     let year = d.getFullYear();
     let dayName = dayNames[d.getDay()];
     let type = dayType(month, day, dayName);
-    let result = "Today is "+month+"/"+day+"/"+year+"/"+", "+type+". ";
+    let result = "Today is "+month+"/"+day+"/"+year+", "+type+". ";
     const dayinfo = [type, month, day, year, "", "", "", "", ""];
     for (let i=0; i<info.length; i++){
       for (j of info[i]){
