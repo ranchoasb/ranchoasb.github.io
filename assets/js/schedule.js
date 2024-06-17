@@ -34,13 +34,7 @@ fetch("https://script.google.com/macros/s/AKfycbzQD0q5-QB-VX809oPY-7pUqMStIb0iuR
               var currentdate = startandend[0];
               const startdate = currentdate.split("/");
               currentdate = startandend[1];
-              if (currentdate != null){
-                const enddate = currentdate.split("/");
-              }
-              else {
-                currentdate = startandend[0];
-                const enddate = currentdate.split("/");
-              }
+              const enddate = currentdate.split("/");
               info.push([rows.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[2], enddate[3], rows.starttime, rows.endtime, rows.periodlength, rows.school, rows.additional]);
       }
 });
