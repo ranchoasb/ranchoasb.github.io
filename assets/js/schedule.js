@@ -1,25 +1,3 @@
-datepicker(date, {
-        formatter: (i, d, _) => {
-          let t = new Date();
-          t.setHours(0);
-          t.setMinutes(0);
-          t.setSeconds(0);
-          t.setMilliseconds(0);
-          i.value = +t === +d ? "Today" : +t === +d - 24 * 60 * 60 * 1000 ? "Tomorrow" : d.toLocaleDateString();
-        },
-        dateSelected: new Date(),
-        onHide: function () {
-          try {
-            get_schedule_for_day(new Date(date.value));
-          } catch {
-            if (date.value == "Today") {
-              get_schedule_for_day(new Date());
-            } else if (date.value == "Tomorrow") {
-              get_schedule_for_day(new Date(new Date().getTime() + 86400000));
-            }
-          }
-        },
-      });
 const info = [];
 fetch("https://script.google.com/macros/s/AKfycbw8Tx6DcK9vmFS6SCGO7VFrUG2pULVkcXbWfrFQdZAQJMoD4C0dNQSK1K3PU_OLO6CU/exec?query=schedule").then(e => e.json()).then(response => {
       let data = response;
@@ -83,5 +61,26 @@ function get_schedule_for_day(d){
     return 0;
  // }
 }
-
+datepicker(date, {
+        formatter: (i, d, _) => {
+          let t = new Date();
+          t.setHours(0);
+          t.setMinutes(0);
+          t.setSeconds(0);
+          t.setMilliseconds(0);
+          i.value = +t === +d ? "Today" : +t === +d - 24 * 60 * 60 * 1000 ? "Tomorrow" : d.toLocaleDateString();
+        },
+        dateSelected: new Date(),
+        onHide: function () {
+          try {
+            get_schedule_for_day(new Date(date.value));
+          } catch {
+            if (date.value == "Today") {
+              get_schedule_for_day(new Date());
+            } else if (date.value == "Tomorrow") {
+              get_schedule_for_day(new Date(new Date().getTime() + 86400000));
+            }
+          }
+        },
+      });
 get_schedule_for_day(new Date());
