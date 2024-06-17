@@ -34,7 +34,7 @@ fetch("https://script.google.com/macros/s/AKfycbzQD0q5-QB-VX809oPY-7pUqMStIb0iuR
       const enddate = currentdate.split("/");
       info.push([rows.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[2], enddate[3], rows.starttime, rows.endtime, rows.periodlength, rows.school, rows.additional]);
       }
-}));
+});
 const dayNames = ["a Sunday", "a Monday", "a Tuesday", "a Wednesday", "a Thursday", "a Friday", "a Saturday"];
 const monthNames = ["Month numbers start from 1, not 0", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 function dayType(month, day, dayName){
