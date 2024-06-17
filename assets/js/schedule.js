@@ -43,17 +43,15 @@ function get_schedule_for_day(d){
       console.log("hi"+info.length);
     for (let z=0; z<info.length; z++){
       console.log("boo!");
-      for (j of info[z]){
-      console.log(j[0]);
-        if (j[0]==type){
-          dayinfo[4]==j[7];
-          dayinfo[5]==j[8];
-          dayinfo[6]==j[9];
-          dayinfo[7]==j[10];
-          dayinfo[8]==j[11];
+      console.log(info[z][0]);
+        if (info[z][0]==type){
+          dayinfo[4]==info[z][7];
+          dayinfo[5]==info[z][8];
+          dayinfo[6]==info[z][9];
+          dayinfo[7]==info[z][10];
+          dayinfo[8]==info[z][11];
             console.log("success!");
         }
-      }
     }
     if (dayinfo[7]=="0"){
       result+="There is no school."
