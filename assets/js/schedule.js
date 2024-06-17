@@ -28,7 +28,7 @@ fetch("https://script.google.com/macros/s/AKfycbzQD0q5-QB-VX809oPY-7pUqMStIb0iuR
         console.log(rows);
       for (let index in rows) {
               let row = rows[index];
-              const input = rows.date;
+              const input = row.date;
               console.log(input);
               const startandend = input.split("-");
               var currentdate = startandend[0];
