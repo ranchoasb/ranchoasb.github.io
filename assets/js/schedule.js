@@ -21,7 +21,7 @@ datepicker(date, {
         },
       });
 const info = [];
-fetch("https://script.google.com/macros/s/AKfycbzQD0q5-QB-VX809oPY-7pUqMStIb0iuRwwbos9Cht4zig-Kg1vlny0eT7QDSJwXjH5/exec?query=schedule").then(e => e.json()).then(response => {
+fetch("https://script.google.com/macros/s/AKfycbw8Tx6DcK9vmFS6SCGO7VFrUG2pULVkcXbWfrFQdZAQJMoD4C0dNQSK1K3PU_OLO6CU/exec?query=schedule").then(e => e.json()).then(response => {
       let data = response;
         console.log(data);
       let rows = data.slice(0, data.length);
