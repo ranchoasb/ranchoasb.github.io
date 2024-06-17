@@ -28,9 +28,9 @@ fetch("https://script.google.com/macros/s/AKfycbzQD0q5-QB-VX809oPY-7pUqMStIb0iuR
       let row = rows[index];
       const input = rows.date;
       const startandend = input.split("-");
-      var currentdate = input[0];
+      var currentdate = startandend[0];
       const startdate = currentdate.split("/");
-      currentdate = input[1];
+      currentdate = startandend[1];
       const enddate = currentdate.split("/");
       info.push([rows.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[2], enddate[3], rows.starttime, rows.endtime, rows.periodlength, rows.school, rows.additional]);
       }
