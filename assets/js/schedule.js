@@ -13,6 +13,7 @@ fetch("https://script.google.com/macros/s/AKfycbw8Tx6DcK9vmFS6SCGO7VFrUG2pULVkcX
               info.push([rows.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[2], enddate[3], rows.starttime, rows.endtime, rows.periodlength, rows.school, rows.additional]);
       }
 });
+console.log("1: "+info.length);
 const dayNames = ["a Sunday", "a Monday", "a Tuesday", "a Wednesday", "a Thursday", "a Friday", "a Saturday"];
 const monthNames = ["Month numbers start from 1, not 0", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 function dayType(month, day, dayName){
@@ -25,6 +26,7 @@ function dayType(month, day, dayName){
   }
   return dayName;
 }
+console.log("2: "+info.length);
 // gets schedule for any day
 function get_schedule_for_day(d){
  /* if (d < 1724167200000) {
