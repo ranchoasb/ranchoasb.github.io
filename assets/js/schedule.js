@@ -11,7 +11,7 @@ fetch("https://script.google.com/macros/s/AKfycbw8Tx6DcK9vmFS6SCGO7VFrUG2pULVkcX
               currentdate = startandend[1];
               const enddate = currentdate.split("/");
                   console.log("haha!");
-              info.push([rows.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[1], enddate[2], rows.starttime, rows.endtime, rows.periodlength, rows.school, rows.additional]);
+              info.push([row.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[1], enddate[2], row.starttime, row.endtime, row.periodlength, row.school, row.additional]);
       }
 }).then(a => {
 console.log("1: "+info.length);
