@@ -23,16 +23,19 @@ datepicker(date, {
 const info = [];
 fetch("https://script.google.com/macros/s/AKfycbzQD0q5-QB-VX809oPY-7pUqMStIb0iuRwwbos9Cht4zig-Kg1vlny0eT7QDSJwXjH5/exec?query=schedule").then(e => e.json()).then(response => {
       let data = response;
+        console.log(data);
       let rows = data.slice(0, data.length);
+        console.log(rows);
       for (let index in rows) {
-      let row = rows[index];
-      const input = rows.date;
-      const startandend = input.split("-");
-      var currentdate = startandend[0];
-      const startdate = currentdate.split("/");
-      currentdate = startandend[1];
-      const enddate = currentdate.split("/");
-      info.push([rows.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[2], enddate[3], rows.starttime, rows.endtime, rows.periodlength, rows.school, rows.additional]);
+              let row = rows[index];
+              const input = rows.date;
+              console.log(input);
+              const startandend = input.split("-");
+              var currentdate = startandend[0];
+              const startdate = currentdate.split("/");
+              currentdate = startandend[1];
+              const enddate = currentdate.split("/");
+              info.push([rows.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[2], enddate[3], rows.starttime, rows.endtime, rows.periodlength, rows.school, rows.additional]);
       }
 });
 const dayNames = ["a Sunday", "a Monday", "a Tuesday", "a Wednesday", "a Thursday", "a Friday", "a Saturday"];
