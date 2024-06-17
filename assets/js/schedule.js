@@ -39,10 +39,10 @@ function get_schedule_for_day(d){
     let type = dayType(month, day, dayName);
     let result = "Today is "+month+"/"+day+"/"+year+", "+type+". ";
     const dayinfo = [type, month, day, year, "", "", "", "", ""];
-      console.log("hi");
-    for (let i=0; i<info.length; i++){
+      console.log("hi"+info.length);
+    for (let z=0; z<info.length; z++){
       console.log("boo!");
-      for (j of info[i]){
+      for (j of info[z]){
       console.log(j[0]);
         if (j[0]==type){
           dayinfo[4]==j[7];
