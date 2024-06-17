@@ -47,6 +47,7 @@ function get_schedule_for_day(d){
           dayinfo[6]==j[9];
           dayinfo[7]==j[10];
           dayinfo[8]==j[11];
+            console.log("success!");
         }
       }
     }
