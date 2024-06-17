@@ -4,6 +4,7 @@ fetch("https://script.google.com/macros/s/AKfycbw8Tx6DcK9vmFS6SCGO7VFrUG2pULVkcX
       let rows = data.slice(0, data.length);
       for (let index in rows) {
               let row = rows[index];
+                  console.log(rows);
               const input = row.date;
               const startandend = input.split("-");
               var currentdate = startandend[0];
