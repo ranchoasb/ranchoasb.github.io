@@ -22,7 +22,7 @@ datepicker(date, {
       });
 const info = [];
 fetch("https://script.google.com/macros/s/AKfycbzQD0q5-QB-VX809oPY-7pUqMStIb0iuRwwbos9Cht4zig-Kg1vlny0eT7QDSJwXjH5/exec?query=schedule").then(e => e.json()).then(response => {
-      data = response;
+      let data = response;
       let rows = data.slice(0, data.length);
       for (let index in rows) {
       let row = rows[index];
