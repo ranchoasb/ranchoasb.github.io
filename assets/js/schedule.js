@@ -41,6 +41,7 @@ function get_schedule_for_day(d){
     const dayinfo = [type, month, day, year, "", "", "", "", ""];
     for (let i=0; i<info.length; i++){
       for (j of info[i]){
+      console.log(j[0]);
         if (j[0]==type){
           dayinfo[4]==j[7];
           dayinfo[5]==j[8];
