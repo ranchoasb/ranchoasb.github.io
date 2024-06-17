@@ -49,11 +49,11 @@ function dayType(month, day, dayName){
 }
 // gets schedule for any day
 function get_schedule_for_day(d){
-  if (d < 1724167200000) {
+ /* if (d < 1724167200000) {
     document.getElementById("schedule").textContent = "The 2024 to 2025 school year has not started yet!";
   } else if (d > 1749207600000) {
     document.getElementById("schedule").textContent = "The 2024 to 2025 school year has concluded.";
-  } else {
+  } else {*/
     let month = d.getMonth()+1;
     let day = d.getDate();
     let year = d.getFullYear();
@@ -81,7 +81,7 @@ function get_schedule_for_day(d){
     document.getElementById("schedule").textContent = result;
         console.log(dayinfo);
     return 0;
-  }
+ // }
 }
 
 get_schedule_for_day(new Date());
