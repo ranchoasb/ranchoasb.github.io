@@ -51,11 +51,11 @@ function get_schedule_for_day(d){
           console.log(info[z][0]);
         if (info[z][0]==type){
               console.log("hello world");
-          dayinfo[4]==info[z][7];
-          dayinfo[5]==info[z][8];
-          dayinfo[6]==info[z][9];
-          dayinfo[7]==info[z][10];
-          dayinfo[8]==info[z][11];
+          dayinfo[4]=info[z][7];
+          dayinfo[5]=info[z][8];
+          dayinfo[6]=info[z][9];
+          dayinfo[7]=info[z][10];
+          dayinfo[8]=info[z][11];
         }
     }
     if (dayinfo[7]=="0"){
