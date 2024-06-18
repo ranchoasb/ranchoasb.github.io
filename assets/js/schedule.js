@@ -63,7 +63,7 @@ function get_schedule_for_day(d){
       result+="There is no school."
     }
     else {
-      result+="School begins at "+dayinfo[4]+" and ends at "+dayinfo[5]+" for regular students and "+dayinfo[6]" for Extended Day students. Periods are "+dayinfo[7]+" minutes long. "+dayinfo[9];
+      result+="School begins at "+dayinfo[4]+" and ends at "+dayinfo[5]+" for regular students and "+dayinfo[6]+" for Extended Day students. Periods are "+dayinfo[7]+" minutes long. "+dayinfo[9];
     }
     document.getElementById("schedule").textContent = result;
         console.log(dayinfo);
