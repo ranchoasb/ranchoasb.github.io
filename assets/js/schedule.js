@@ -24,7 +24,7 @@ const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Frida
 const monthNames = ["Month numbers start from 1, not 0", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 function dayType(month, day, dayName){
   for (let i = 0; i < info.length; i++){
-      if (parseInt(info[i][1])>=month<=parseInt(info[i][4]) && parseInt(info[i][2])>=day<=parseInt(info[i][5])){
+      if (parseInt(info[i][1])<=month && month<=parseInt(info[i][4]) && parseInt(info[i][2])<=day && day<=parseInt(info[i][5])){
         return info[i][0];
       }
     }
