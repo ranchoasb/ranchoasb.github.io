@@ -83,13 +83,13 @@ datepicker(date, {
         onHide: function () {
           let timestamp = (Math.floor((Date.now())/86400000))*86400000;
           console.log("timestamp: "+timestamp);
-          if (date.value == "Today") {
+          if (dateSelected.value == "Today") {
               get_schedule_for_day(new Date(timestamp));
-          } else if (date.value == "Tomorrow") {
+          } else if (dateSelected.value == "Tomorrow") {
               get_schedule_for_day(new Date(timestamp + 86400000));
           }
           else {
-              get_schedule_for_day(date.value);
+              get_schedule_for_day(dateSelected.value);
           }
         },
       });
