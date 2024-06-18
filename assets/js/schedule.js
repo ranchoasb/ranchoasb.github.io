@@ -20,7 +20,7 @@ fetch("https://script.google.com/macros/s/AKfycbyK1_WCt35YAVL8vBqX0kHPt0kM6Tgp7w
             }
       }
 }).then(a => {
-const dayNames = ["a Sunday", "a Monday", "a Tuesday", "a Wednesday", "a Thursday", "a Friday", "a Saturday"];
+const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const monthNames = ["Month numbers start from 1, not 0", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 function dayType(month, day, dayName){
   for (let i = 0; i < info.length; i++){
