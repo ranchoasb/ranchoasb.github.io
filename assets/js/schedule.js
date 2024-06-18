@@ -81,15 +81,14 @@ datepicker(date, {
         },
         dateSelected: new Date(),
         onHide: function () {
-          let timestamp = (Math.floor((Date.now())/86400000))*86400000;
-          console.log("timestamp: "+timestamp);
-          if (dateSelected.value == "Today") {
-              get_schedule_for_day(new Date(timestamp));
-          } else if (dateSelected.value == "Tomorrow") {
-              get_schedule_for_day(new Date(timestamp + 86400000));
-          }
-          else {
-              get_schedule_for_day(new Date(date.value));
+          try {
+            get_schedule_for_day(new Date(date.value));
+          } catch {
+            if (date.value == "Today") {
+              get_schedule_for_day(new Date());
+            } else if (date.value == "Tomorrow") {
+              get_schedule_for_day(new Date(new Date().getTime() + 86400000));
+            }
           }
         },
       });
