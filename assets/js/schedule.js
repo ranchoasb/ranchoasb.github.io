@@ -12,12 +12,12 @@ fetch("https://script.google.com/macros/s/AKfycbyK1_WCt35YAVL8vBqX0kHPt0kM6Tgp7w
               const startdate = currentdate.split("/");
               currentdate = startandend[1];
               const enddate = currentdate.split("/");
+              info.push([row.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[1], enddate[2], row.starttime, row.endtime, row.periodlength, row.school, row.additional]);
             } else {
                   const startdate = input.split("/");
                   const enddate = startdate;
+                  info.push([row.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[1], enddate[2], row.starttime, row.endtime, row.periodlength, row.school, row.additional]);
             }
-              
-              info.push([row.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[1], enddate[2], row.starttime, row.endtime, row.periodlength, row.school, row.additional]);
       }
 }).then(a => {
 const dayNames = ["a Sunday", "a Monday", "a Tuesday", "a Wednesday", "a Thursday", "a Friday", "a Saturday"];
