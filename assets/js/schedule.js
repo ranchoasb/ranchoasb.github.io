@@ -1,5 +1,5 @@
 const info = [];
-fetch("https://script.google.com/macros/s/AKfycbzZ9Vaoa6c1kwvsxkaOXTh6rWOgSucMD07j8h_mHgIcLNO_u2WiWncjwXBy3B6GG_Iy/exec?query=schedule").then(e => e.json()).then(response => {
+fetch("https://script.google.com/macros/s/AKfycbzWhdOHhb97n6nCYSHAuWEBsIuTpZw1326FnKT0imVPLdbNh04cH5yNrCpC7ZW7ANGj/exec?query=schedule").then(e => e.json()).then(response => {
       let data = response;
       let rows = data.slice(0, data.length);
       for (let index in rows) {
@@ -11,11 +11,11 @@ fetch("https://script.google.com/macros/s/AKfycbzZ9Vaoa6c1kwvsxkaOXTh6rWOgSucMD0
               const startdate = currentdate.split("/");
               currentdate = startandend[1];
               const enddate = currentdate.split("/");
-              info.push([row.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[1], enddate[2], row.starttime, row.endtime, row.periodlength, row.school, row.additional]);
+              info.push([row.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[1], enddate[2], row.starttime, row.endtime, row.extendedday, row.periodlength, row.school, row.additional]);
             } else {
                   const startdate = input.split("/");
                   const enddate = startdate;
-                  info.push([row.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[1], enddate[2], row.starttime, row.endtime, row.periodlength, row.school, row.additional]);
+                  info.push([row.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[1], enddate[2], row.starttime, row.endtime, row.extendedday, row.periodlength, row.school, row.additional]);
             }
       }
       console.log(info);
@@ -46,7 +46,7 @@ function get_schedule_for_day(d){
     let type = dayType(month, day, dayName);
       console.log(type);
     let result = "Today is "+type+", "+monthNames[month]+" "+day+", "+year+". ";
-    const dayinfo = [type, month, day, year, "", "", "", "", ""];
+    const dayinfo = [type, month, day, year, "", "", "", "", "", ""];
     for (let z=0; z<info.length; z++){
           console.log(info[z][0]);
         if (info[z][0]==type){
@@ -56,13 +56,14 @@ function get_schedule_for_day(d){
           dayinfo[6]=info[z][9];
           dayinfo[7]=info[z][10];
           dayinfo[8]=info[z][11];
+          dayinfo[9]=info[z][12];
         }
     }
-    if (dayinfo[7]=="0"){
+    if (dayinfo[8]=="0"){
       result+="There is no school."
     }
     else {
-      result+="School begins at "+dayinfo[4]+" and ends at "+dayinfo[5]+". Periods are "+dayinfo[6]+" minutes long. "+dayinfo[8];
+      result+="School begins at "+dayinfo[4]+" and ends at "+dayinfo[5]+" for regular students and "+dayinfo[6]" for Extended Day students. Periods are "+dayinfo[7]+" minutes long. "+dayinfo[9];
     }
     document.getElementById("schedule").textContent = result;
         console.log(dayinfo);
