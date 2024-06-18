@@ -1,22 +1,25 @@
 const info = [];
-fetch("https://script.google.com/macros/s/AKfycbxnwQrVfvmwljlh9vBPRxyAKLWtYHxNhW9IkKeq4TgndOJT9QUXiS0FsHbLEYII0vmL/exec?query=schedule").then(e => e.json()).then(response => {
+fetch("https://script.google.com/macros/s/AKfycbyK1_WCt35YAVL8vBqX0kHPt0kM6Tgp7wi9AYsVh2FuPMFPJ8Coo_ds0OanuNF4732I/exec?query=schedule").then(e => e.json()).then(response => {
       let data = response;
-      console.log(data);
       let rows = data.slice(0, data.length);
       for (let index in rows) {
               let row = rows[index];
                   console.log(rows);
               const input = row.date;
+            if(input.includes("-")){
               const startandend = input.split("-");
               var currentdate = startandend[0];
               const startdate = currentdate.split("/");
               currentdate = startandend[1];
               const enddate = currentdate.split("/");
-                  console.log("haha!");
+            } else {
+                  const startdate = input.split("/");
+                  const enddate = startdate;
+            }
+              
               info.push([row.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[1], enddate[2], row.starttime, row.endtime, row.periodlength, row.school, row.additional]);
       }
 }).then(a => {
-console.log("1: "+info.length);
 const dayNames = ["a Sunday", "a Monday", "a Tuesday", "a Wednesday", "a Thursday", "a Friday", "a Saturday"];
 const monthNames = ["Month numbers start from 1, not 0", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 function dayType(month, day, dayName){
@@ -27,7 +30,6 @@ function dayType(month, day, dayName){
     }
   return dayName;
 }
-console.log("2: "+info.length);
 // gets schedule for any day
 function get_schedule_for_day(d){
  /* if (d < 1724167200000) {
@@ -40,19 +42,15 @@ function get_schedule_for_day(d){
     let year = d.getFullYear();
     let dayName = dayNames[d.getDay()];
     let type = dayType(month, day, dayName);
-    let result = "Today is "+month+"/"+day+"/"+year+", "+type+". ";
+    let result = "Today is "+type+", "+monthNames[month]+" "+day+", "+year+". ";
     const dayinfo = [type, month, day, year, "", "", "", "", ""];
-      console.log("hi"+info.length);
     for (let z=0; z<info.length; z++){
-      console.log("boo!");
-      console.log(info[z]);
         if (info[z][0]==type){
           dayinfo[4]==info[z][7];
           dayinfo[5]==info[z][8];
           dayinfo[6]==info[z][9];
           dayinfo[7]==info[z][10];
           dayinfo[8]==info[z][11];
-            console.log("success!");
         }
     }
     if (dayinfo[7]=="0"){
