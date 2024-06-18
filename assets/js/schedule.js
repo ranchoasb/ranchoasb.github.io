@@ -89,7 +89,7 @@ datepicker(date, {
               get_schedule_for_day(new Date(timestamp + 86400000));
           }
           else {
-              get_schedule_for_day(dateSelected.value);
+              get_schedule_for_day(dateSelected);
           }
         },
       });
