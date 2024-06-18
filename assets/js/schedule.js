@@ -85,9 +85,9 @@ datepicker(date, {
             get_schedule_for_day(new Date(date.value));
           } catch {
             if (date.value == "Today") {
-              get_schedule_for_day(new Date());
+              get_schedule_for_day(new Date(date.value));
             } else if (date.value == "Tomorrow") {
-              get_schedule_for_day(new Date(new Date().getTime() + 86400000));
+              get_schedule_for_day(new Date(new Date(date.value).getTime() + 86400000));
             }
           }
         },
