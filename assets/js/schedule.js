@@ -4,7 +4,6 @@ fetch("https://script.google.com/macros/s/AKfycbzZ9Vaoa6c1kwvsxkaOXTh6rWOgSucMD0
       let rows = data.slice(0, data.length);
       for (let index in rows) {
               let row = rows[index];
-                  console.log(rows);
               const input = row.date;
             if(input.includes("-")){
               const startandend = input.split("-");
@@ -19,6 +18,7 @@ fetch("https://script.google.com/macros/s/AKfycbzZ9Vaoa6c1kwvsxkaOXTh6rWOgSucMD0
                   info.push([row.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[1], enddate[2], row.starttime, row.endtime, row.periodlength, row.school, row.additional]);
             }
       }
+      console.log(info);
 }).then(a => {
 const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const monthNames = ["Month numbers start from 1, not 0", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
