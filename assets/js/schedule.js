@@ -22,10 +22,12 @@ fetch("https://script.google.com/macros/s/AKfycbzWhdOHhb97n6nCYSHAuWEBsIuTpZw132
 }).then(a => {
 const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const monthNames = ["Month numbers start from 1, not 0", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+let special = false;
 function dayType(month, day, dayName){
   for (let i = 0; i < info.length; i++){
       if (parseInt(info[i][1])<=month && month<=parseInt(info[i][4]) && parseInt(info[i][2])<=day && day<=parseInt(info[i][5])){
         return info[i][0];
+        special = true;
       }
     }
   return dayName;
@@ -39,18 +41,13 @@ function get_schedule_for_day(d){
   } else {*/
     let month = d.getMonth()+1;
     let day = d.getDate();
-      console.log(day);
     let year = d.getFullYear();
     let dayName = dayNames[d.getDay()];
-      console.log(dayName);
     let type = dayType(month, day, dayName);
-      console.log(type);
-    let result = "Today is "+type+", "+monthNames[month]+" "+day+", "+year+". ";
+    let result = dayName+", "+monthNames[month]+" "+day+", "+year+", is ";
     const dayinfo = [type, month, day, year, "", "", "", "", "", ""];
     for (let z=0; z<info.length; z++){
-          console.log(info[z][0]);
         if (info[z][0]==type){
-              console.log("hello world");
           dayinfo[4]=info[z][7];
           dayinfo[5]=info[z][8];
           dayinfo[6]=info[z][9];
@@ -58,6 +55,12 @@ function get_schedule_for_day(d){
           dayinfo[8]=info[z][11];
           dayinfo[9]=info[z][12];
         }
+    }
+    if (special){
+      result+=type+". ";
+    }
+    else {
+      result+="a regular "+dayName+". ";
     }
     if (dayinfo[8]=="0"){
       result+="There is no school."
