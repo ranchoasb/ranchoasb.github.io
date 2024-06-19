@@ -80,7 +80,7 @@ datepicker(date, {
           t.setMilliseconds(0);
           i.value = +t === +d ? "Today" : +t === +d - 24 * 60 * 60 * 1000 ? "Tomorrow" : d.toLocaleDateString();
         },
-        dateSelected = new Date(),
+        dateSelected: new Date(),
         onHide: instance => {
           get_schedule_for_day(instance.dateSelected);
         },
