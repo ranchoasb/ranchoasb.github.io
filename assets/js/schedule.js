@@ -70,6 +70,7 @@ function get_schedule_for_day(d){
     return 0;
  // }
 }
+get_schedule_for_day(new Date());
 datepicker(date, {
         formatter: (i, d, _) => {
           let t = new Date();
@@ -79,18 +80,10 @@ datepicker(date, {
           t.setMilliseconds(0);
           i.value = +t === +d ? "Today" : +t === +d - 24 * 60 * 60 * 1000 ? "Tomorrow" : d.toLocaleDateString();
         },
-        dateSelected: new Date(),
-        onHide: function () {
-          try {
-            get_schedule_for_day(new Date(date.value));
-          } catch {
-            if (date.value == "Today") {
-              get_schedule_for_day(new Date());
-            } else if (date.value == "Tomorrow") {
-              get_schedule_for_day(new Date(new Date().getTime() + 86400000));
-            }
-          }
+        dateSelected = new Date(),
+        onHide: instance => {
+          get_schedule_for_day(instance.dateSelected);
         },
       });
-get_schedule_for_day(new Date());
+
 });
