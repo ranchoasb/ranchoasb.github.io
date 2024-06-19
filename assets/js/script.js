@@ -1,6 +1,6 @@
 window.onload = () => {
   
-  copyrightyear.textContent = new Date().getFullYear();
+  //copyrightyear.textContent = new Date().getFullYear();
 
   let data;
   let datalen;
