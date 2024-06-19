@@ -26,8 +26,8 @@ let special = false;
 function dayType(month, day, dayName){
   for (let i = 0; i < info.length; i++){
       if (parseInt(info[i][1])<=month && month<=parseInt(info[i][4]) && parseInt(info[i][2])<=day && day<=parseInt(info[i][5])){
-        return info[i][0];
         special = true;
+        return info[i][0];
       }
     }
   return dayName;
