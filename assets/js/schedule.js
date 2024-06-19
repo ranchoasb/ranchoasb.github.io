@@ -70,6 +70,7 @@ function get_schedule_for_day(d){
     }
     document.getElementById("schedule").textContent = result;
         console.log(dayinfo);
+        console.log(special);
     return 0;
  // }
 }
