@@ -1,3 +1,71 @@
+let titles;
+
+function load() {
+  let nomore = false;
+  let toload = 10;
+  
+  if (dataindex + toload >= datalen) {
+    toload = datalen - dataindex;
+    nomore = true;
+  }
+
+  let rows = data.slice(dataindex, dataindex + toload);
+  for (let index in rows) {
+    let row = rows[index];
+    
+    let title = row.title;
+    let date = row.time;
+    let description = row.description;
+    let category = row.category;
+    let hideHeader = +row.hideHeader;
+    let hideBody = +row.hideBody;
+    let hideFooter = +row.hideFooter;
+    let hideModal = +row.hideModal;
+    let carousel = +row.carousel;
+
+    if (carousel){
+      carouselImgs = description.split(/(?:<br\s*\/?>\s*)+/gi);
+      description = `<div id="carousel${carouselId}" class="carousel carousel-dark slide" data-bs-ride="carousel"><div class="carousel-indicators"><button type="button" data-bs-target="#carousel${carouselId}" data-bs-slide-to="${0}" class="active" aria-current="true" aria-label="Slide ${1}"></button>`;
+      for (let i = 1; i < carouselImgs.length; i++){
+        description += `<button type="button" data-bs-target="#carousel${carouselId}" data-bs-slide-to="${i}" class="active" aria-current="true" aria-label="Slide ${i+1}"></button>`;
+      }
+      description += `</div><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="3000"><img src="${carouselImgs[0]}" class="d-block" alt="..."></div>`;
+      for (let i = 1; i < carouselImgs.length; i++){
+        description += `<div class="carousel-item" data-bs-interval="3000"><img src="${carouselImgs[i]}" class="d-block" alt="..."></div>`;
+      }
+      description += `</div><button class="carousel-control-prev" type="button" data-bs-target="#carousel${carouselId}" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button><button class="carousel-control-next" type="button" data-bs-target="#carousel${carouselId}" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button></div>`;
+      carouselId++;
+    }
+    
+    loadmorebutton.insertAdjacentHTML("beforebegin", `<div class="card-link" ${hideModal?"":`data-bs-toggle="modal" data-bs-target="#rowmodal${index}"`} id="x${title.replace(/['"\s]/g, '-')}"><div class="card">${hideHeader?"":`<div class="card-header"><div class="d-flex align-items-center justify-content-between"><div class="d-flex align-items-center"><div><h6 class="card-title mb-0">${title}</h6><p class="small mb-0">${date}</p></div></div></div></div>`}${hideBody?"":`<div class="card-body"><div class="mb-0">${description}</div></div>`}${hideFooter?"":`<div class="card-footer border-0 d-flex justify-content-between align-items-center"><p class="mb-0">Category: ${category}</p></div>`}</div></div><div class="modal" tabindex="-1" id="rowmodal${index}"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">${title} <small>on ${date}</small></h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p>${description}</p><p><small>Category: ${category}</small></p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>`);
+  }
+
+  dataindex += toload;
+  
+  if (nomore) {
+    loadmorebutton.insertAdjacentHTML("beforebegin", `<div class="card"><div class="alert alert-info mb-0" role="alert">Nothing else to load.</div></div>`);
+    loadmorebutton.remove();
+  }
+
+  for (element of document.querySelectorAll('.carousel')){
+    new bootstrap.Carousel(element).cycle()
+  }
+  
+  // Find the active carousel item
+  let activeItem = document.querySelector('.active.carousel-item');
+  if (!activeItem) {
+      console.warn('No active carousel item found.');
+  }
+  let activeWidth = activeItem.offsetWidth; // Get the width of the active item
+  let desiredHeight = (10 / 16) * activeWidth; // Calculate the desired height
+
+  // Set the height for all carousel items
+  let items = document.querySelectorAll('.carousel-item');
+  items.forEach(function(item) {
+      item.style.height = desiredHeight + 'px';
+  });
+}
+
 window.onload = () => {
   
   //copyrightyear.textContent = new Date().getFullYear();
@@ -8,74 +76,6 @@ window.onload = () => {
   let carouselId = 0;
   
   let fuse;
-
-  let titles;
-  
-  function load() {
-    let nomore = false;
-    let toload = 10;
-    
-    if (dataindex + toload >= datalen) {
-      toload = datalen - dataindex;
-      nomore = true;
-    }
-
-    let rows = data.slice(dataindex, dataindex + toload);
-    for (let index in rows) {
-      let row = rows[index];
-      
-      let title = row.title;
-      let date = row.time;
-      let description = row.description;
-      let category = row.category;
-      let hideHeader = +row.hideHeader;
-      let hideBody = +row.hideBody;
-      let hideFooter = +row.hideFooter;
-      let hideModal = +row.hideModal;
-      let carousel = +row.carousel;
-
-      if (carousel){
-        carouselImgs = description.split(/(?:<br\s*\/?>\s*)+/gi);
-        description = `<div id="carousel${carouselId}" class="carousel carousel-dark slide" data-bs-ride="carousel"><div class="carousel-indicators"><button type="button" data-bs-target="#carousel${carouselId}" data-bs-slide-to="${0}" class="active" aria-current="true" aria-label="Slide ${1}"></button>`;
-        for (let i = 1; i < carouselImgs.length; i++){
-          description += `<button type="button" data-bs-target="#carousel${carouselId}" data-bs-slide-to="${i}" class="active" aria-current="true" aria-label="Slide ${i+1}"></button>`;
-        }
-        description += `</div><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="3000"><img src="${carouselImgs[0]}" class="d-block" alt="..."></div>`;
-        for (let i = 1; i < carouselImgs.length; i++){
-          description += `<div class="carousel-item" data-bs-interval="3000"><img src="${carouselImgs[i]}" class="d-block" alt="..."></div>`;
-        }
-        description += `</div><button class="carousel-control-prev" type="button" data-bs-target="#carousel${carouselId}" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button><button class="carousel-control-next" type="button" data-bs-target="#carousel${carouselId}" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button></div>`;
-        carouselId++;
-      }
-      
-      loadmorebutton.insertAdjacentHTML("beforebegin", `<div class="card-link" ${hideModal?"":`data-bs-toggle="modal" data-bs-target="#rowmodal${index}"`} id="x${title.replace(/['"\s]/g, '-')}"><div class="card">${hideHeader?"":`<div class="card-header"><div class="d-flex align-items-center justify-content-between"><div class="d-flex align-items-center"><div><h6 class="card-title mb-0">${title}</h6><p class="small mb-0">${date}</p></div></div></div></div>`}${hideBody?"":`<div class="card-body"><div class="mb-0">${description}</div></div>`}${hideFooter?"":`<div class="card-footer border-0 d-flex justify-content-between align-items-center"><p class="mb-0">Category: ${category}</p></div>`}</div></div><div class="modal" tabindex="-1" id="rowmodal${index}"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">${title} <small>on ${date}</small></h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p>${description}</p><p><small>Category: ${category}</small></p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>`);
-    }
-
-    dataindex += toload;
-    
-    if (nomore) {
-      loadmorebutton.insertAdjacentHTML("beforebegin", `<div class="card"><div class="alert alert-info mb-0" role="alert">Nothing else to load.</div></div>`);
-      loadmorebutton.remove();
-    }
-
-    for (element of document.querySelectorAll('.carousel')){
-      new bootstrap.Carousel(element).cycle()
-    }
-    
-    // Find the active carousel item
-    let activeItem = document.querySelector('.active.carousel-item');
-    if (!activeItem) {
-        console.warn('No active carousel item found.');
-    }
-    let activeWidth = activeItem.offsetWidth; // Get the width of the active item
-    let desiredHeight = (10 / 16) * activeWidth; // Calculate the desired height
-
-    // Set the height for all carousel items
-    let items = document.querySelectorAll('.carousel-item');
-    items.forEach(function(item) {
-        item.style.height = desiredHeight + 'px';
-    });
-  }
 
   fetch("https://script.google.com/macros/s/AKfycby28T5Ihu9msFqicRgTfSqKR1k6SWeSjWzp_FmIm4iTwjUHwLbo4EISAusLKV1wn9_U/exec?query=announcements").then(e=>e.text()).then(response => {
     try {
@@ -191,19 +191,19 @@ window.onload = () => {
     let datepickerinput = this.nextElementSibling.nextElementSibling;
     datepickerinput.disabled = !datepickerinput.disabled;
   });
+};
 
-  function goToPost(id) {
-    if (titles.includes(id)) {
-      try {
-        window.scrollTo({ top: document.querySelector("#x"+id).offsetTop-document.querySelector("header").offsetHeight-10, behavior: 'smooth' });
-      }
-      catch(err) {
-        load();
-        goToPost(id);
-      }
+function goToPost(id) {
+  if (titles.includes(id)) {
+    try {
+      window.scrollTo({ top: document.querySelector("#x"+id).offsetTop-document.querySelector("header").offsetHeight-10, behavior: 'smooth' });
     }
-    else {
-      console.log("Couldn't find post!");
+    catch(err) {
+      load();
+      goToPost(id);
     }
   }
-};
+  else {
+    console.log("Couldn't find post!");
+  }
+}
