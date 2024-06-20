@@ -97,7 +97,7 @@ window.onload = () => {
     ).join("");});
   fetch("https://script.google.com/macros/s/AKfycby28T5Ihu9msFqicRgTfSqKR1k6SWeSjWzp_FmIm4iTwjUHwLbo4EISAusLKV1wn9_U/exec?query=posts").then(e => e.json()).then(response => {
     data = response;
-    titles = data.map(item => item.title[0].split('-'));
+    titles = data.map(item => item.title.replace(/['"\s]/g, '-'));
     datalen = data.length;
     
     document.querySelectorAll(".disposable").forEach(e => e.remove());
