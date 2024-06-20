@@ -1,3 +1,5 @@
+let titles;
+
 window.onload = () => {
   
   //copyrightyear.textContent = new Date().getFullYear();
@@ -8,8 +10,6 @@ window.onload = () => {
   let carouselId = 0;
   
   let fuse;
-
-  let titles;
 
   function load() {
     let nomore = false;
