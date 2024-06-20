@@ -9,6 +9,8 @@ window.onload = () => {
   
   let fuse;
 
+  let titles;
+
   function load() {
     let nomore = false;
     let toload = 10;
@@ -95,7 +97,7 @@ window.onload = () => {
     ).join("");});
   fetch("https://script.google.com/macros/s/AKfycby28T5Ihu9msFqicRgTfSqKR1k6SWeSjWzp_FmIm4iTwjUHwLbo4EISAusLKV1wn9_U/exec?query=posts").then(e => e.json()).then(response => {
     data = response;
-    var titles = data.map(item => item.title);
+    titles = data.map(item => item.title);
     datalen = data.length;
     
     document.querySelectorAll(".disposable").forEach(e => e.remove());
