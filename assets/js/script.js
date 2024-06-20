@@ -1,5 +1,3 @@
-let titles;
-
 window.onload = () => {
   
   //copyrightyear.textContent = new Date().getFullYear();
@@ -11,6 +9,8 @@ window.onload = () => {
   
   let fuse;
 
+  let titles;
+  
   function load() {
     let nomore = false;
     let toload = 10;
@@ -191,19 +191,19 @@ window.onload = () => {
     let datepickerinput = this.nextElementSibling.nextElementSibling;
     datepickerinput.disabled = !datepickerinput.disabled;
   });
-};
 
-function goToPost(id) {
-  if (titles.includes(id)) {
-    try {
-      window.scrollTo({ top: document.querySelector("#x"+id).offsetTop-document.querySelector("header").offsetHeight-10, behavior: 'smooth' });
+  function goToPost(id) {
+    if (titles.includes(id)) {
+      try {
+        window.scrollTo({ top: document.querySelector("#x"+id).offsetTop-document.querySelector("header").offsetHeight-10, behavior: 'smooth' });
+      }
+      catch(err) {
+        load();
+        goToPost(id);
+      }
     }
-    catch(err) {
-      load();
-      goToPost(id);
+    else {
+      console.log("Couldn't find post!");
     }
   }
-  else {
-    console.log("Couldn't find post!");
-  }
-}
+};
