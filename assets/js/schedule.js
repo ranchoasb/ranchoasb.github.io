@@ -1,5 +1,5 @@
 const info = [];
-fetch("https://script.google.com/macros/s/AKfycbxwUGn5tktJImKvb6GtZ7ylzMkQUbI5o7Jofv6xOi8WnlOhFBgS91zuLfPRXeTIGpGe/exec?query=schedule", {mode: "no-cors"}).then(e => JSON.parse(e)).then(response => {
+fetch("https://script.google.com/macros/s/AKfycbxwUGn5tktJImKvb6GtZ7ylzMkQUbI5o7Jofv6xOi8WnlOhFBgS91zuLfPRXeTIGpGe/exec?query=schedule", {mode: "no-cors"}).then(e => e.json()).then(response => {
       let data = response;
       let rows = data.slice(0, data.length);
       for (let index in rows) {
