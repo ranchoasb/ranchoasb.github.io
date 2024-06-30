@@ -32,5 +32,5 @@ fetch("https://script.google.com/macros/s/AKfycbx5QXiwFiOzIKM_8KrFYAERtcrkYjJ3wu
    result+="<ul><li><b>"+x[0]+" -"+x[2]+":</b>"+" "+x[1]+"</li>";
  }
  result+="</ul>";
- current.textContent = result;
+ current.innerHTML = result;
 });
