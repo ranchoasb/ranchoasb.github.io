@@ -19,18 +19,18 @@ fetch("https://script.google.com/macros/s/AKfycbx5QXiwFiOzIKM_8KrFYAERtcrkYjJ3wu
   let current = document.getElementById("clubstext");
   let result = `<p>On specific days, certain lunch clubs—student-led activities sponsored by a teacher—meet in a classroom and partake in engaging and community-building activities. Find a teacher to sponsor your club and talk to our principal, Mrs. Snowden, if you want to form your own!</p><h4>Clubs today:</h4>`;
   result+="<ul>";
-  for (let x in info){
+  for (let x=0; x<info.length(); x++){
     let y = new Date();
     z = y.getDay();
     if (0 < z && z<6){
       if (x[3+z]=="1"){
-        result+="<li><b>"+x[0]+" -"+x[2]+":</b>"+" "+x[1]+"</li>";
+        result+="<li><b>"+info[x][0]+" -"+info[x][2]+":</b>"+" "+info[x][1]+"</li>";
       }
     }
   }
   result+="</ul><h4>All Clubs:</h4><ul>";
- for (let p in info){
-   result+="<li><b>"+p[0]+" -"+p[2]+":</b>"+" "+p[1]+"</li>";
+ for (let p=0; p<info.length(); p++){
+   result+="<li><b>"+info[p][0]+" -"+info[p][2]+":</b>"+" "+info[p][1]+"</li>";
  }
  result+="</ul>";
  current.innerHTML = result;
