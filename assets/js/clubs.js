@@ -30,7 +30,13 @@ fetch("https://script.google.com/macros/s/AKfycbx5QXiwFiOzIKM_8KrFYAERtcrkYjJ3wu
   }
   result+="</ul><h4>All Clubs:</h4><ul>";
  for (let p=0; p<info.length; p++){
-   result+="<li><b>"+info[p][0]+" ("+info[p][2]+") :</b>"+" "+info[p][1]+"</li>";
+   result+="<li><b>"+info[p][0]+" (";
+   if (info[p][4]=="1"){result+="Mon, "};
+   if (info[p][5]=="1"){result+="Tue, "};
+   if (info[p][6]=="1"){result+="Wed, "};
+   if (info[p][7]=="1"){result+="Thu, "};
+   if (info[p][8]=="1"){result+="Fri, "};
+   result+=info[p][2]+") :</b>"+" "+info[p][1]+"</li>";
  }
  result+="</ul>";
  current.innerHTML = result;
