@@ -49,14 +49,36 @@
           <a style="font-size:2.6em" href="https://ranchoasb.org/">Go home?</a>
         </div>
       </div>
-      <div class="modal" tabindex="-1" id="searchresultsmodal">
+      <div class="modal" tabindex="-1" id="searchoptionsmodal">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Search results</h5>
+                    <h5 class="modal-title">Search Options</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="searchresultsbody"></div>
+                <div class="modal-body" id="searchoptionsbody">
+                    <div class="mb-3">
+                        <ul class="list-group">
+                            <li class="list-group-item search-options-no-bounds">
+                                <input class="form-check-input me-1" type="checkbox" id="beforesearchoptioncheck">
+                                <label for="beforesearchoption">Before:</label><input class="form-control" type="text" autocomplete="off" id="beforesearchoption" style="margin-top:5px" disabled readonly>
+                            </li>
+                            <li class="list-group-item search-options-no-bounds">
+                                <input class="form-check-input me-1" type="checkbox" id="aftersearchoptioncheck">
+                                <label for="aftersearchoption">After:</label><input class="form-control" type="text" autocomplete="off" id="aftersearchoption" style="margin-top:5px" disabled readonly>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sortbysearchresults" class="form-label">Sort by</label>
+                        <select class="form-select" aria-label="Sort search results by..." id="sortbysearchresults">
+                            <option value="relevanceascending" selected>Relevance (ascending)</option>
+                            <option value="relevancedescending">Relevance (descending)</option>
+                            <option value="dateascending">Date (ascending)</option>
+                            <option value="datedescending">Date (descending)</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
