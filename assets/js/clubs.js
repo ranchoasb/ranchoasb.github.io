@@ -30,7 +30,7 @@ fetch("https://script.google.com/macros/s/AKfycbx5QXiwFiOzIKM_8KrFYAERtcrkYjJ3wu
   }
   result+="</ul><h4>All Clubs:</h4><ul>";
  for (let p=0; p<info.length; p++){
-   result+="<li><b>"+info[p][0]+" -"+info[p][2]+":</b>"+" "+info[p][1]+"</li>";
+   result+="<li><b>"+info[p][0]+" ("+info[p][2]+") :</b>"+" "+info[p][1]+"</li>";
  }
  result+="</ul>";
  current.innerHTML = result;
