@@ -33,6 +33,7 @@ function dayType(month, day, dayName){
 }
 // gets schedule for any day
 function get_schedule_for_day(d){
+console.log(d.parse);
  if (d.parse < 1724167200000) {
     document.getElementById("schedule").textContent = "The 2024 to 2025 school year has not started yet!";
   } else if (d.parse > 1749207600000) {
