@@ -28,9 +28,9 @@ fetch("https://script.google.com/macros/s/AKfycbx5QXiwFiOzIKM_8KrFYAERtcrkYjJ3wu
       }
     }
   }
-  result+="</ul><h4>All Clubs:</h4>";
+  result+="</ul><h4>All Clubs:</h4><ul>";
  for (let p in info){
-   result+="<ul><li><b>"+x[0]+" -"+x[2]+":</b>"+" "+x[1]+"</li>";
+   result+="<li><b>"+x[0]+" -"+x[2]+":</b>"+" "+x[1]+"</li>";
  }
  result+="</ul>";
  current.innerHTML = result;
