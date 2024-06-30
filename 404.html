@@ -19,10 +19,25 @@
           <button class="navbar-toggler ms-auto icon-md btn btn-light p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-animation"><span></span><span></span><span></span></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse"><div id="navbarhtml"><div id="login_button"></div></div></div>
-          <div id="loginbutton"></div>
-          <script src="assets/js/login.js"></script>
-          <script src="assets/js/loginfunctions.js"></script>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0">
+              <div class="nav-item w-100">
+                  <div class="rounded position-relative">
+                      <input class="form-control ps-5 bg-light" placeholder="Search..." aria-label="Search" id="searchinput">
+                      <script src="assets/js/script.js"></script>
+                      <button class="btn bg-transparent px-2 py-0 position-absolute top-50 start-0 translate-middle-y" onclick="search()">
+                        <script src="assets/js/script.js"></script>
+                          <div style="transform:rotate(270deg);font-size:2rem!important">⌕</div>
+                      </button>
+                  </div>
+              </div>
+            </div>      
+            <div class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0" style="margin-left:10px;font-weight:600"><a href="javascript:void(0)" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchoptionsmodal" id="searchoptionslink">Options</a></div>
+            <div id="navbarhtml"></div>
+            <div id="navbarhtml"><div id="login_button"></div></div></div>
+            <div id="loginbutton"></div>
+            <script src="assets/js/login.js"></script>
+            <script src="assets/js/loginfunctions.js"></script>
         </div>
       </nav>
     </header>
