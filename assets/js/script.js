@@ -33,6 +33,7 @@ window.onload = () => {
       let hideFooter = +row.hideFooter;
       let hideModal = +row.hideModal;
       let carousel = +row.carousel;
+      let banner = +row.banner;
   
       if (carousel){
         carouselImgs = description.split(/(?:<br\s*\/?>\s*)+/gi);
@@ -47,7 +48,9 @@ window.onload = () => {
         description += `</div><button class="carousel-control-prev" type="button" data-bs-target="#carousel${carouselId}" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button><button class="carousel-control-next" type="button" data-bs-target="#carousel${carouselId}" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button></div>`;
         carouselId++;
       }
-      
+      if (banner){
+        loadmorebutton.insertAdjacentHTML("beforebegin", `<div class="card-link" ${hideModal?"":`data-bs-toggle="modal" data-bs-target="#rowmodal${index}"`} id="banner"><div class="card"><div class="card-header"><div class="d-flex align-items-center justify-content-between"><div class="d-flex align-items-center"><div><h6 class="card-title mb-0">${title}</h6>`);
+      }
       loadmorebutton.insertAdjacentHTML("beforebegin", `<div class="card-link" ${hideModal?"":`data-bs-toggle="modal" data-bs-target="#rowmodal${index}"`} id="x${title.replace(/['"\s]/g, '-')}"><div class="card">${hideHeader?"":`<div class="card-header"><div class="d-flex align-items-center justify-content-between"><div class="d-flex align-items-center"><div><h6 class="card-title mb-0">${title}</h6><p class="small mb-0">${date}</p></div></div></div></div>`}${hideBody?"":`<div class="card-body"><div class="mb-0">${description}</div></div>`}${hideFooter?"":`<div class="card-footer border-0 d-flex justify-content-between align-items-center"><p class="mb-0">Category: ${category}</p></div>`}</div></div><div class="modal" tabindex="-1" id="rowmodal${index}"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">${title} <small>on ${date}</small></h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p>${description}</p><p><small>Category: ${category}</small></p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>`);
     }
   
@@ -95,7 +98,7 @@ window.onload = () => {
     upcomingEvents.innerHTML=response.map(
       i=>new Date(i[0])>new Date(+new Date()-86400000)?i[1]:""
     ).join("");});
-  fetch("https://script.google.com/macros/s/AKfycby28T5Ihu9msFqicRgTfSqKR1k6SWeSjWzp_FmIm4iTwjUHwLbo4EISAusLKV1wn9_U/exec?query=posts").then(e => e.json()).then(response => {
+  fetch("https://script.google.com/macros/s/AKfycbzaVLYgziHk157t2OG4mttW789gMvixhRE_XlfSxo1YpVIiIlBmvld8lA0K1vEOg27u/exec?query=posts").then(e => e.json()).then(response => {
     data = response;
     titles = data.map(item => item.title.replace(/['"\s]/g, '-'));
     datalen = data.length;
