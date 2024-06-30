@@ -7,17 +7,30 @@ fetch("https://script.google.com/macros/s/AKfycbx5QXiwFiOzIKM_8KrFYAERtcrkYjJ3wu
           let description = row.description;
           let location = row.location;
           let picture = row.picture;
-          let mon = row.monday;
-          let tue = row.tuesday;
-          let wed = row.wednesday;
-          let thu = row.thursday;
-          let fri = row.friday;
+          let mon = +row.monday;
+          let tue = +row.tuesday;
+          let wed = +row.wednesday;
+          let thu = +row.thursday;
+          let fri = +row.friday;
           info.push([name, description, location, picture, mon, tue, wed, thu, fri]);
       }
       console.log(info);
 }).then(a => {
-  let text = "On specific days, certain lunch clubs—student-led activities sponsored by a teacher—meet in a classroom and partake in engaging and community-building activities. Find a teacher to sponsor your club and talk to our principal, Mrs. Snowden, if you want to form your own!";
-  
   let current = document.getElementById("clubstext");
-  current.textContent = 
+  let result = `<p>On specific days, certain lunch clubs—student-led activities sponsored by a teacher—meet in a classroom and partake in engaging and community-building activities. Find a teacher to sponsor your club and talk to our principal, Mrs. Snowden, if you want to form your own!</p><h4>Clubs today:</h4>`;
+  for (let x in info){
+    let y = new Date();
+    z = y.getDay();
+    if (0 < z && z<6){
+      if (x[3+z]=="1"){
+        result+="<ul><li><b>"+x[0]+" -"+x[2]+":</b>"+" "+x[1]+"</li>";
+      }
+    }
+  }
+  result+="</ul><h4>All Clubs:</h4>";
+ for (let p in info){
+   result+="<ul><li><b>"+x[0]+" -"+x[2]+":</b>"+" "+x[1]+"</li>";
+ }
+ result+="</ul>";
+ current.textContent = result;
 });
