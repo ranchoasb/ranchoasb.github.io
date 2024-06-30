@@ -13,34 +13,69 @@
   </head>
   <body>
     <header class="navbar-light fixed-top header-static bg-mode">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container">
-          <a class="navbar-brand" href="">
-            <img class="light-mode-item navbar-brand-item" src="assets/images/navbar.png" alt="logo">
-            <img class="dark-mode-item navbar-brand-item" src="assets/images/navbar.png" alt="logo">
-          </a>
-          <script src = "assets/js/script.js"></script>
-          <div class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0">
-              <div class="nav-item w-100">
-                  <div class="rounded position-relative">
-                      <input class="form-control ps-5 bg-light" placeholder="Search..." aria-label="Search" id="searchinput">
-                      <button class="btn bg-transparent px-2 py-0 position-absolute top-50 start-0 translate-middle-y" onclick="search()">
-                          <div style="transform:rotate(270deg);font-size:2rem!important">⌕</div>
-                      </button>
-                  </div>
-              </div>
-          </div>
-          <script src = "assets/js/script.js"></script>
-          <div class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0" style="margin-left:10px;font-weight:600"><a href="javascript:void(0)" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchoptionsmodal" id="searchoptionslink">Options</a></div>
-          <script src = "assets/js/script.js"></script>
-          <div id="navbarhtml"></div>
-          <button class="navbar-toggler ms-auto icon-md btn btn-light p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-animation"><span></span><span></span><span></span></span></button>
-          <div class="collapse navbar-collapse" id="navbarCollapse"><div id="navbarhtml"></div></div>
-          <script src="assets/js/loginfunctions.js"></script>
-          <div id="loginbutton"></div>
-          <script src="assets/js/login.js"></script>
-        </div>
-      </nav>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+        <!-- Logo Nav START -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <!-- Logo START -->
+                <a class="navbar-brand" href="">
+                    <img class="light-mode-item navbar-brand-item" src="assets/images/navbar.png" alt="logo">
+                    <img class="dark-mode-item navbar-brand-item" src="assets/images/navbar.png" alt="logo">
+                </a>
+                <!-- Logo END -->
+
+                <!-- Responsive navbar toggler -->
+                <button class="navbar-toggler ms-auto icon-md btn btn-light p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-animation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+
+                <!-- Main navbar START -->
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+
+                    <!-- Nav Search START -->
+                    <div class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0">
+                        <div class="nav-item w-100">
+                            <div class="rounded position-relative">
+                                <input class="form-control ps-5 bg-light" placeholder="Search..." aria-label="Search" id="searchinput">
+                                <button class="btn bg-transparent px-2 py-0 position-absolute top-50 start-0 translate-middle-y" onclick="search()">
+                                    <div style="transform:rotate(270deg);font-size:2rem!important">⌕</div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="nav mt-3 mt-lg-0 flex-nowrap align-items-center px-4 px-lg-0" style="margin-left:10px;font-weight:600"><a href="javascript:void(0)" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchoptionsmodal" id="searchoptionslink">Options</a></div>
+                    <div id="navbarhtml"></div>
+                    <!-- Login -->
+                    <script src="assets/js/loginfunctions.js"></script>
+                    
+                    <div
+                        class="g_id_signin"
+                        style="margin-left:10px;font-weight:600"
+                        id='g_id_onload'
+                        data-type="icon"
+                        data-client_id='786051960466-7froki4slf68hqug865502qiugj091um.apps.googleusercontent.com'
+                        data-login_uri="https://ranchoasb.org"
+                        data-callback="handleCredentialResponse"
+                        data-native_callback="handleCredentialResponse"
+                        data-ux_mode="popup"
+                        data-auto_prompt="true"
+                        data-auto_select="true"
+                        data-text="signin"
+                        data-shape="pill">
+                    </div>
+                    
+                </div>
+                <!-- Main navbar END -->
+            </div>
+        </nav>
+        <!-- Logo Nav END -->
     </header>
     <main>
       <div class="container">
@@ -51,57 +86,6 @@
         </div>
       </div>
     </main>
-     <div class="modal" tabindex="-1" id="searchresultsmodal">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Search results</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="searchresultsbody"></div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="modal" tabindex="-1" id="searchoptionsmodal">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Search Options</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="searchoptionsbody">
-                    <div class="mb-3">
-                        <ul class="list-group">
-                            <li class="list-group-item search-options-no-bounds">
-                                <input class="form-check-input me-1" type="checkbox" id="beforesearchoptioncheck">
-                                <label for="beforesearchoption">Before:</label><input class="form-control" type="text" autocomplete="off" id="beforesearchoption" style="margin-top:5px" disabled readonly>
-                            </li>
-                            <li class="list-group-item search-options-no-bounds">
-                                <input class="form-check-input me-1" type="checkbox" id="aftersearchoptioncheck">
-                                <label for="aftersearchoption">After:</label><input class="form-control" type="text" autocomplete="off" id="aftersearchoption" style="margin-top:5px" disabled readonly>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="mb-3">
-                        <label for="sortbysearchresults" class="form-label">Sort by</label>
-                        <select class="form-select" aria-label="Sort search results by..." id="sortbysearchresults">
-                            <option value="relevanceascending" selected>Relevance (ascending)</option>
-                            <option value="relevancedescending">Relevance (descending)</option>
-                            <option value="dateascending">Date (ascending)</option>
-                            <option value="datedescending">Date (descending)</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/viewcount.js"></script>
