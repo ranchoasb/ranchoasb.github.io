@@ -82,7 +82,7 @@ window.onload = () => {
     });
   }
   
-  fetch("https://script.google.com/macros/s/AKfycby28T5Ihu9msFqicRgTfSqKR1k6SWeSjWzp_FmIm4iTwjUHwLbo4EISAusLKV1wn9_U/exec?query=announcements").then(e=>e.text()).then(response => {
+  fetch("https://script.google.com/macros/s/AKfycbzhK65483zEFGYSGVErhdtCI05mKeqBjDifRgpo7ytdeuzd_4lwwGoBCfeE_Eqyee4g/exec?query=announcements").then(e=>e.text()).then(response => {
     try {
       for(let i=0;i<Math.min(3,response.match(/Advisement Announcements for /g).length);i++) {
         response = response.slice(response.indexOf('<div class="accordion-item"',1));
@@ -94,13 +94,13 @@ window.onload = () => {
       announcements.innerHTML+='No advisement announcements for now.';
     }
   });
-  fetch("https://script.google.com/macros/s/AKfycby28T5Ihu9msFqicRgTfSqKR1k6SWeSjWzp_FmIm4iTwjUHwLbo4EISAusLKV1wn9_U/exec?query=upcomingEvents").then(e=>e.text()).then(response=>{
+  fetch("https://script.google.com/macros/s/AKfycbzhK65483zEFGYSGVErhdtCI05mKeqBjDifRgpo7ytdeuzd_4lwwGoBCfeE_Eqyee4g/exec?query=upcomingEvents").then(e=>e.text()).then(response=>{
     response = response.split(".....");
     response = response.map(i=>i.split("/////"));
     upcomingEvents.innerHTML=response.map(
       i=>new Date(i[0])>new Date(+new Date()-86400000)?i[1]:""
     ).join("");});
-  fetch("https://script.google.com/macros/s/AKfycbzaVLYgziHk157t2OG4mttW789gMvixhRE_XlfSxo1YpVIiIlBmvld8lA0K1vEOg27u/exec?query=posts").then(e => e.json()).then(response => {
+  fetch("https://script.google.com/macros/s/AKfycbzhK65483zEFGYSGVErhdtCI05mKeqBjDifRgpo7ytdeuzd_4lwwGoBCfeE_Eqyee4g/exec?query=posts").then(e => e.json()).then(response => {
     data = response;
     titles = data.map(item => item.title.replace(/['"\s]/g, '-'));
     datalen = data.length;
