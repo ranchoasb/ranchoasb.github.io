@@ -40,7 +40,7 @@ function handleCredentialResponse(response){
         domainIUSD=true;
     }
     const elem = document.getElementById("g_id_onload");
-    elem.outerHTML = '<div class="signoutdropdown" id="g_id_onload"><button class="signoutbutton" style="margin-left:10px;font-weight:600">'+encodeURIComponent(info.name)+'</button><div class="signoutdropdown-content"><button onclick="signOut()">Sign out</button></div></div>';
+    elem.outerHTML = '<div class="signoutdropdown" id="g_id_onload"><button class="signoutbutton" style="margin-left:10px;font-weight:600" aria-label="Sign Out Button">'+encodeURIComponent(info.name)+'</button><div class="signoutdropdown-content"><button onclick="signOut()">Sign out</button></div></div>';
 }
 function signOut(){
     google.accounts.id.disableAutoSelect();
