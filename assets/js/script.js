@@ -53,7 +53,6 @@ window.onload = () => {
       }
       else {
         loadmorebutton.insertAdjacentHTML("beforebegin", `<div class="card-link" ${hideModal?"":`data-bs-toggle="modal" data-bs-target="#rowmodal${index}"`} id="x${title.replace(/['"\s]/g, '-')}"><div class="card">${hideHeader?"":`<div class="card-header"><div class="d-flex align-items-center justify-content-between"><div class="d-flex align-items-center"><div><h6 class="card-title mb-0">${title}</h6><p class="small mb-0">${date}</p></div></div></div></div>`}${hideBody?"":`<div class="card-body"><div class="mb-0">${description}</div></div>`}${hideFooter?"":`<div class="card-footer border-0 d-flex justify-content-between align-items-center"><p class="mb-0">Category: ${category}</p></div>`}</div></div><div class="modal" tabindex="-1" id="rowmodal${index}"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">${title} <small>on ${date}</small></h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p>${description}</p><p><small>Category: ${category}</small></p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>`);
-        console.log(description);
       }
     }
   
@@ -77,9 +76,7 @@ window.onload = () => {
     }
     else {
     activeWidth = activeItem.offsetWidth; // Get the width of the active item
-    console.log(activeWidth);
     desiredHeight = (10 / 16) * activeWidth; // Calculate the desired height
-    console.log(desiredHeight);
     }
     // Set the height for all carousel items
     let items = document.querySelectorAll('.carousel-item');
