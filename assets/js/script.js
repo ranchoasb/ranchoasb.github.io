@@ -2,8 +2,8 @@ let titles;
 
 window.onload = () => {
   
-  //copyrightyear.textContent = new Date().getFullYear();
-
+  //copyrightyear.textContent = new Date().getFullYear(); //needs to be commented out because copyrightyear only exists on index.html, but this script is run on other pages
+//displaying info on index page
   let data;
   let datalen;
   let dataindex = 0;
@@ -11,7 +11,7 @@ window.onload = () => {
   
   let fuse;
 
-  function load() {
+  function load() { //load info onto index page
     let nomore = false;
     let toload = 10;
     
@@ -34,7 +34,7 @@ window.onload = () => {
       let hideModal = +row.hideModal;
       let carousel = +row.carousel;
       let banner = +row.banner;
-  
+  //carousel (rotating images)
       if (carousel){
         carouselImgs = description.split(/(?:<br\s*\/?>\s*)+/gi);
         description = `<div id="carousel${carouselId}" class="carousel carousel-dark slide" data-bs-ride="carousel"><div class="carousel-indicators"><button type="button" data-bs-target="#carousel${carouselId}" data-bs-slide-to="${0}" class="active" aria-current="true" aria-label="Slide ${1}"></button>`;
@@ -57,7 +57,7 @@ window.onload = () => {
     }
   
     dataindex += toload;
-    
+    //load more button
     if (nomore) {
       loadmorebutton.insertAdjacentHTML("beforebegin", `<div class="card"><div class="alert alert-info mb-0" role="alert">Nothing else to load.</div></div>`);
       loadmorebutton.remove();
@@ -84,7 +84,7 @@ window.onload = () => {
         item.style.height = desiredHeight + 'px';
     });
   }
-  
+  //get and parse and display info for advisement announcements (on index.html page)
   fetch("https://script.google.com/macros/s/AKfycbzhK65483zEFGYSGVErhdtCI05mKeqBjDifRgpo7ytdeuzd_4lwwGoBCfeE_Eqyee4g/exec?query=announcements").then(e=>e.text()).then(response => {
     try {
       for(let i=0;i<Math.min(3,response.match(/Advisement Announcements for /g).length);i++) {
@@ -97,12 +97,14 @@ window.onload = () => {
       announcements.innerHTML+='No advisement announcements for now.';
     }
   });
+  //get and parse and display info for upcoming events
   fetch("https://script.google.com/macros/s/AKfycbzhK65483zEFGYSGVErhdtCI05mKeqBjDifRgpo7ytdeuzd_4lwwGoBCfeE_Eqyee4g/exec?query=upcomingEvents").then(e=>e.text()).then(response=>{
     response = response.split(".....");
     response = response.map(i=>i.split("/////"));
     upcomingEvents.innerHTML=response.map(
       i=>new Date(i[0])>new Date(+new Date()-86400000)?i[1]:""
     ).join("");});
+  //get and parse and display info for posts
   fetch("https://script.google.com/macros/s/AKfycbzhK65483zEFGYSGVErhdtCI05mKeqBjDifRgpo7ytdeuzd_4lwwGoBCfeE_Eqyee4g/exec?query=posts").then(e => e.json()).then(response => {
     data = response;
     titles = data.map(item => item.title.replace(/['"\s]/g, '-'));
@@ -124,7 +126,7 @@ window.onload = () => {
       ]
     });
   });
-
+//search
   let searchmodal = new bootstrap.Modal(searchresultsmodal);
   
   function search() {
@@ -171,7 +173,7 @@ window.onload = () => {
       loadmorebutton.classList.remove("active");
     }
   });
-  
+  //search options
   searchoptionslink.addEventListener("click", e => e.preventDefault());
 
   datepicker(beforesearchoption, {
