@@ -1,4 +1,4 @@
-const info = []; //information for schedule, received from google apps script
+const info = []; //information for clubs, received from google apps script
 //get clubs data from google apps script
 fetch("https://script.google.com/macros/s/AKfycbzhK65483zEFGYSGVErhdtCI05mKeqBjDifRgpo7ytdeuzd_4lwwGoBCfeE_Eqyee4g/exec?query=clubs").then(response => response.json()).then(data => {
   //parse data from google sheets
