@@ -1,4 +1,5 @@
 function decodeJwtResponse(token) {
+    //parse info from google OAuth
     var base64Url = token.split(".")[1];
     var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
     var jsonPayload = decodeURIComponent(
@@ -13,6 +14,7 @@ function decodeJwtResponse(token) {
   }
 function handleCredentialResponse(response){
     var info = decodeJwtResponse(response.credential);
+    //putting info google gives us on user into user's local storage
     localStorage.setItem("login", JSON.stringify(true));
     localStorage.setItem("iss", info.iss);
     localStorage.setItem("nbf", JSON.stringify(info.nbf));
@@ -29,6 +31,7 @@ function handleCredentialResponse(response){
     localStorage.setItem("iat", JSON.stringify(info.iat));
     localStorage.setItem("exp", JSON.stringify(info.exp));
     localStorage.setItem("jti", encodeURIComponent(info.jti));
+    //debug stuff
     console.log("ID: " + info.sub);
     console.log('Full Name: ' + info.name);
     console.log('Given Name: ' + info.given_name);
@@ -36,6 +39,7 @@ function handleCredentialResponse(response){
     console.log("Image URL: " + info.picture);
     console.log("Email: " + info.email);
     console.log("hd: " + info.hd);
+    //retrieve account info from google sheets
     fetch("https://script.google.com/macros/s/AKfycbwZ_WtDF3l_ouTjcEeO7sRZgnps9P9x-sV-n36ak3fDjj1NaQq5Y1DIT5-lJ8Gwjt4k/exec?query=retrieveEmail", {
       redirect: "follow",
       method: "GET",
@@ -57,6 +61,7 @@ function handleCredentialResponse(response){
             }
         }
         if (x==0) {
+            // put new account info into google sheets
             fetch("https://script.google.com/macros/s/AKfycbwZ_WtDF3l_ouTjcEeO7sRZgnps9P9x-sV-n36ak3fDjj1NaQq5Y1DIT5-lJ8Gwjt4k/exec?query=setEmail&email="+info.email+"&iusd="+isiusd);
             localStorage.setItem("iusd", isiusd);
         }
@@ -65,6 +70,7 @@ function handleCredentialResponse(response){
     elem.outerHTML = '<div class="signoutdropdown" id="g_id_onload"><button class="signoutbutton" style="margin-left:10px;font-weight:600" aria-label="Sign Out Button">'+encodeURIComponent(info.given_name)+'</button><div class="signoutdropdown-content"><button onclick="signOut()">Sign out</button></div></div>';
 }
 function signOut(){
+    //stuff for signing out
     google.accounts.id.disableAutoSelect();
     domainIUSD=false;
     window.location.assign("https://ranchoasb.org");
