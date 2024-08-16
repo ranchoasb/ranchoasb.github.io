@@ -36,7 +36,10 @@ function handleCredentialResponse(response){
     console.log("Image URL: " + info.picture);
     console.log("Email: " + info.email);
     console.log("hd: " + info.hd);
-    fetch("https://script.google.com/macros/s/AKfycby0NrYCqCE-rFkqB-oRSJemLFMjsbcMHgSRUG1Q8kPrzqpof0OuZXsa9TeUjKlWA65v/exec?query=retrieveEmail").then(response => response.json()).then(data => {
+    fetch("https://script.google.com/macros/s/AKfycby0NrYCqCE-rFkqB-oRSJemLFMjsbcMHgSRUG1Q8kPrzqpof0OuZXsa9TeUjKlWA65v/exec?query=retrieveEmail", {
+      redirect: "follow",
+      method: "GET",
+    }).then(response => response.json()).then(data => {
         let x = 0;
         let isiusd = 0;
         if (info.hd=="iusd.org"){
