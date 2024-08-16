@@ -1,5 +1,7 @@
-const info = [];
+const info = []; //information for schedule, received from google apps script
+//get clubs data from google apps script
 fetch("https://script.google.com/macros/s/AKfycbzhK65483zEFGYSGVErhdtCI05mKeqBjDifRgpo7ytdeuzd_4lwwGoBCfeE_Eqyee4g/exec?query=clubs").then(response => response.json()).then(data => {
+  //parse data from google sheets
   let rows = data.slice(0, data.length);
       for (let index in rows) {
           let row = rows[index];
@@ -14,10 +16,12 @@ fetch("https://script.google.com/macros/s/AKfycbzhK65483zEFGYSGVErhdtCI05mKeqBjD
           let fri = +row.friday;
           info.push([name, description, location, picture, mon, tue, wed, thu, fri]);
       }
-      console.log(info);
+      console.log(info); //debug
 }).then(a => {
-  let current = document.getElementById("clubstext");
+  let current = document.getElementById("clubstext"); //clubstext is the text on the clubs page
+  //description on clubs page
   let result = `<p>On specific days, certain lunch clubs—student-led activities sponsored by a teacher—meet in a classroom and partake in engaging and community-building activities. Find a teacher to sponsor your club and talk to our principal, Mrs. Snowden, if you want to form your own!</p><h4>Clubs today:</h4>`;
+  //adding info on clubs for specific day (today)
   result+="<ul>";
   for (let x=0; x<info.length; x++){
     let y = new Date();
@@ -29,6 +33,7 @@ fetch("https://script.google.com/macros/s/AKfycbzhK65483zEFGYSGVErhdtCI05mKeqBjD
     }
   }
   result+="</ul><h4>All Clubs:</h4><ul>";
+  //adding info on clubs for all clubs
  for (let p=0; p<info.length; p++){
    result+="<li><b>"+info[p][0]+" (";
    if (info[p][4]=="1"){result+="Mon, "};
