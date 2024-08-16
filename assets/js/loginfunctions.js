@@ -36,7 +36,7 @@ function handleCredentialResponse(response){
     console.log("Image URL: " + info.picture);
     console.log("Email: " + info.email);
     console.log("hd: " + info.hd);
-    fetch("https://script.google.com/macros/s/AKfycby0NrYCqCE-rFkqB-oRSJemLFMjsbcMHgSRUG1Q8kPrzqpof0OuZXsa9TeUjKlWA65v/exec?query=retrieveEmail", {
+    fetch("https://script.google.com/macros/s/AKfycbzQYIr_i_sEteKNaXfXnfLEPMusuOKZ8uMVMAb84kFjzQ3CpIG446SCMkIyfBomAez3/exec?query=retrieveEmail", {
       redirect: "follow",
       method: "GET",
       headers: {
