@@ -1,5 +1,7 @@
-const info = [];
+const info = []; //info about schedule, from google apps script
+//get info from google sheets
 fetch("https://script.google.com/macros/s/AKfycbxsSYmmaBATzcQPg_ajs60PgboxjYKgX0i2fbUqd070ZpH_R07aM0l4BHLr7NAAMR8-/exec?query=schedule").then(response => response.json()).then(data => {
+      // parse info from google sheets
       let rows = data.slice(0, data.length);
       for (let index in rows) {
               let row = rows[index];
@@ -17,8 +19,9 @@ fetch("https://script.google.com/macros/s/AKfycbxsSYmmaBATzcQPg_ajs60PgboxjYKgX0
                   info.push([row.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[1], enddate[2], row.starttime, row.endtime, row.extendedday, row.periodlength, row.school, row.additional]);
             }
       }
-      console.log(info);
+      console.log(info); //debug
 }).then(a => {
+      //display the correct information for the day selected
 const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const monthNames = ["Month numbers start from 1, not 0", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 let special = false;
@@ -74,6 +77,7 @@ function get_schedule_for_day(d){
  }
 }
 get_schedule_for_day(new Date());
+//datepicker
 datepicker(date, {
         formatter: (i, d, _) => {
           let t = new Date();
