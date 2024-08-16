@@ -42,6 +42,7 @@ function handleCredentialResponse(response){
         if (info.hd=="iusd.org"){
             isiusd = 1;
         }
+        let rows = data.slice(0, data.length);
         for (let index in rows) {
             let row = rows[index];
             if (row.email == info.email){
