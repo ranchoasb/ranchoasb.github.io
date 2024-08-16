@@ -39,6 +39,9 @@ function handleCredentialResponse(response){
     fetch("https://script.google.com/macros/s/AKfycby0NrYCqCE-rFkqB-oRSJemLFMjsbcMHgSRUG1Q8kPrzqpof0OuZXsa9TeUjKlWA65v/exec?query=retrieveEmail", {
       redirect: "follow",
       method: "GET",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
     }).then(response => response.json()).then(data => {
         let x = 0;
         let isiusd = 0;
