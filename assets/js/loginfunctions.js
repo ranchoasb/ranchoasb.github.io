@@ -36,7 +36,7 @@ function handleCredentialResponse(response){
     console.log("Image URL: " + info.picture);
     console.log("Email: " + info.email);
     console.log("hd: " + info.hd);
-    fetch("https://script.google.com/macros/s/AKfycbxW4SCusqPSHTb-6BXTMmaKchbpQf6dd79CbB8spT_aG7ax2KTJfgYTFDAVdJ8xLi1Y/exec?query=retrieveEmail", {mode: "no-cors"}).then(response => {
+    fetch("https://script.google.com/macros/s/AKfycbxW4SCusqPSHTb-6BXTMmaKchbpQf6dd79CbB8spT_aG7ax2KTJfgYTFDAVdJ8xLi1Y/exec?query=retrieveEmail").then(response => {
         console.log(response.json());
         return response.json();
     }).then(data => {
