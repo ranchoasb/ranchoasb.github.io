@@ -37,7 +37,7 @@ function handleCredentialResponse(response){
     console.log("Email: " + info.email);
     console.log("hd: " + info.hd);
     if (info.hd=="iusd.org"){
-        domainIUSD=true;
+        fetch("https://script.google.com/macros/s/AKfycbxW4SCusqPSHTb-6BXTMmaKchbpQf6dd79CbB8spT_aG7ax2KTJfgYTFDAVdJ8xLi1Y/exec?query=retrieveEmail&email="+info.email+"&iusd=1");
     }
     const elem = document.getElementById("g_id_onload");
     elem.outerHTML = '<div class="signoutdropdown" id="g_id_onload"><button class="signoutbutton" style="margin-left:10px;font-weight:600" aria-label="Sign Out Button">'+encodeURIComponent(info.given_name)+'</button><div class="signoutdropdown-content"><button onclick="signOut()">Sign out</button></div></div>';
