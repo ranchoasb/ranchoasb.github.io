@@ -40,7 +40,7 @@ function handleCredentialResponse(response){
       redirect: "follow",
       method: "GET",
       headers: {
-        "Content-Type": "text/plain;charset=utf-8",
+        "Content-Type": "text/plain",
       },
     }).then(response => response.json()).then(data => {
         let x = 0;
