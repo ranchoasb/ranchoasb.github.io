@@ -1,6 +1,6 @@
 const info = []; //info about schedule, from google apps script
 //get info from google sheets
-fetch("https://script.google.com/macros/s/AKfycbxsSYmmaBATzcQPg_ajs60PgboxjYKgX0i2fbUqd070ZpH_R07aM0l4BHLr7NAAMR8-/exec?query=schedule").then(response => response.json()).then(data => {
+fetch("https://script.google.com/macros/s/AKfycbwqiT9465Ad3ey-x1tAl_pAsejU3nQydnDiS0K_g01f-6cK5kJq82k3_1ckgud-cRiG/exec?query=schedule").then(response => response.json()).then(data => {
       // parse info from google sheets
       let rows = data.slice(0, data.length);
       for (let index in rows) {
