@@ -20,7 +20,7 @@ fetch("https://script.google.com/macros/s/AKfycbzhK65483zEFGYSGVErhdtCI05mKeqBjD
 }).then(a => {
   let current = document.getElementById("clubstext"); //clubstext is the text on the clubs page
   //description on clubs page
-  let result = `<p>On specific days, students meet to participate in fun, engaging, community-building activities based around their interests. Find a teacher to sponsor your activity and talk to our principal, Mrs. Snowden, if you want to create your own!</p><h4>Clubs today:</h4>`;
+  let result = `<p>On specific days, students meet to participate in fun, engaging, community-building activities based around their interests. Find a teacher to sponsor your activity and talk to our principal, Mrs. Snowden, if you want to create your own!</p><h4>Activities today:</h4>`;
   //adding info on clubs for specific day (today)
   result+="<ul>";
   for (let x=0; x<info.length; x++){
@@ -32,7 +32,7 @@ fetch("https://script.google.com/macros/s/AKfycbzhK65483zEFGYSGVErhdtCI05mKeqBjD
       }
     }
   }
-  result+="</ul><h4>All Clubs:</h4><ul>";
+  result+="</ul><h4>All Activities:</h4><ul>";
   //adding info on clubs for all clubs
  for (let p=0; p<info.length; p++){
    result+="<li><b>"+info[p][0]+" (";
