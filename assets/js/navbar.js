@@ -1,1 +1,1 @@
-fetch("https://script.google.com/macros/s/AKfycbylp7XIw-zKcFtz1tOjPAI9_sR-I3PYyjP1bMXWTyrio3IYEMBNxeg2XT_1X9DzU_4H/exec?query=navbar").then(e=>e.text()).then((e=>{navbarhtml.outerHTML=e}));
+fetch("https://script.google.com/macros/s/AKfycby9qWGns9f47zJmJnyE9gNYCy-DtuqcsE68ClRIiaCGstEuBAQZgdGUstkqCFeFGMFf/exec?query=navbar").then(e=>e.text()).then((e=>{navbarhtml.outerHTML=e}));
