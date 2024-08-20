@@ -40,7 +40,7 @@ function handleCredentialResponse(response){
     console.log("Email: " + info.email);
     console.log("hd: " + info.hd);
     //retrieve account info from google sheets
-    fetch("https://script.google.com/macros/s/AKfycbwZ_WtDF3l_ouTjcEeO7sRZgnps9P9x-sV-n36ak3fDjj1NaQq5Y1DIT5-lJ8Gwjt4k/exec?query=retrieveEmail", {
+    fetch("https://script.google.com/macros/s/AKfycby9qWGns9f47zJmJnyE9gNYCy-DtuqcsE68ClRIiaCGstEuBAQZgdGUstkqCFeFGMFf/exec?query=retrieveEmail", {
       redirect: "follow",
       method: "GET",
       headers: {
@@ -62,7 +62,7 @@ function handleCredentialResponse(response){
         }
         if (x==0) {
             // put new account info into google sheets
-            fetch("https://script.google.com/macros/s/AKfycbwZ_WtDF3l_ouTjcEeO7sRZgnps9P9x-sV-n36ak3fDjj1NaQq5Y1DIT5-lJ8Gwjt4k/exec?query=setEmail&email="+info.email+"&iusd="+isiusd);
+            fetch("https://script.google.com/macros/s/AKfycby9qWGns9f47zJmJnyE9gNYCy-DtuqcsE68ClRIiaCGstEuBAQZgdGUstkqCFeFGMFf/exec?query=setEmail&email="+info.email+"&iusd="+isiusd);
             localStorage.setItem("iusd", isiusd);
         }
     });
