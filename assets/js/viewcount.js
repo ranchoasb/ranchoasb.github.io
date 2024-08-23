@@ -3,6 +3,6 @@ addEventListener("load", () => {
     let timestamp = new Date();
     let month = timestamp.getMonth() + 1;
     let time = timestamp.getHours().toString() + ":" + timestamp.getMinutes().toString() + ":" + timestamp.getSeconds().toString() + ", " + month.toString() + "/" + timestamp.getDate().toString() + "/" + timestamp.getFullYear().toString();
-    fetch("https://script.google.com/macros/s/AKfycby63cw5KSLy6PAmRkjqKce_DN0fUST_z5aPQmA5-7gAWMdZdU5YkBTodyfdQ98xktug/exec?query=ping&type=View&time="+time);
+    fetch("https://script.google.com/macros/s/AKfycbxuZsKu9IGYFQXjS935qEsMAlwdCeEjMvJnyouQo7hTG8msvRBS_aA30702SsaCmwLv/exec?query=ping&type=View&time="+time);
   }
 });
