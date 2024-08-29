@@ -41,9 +41,9 @@ window.onload = () => {
         for (let i = 1; i < carouselImgs.length; i++){
           description += `<button type="button" data-bs-target="#carousel${carouselId}" data-bs-slide-to="${i}" class="active" aria-current="true" aria-label="Slide ${i+1}"></button>`;
         }
-        description += `</div><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="3000"><iframe src="${carouselImgs[0]}" style="margin:auto" height="333.75" class="d-block" alt="..."></iframe></div>`;
+        description += `</div><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="3000"><img src="${carouselImgs[0]}" style="margin:auto" height="333.75" class="d-block" alt="..."></div>`;
         for (let i = 1; i < carouselImgs.length; i++){
-          description += `<div class="carousel-item" data-bs-interval="3000"><iframe src="${carouselImgs[i]}" width="100%" height="100%" class="d-block" alt="..."></iframe></div>`;
+          description += `<div class="carousel-item" data-bs-interval="3000"><img src="${carouselImgs[i]}" width="100%" height="100%" class="d-block" alt="..."></div>`;
         }
         description += `</div><button class="carousel-control-prev" type="button" data-bs-target="#carousel${carouselId}" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button><button class="carousel-control-next" type="button" data-bs-target="#carousel${carouselId}" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button></div>`;
         carouselId++;
