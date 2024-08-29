@@ -7015,6 +7015,7 @@ textarea.form-control-lg {
 	display: block;
 	clear: both;
 	content: "";
+	text-align: center;
 }
 
 .carousel-item {
