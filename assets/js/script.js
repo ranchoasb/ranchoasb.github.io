@@ -41,7 +41,7 @@ window.onload = () => {
         for (let i = 1; i < carouselImgs.length; i++){
           description += `<button type="button" data-bs-target="#carousel${carouselId}" data-bs-slide-to="${i}" class="active" aria-current="true" aria-label="Slide ${i+1}"></button>`;
         }
-        description += `</div><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="3000"><iframe src="${carouselImgs[0]}" width="550.02" class="d-block" alt="..."></iframe></div>`;
+        description += `</div><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="3000"><iframe src="${carouselImgs[0]}" width="550.02" height="343.7" class="d-block" alt="..."></iframe></div>`;
         for (let i = 1; i < carouselImgs.length; i++){
           description += `<div class="carousel-item" data-bs-interval="3000"><iframe src="${carouselImgs[i]}" class="d-block" alt="..."></iframe></div>`;
         }
