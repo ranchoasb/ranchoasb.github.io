@@ -7007,6 +7007,7 @@ textarea.form-control-lg {
 
 .carousel-inner {
 	position: relative;
+	overflow: hidden;
 }
 
 .carousel-inner::after {
