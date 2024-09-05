@@ -81,7 +81,6 @@ window.onload = () => {
     // Set the height for all carousel items
     let items = document.querySelectorAll('.carousel-item');
     items.forEach(function(item) {
-        item.style.width = activeWidth + 'px';
         item.style.height = desiredHeight + 'px';
     });
   }
