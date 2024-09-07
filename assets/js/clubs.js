@@ -29,8 +29,9 @@ fetch("https://script.google.com/macros/s/AKfycby9qWGns9f47zJmJnyE9gNYCy-DtuqcsE
     z = 1;
     if (0 < z && z<6){
       let n = z+3;
-      if (x[n]==1){
+      if (info[x][n]=="1"){
         result+="<li><b>"+info[x][0]+" -"+info[x][2]+":</b>"+" "+info[x][1]+"</li>";
+        console.log("Success!");
       }
     }
   }
