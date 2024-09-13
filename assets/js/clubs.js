@@ -21,7 +21,7 @@ fetch("https://script.google.com/macros/s/AKfycby9qWGns9f47zJmJnyE9gNYCy-DtuqcsE
 }).then(a => {
   let current = document.getElementById("clubstext"); //clubstext is the text on the clubs page
   //description on clubs page
-  let result = `<p>On specific days, students meet to participate in fun, engaging, community-building activities based around their interests. Find a teacher to sponsor your activity and talk to our principal, Mrs. Snowden, if you want to create your own!</p><h4>Activities today:</h4>`;
+  let result = `<p>On specific days, students meet to participate in fun, engaging, community-building activities based around their interests. If you would like to start your own activity, find a teacher willing to sponsor it and fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRuRGAl01ZERInv1mZMg3GOAEMLkGJGm9vataF9csniZsOeQ/viewform">this</a> form!</p><h4>Activities today:</h4>`;
   //adding info on clubs for specific day (today)
   result+="<ul>";
   for (let x=0; x<info.length; x++){
