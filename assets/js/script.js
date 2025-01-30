@@ -85,7 +85,7 @@ window.onload = () => {
     });
   }
   //get and parse and display info for advisement announcements (on index.html page)
-  fetch("https://script.google.com/macros/s/AKfycby9qWGns9f47zJmJnyE9gNYCy-DtuqcsE68ClRIiaCGstEuBAQZgdGUstkqCFeFGMFf/exec?query=announcements").then(e=>e.text()).then(response => {
+  fetch("https://script.google.com/macros/s/AKfycby9qWGns9f47zJmJnyE9gNYCy-DtuqcsE68ClRIiaCGstEuBAQZgdGUstkqCFeFGMFf/exec?query=announcements", {mode: 'no-cors'}).then(e=>e.text()).then(response => {
     try {
       for(let i=0;i<Math.min(3,response.match(/Advisement Announcements for /g).length);i++) {
         response = response.slice(response.indexOf('<div class="accordion-item"',1));
