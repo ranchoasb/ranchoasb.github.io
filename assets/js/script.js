@@ -105,7 +105,7 @@ window.onload = () => {
       i=>new Date(i[0])>new Date(+new Date()-86400000)?i[1]:""
     ).join("");});
   //get and parse and display info for posts
-  fetch("https://script.google.com/macros/s/AKfycby9qWGns9f47zJmJnyE9gNYCy-DtuqcsE68ClRIiaCGstEuBAQZgdGUstkqCFeFGMFf/exec?query=posts").then(e => e.json()).then(response => {
+  fetch("https://script.google.com/macros/s/AKfycby9qWGns9f47zJmJnyE9gNYCy-DtuqcsE68ClRIiaCGstEuBAQZgdGUstkqCFeFGMFf/exec?query=posts", {mode: 'no-cors'}).then(e => e.json()).then(response => {
     data = response;
     titles = data.map(item => item.title.replace(/['"\s]/g, '-'));
     datalen = data.length;
