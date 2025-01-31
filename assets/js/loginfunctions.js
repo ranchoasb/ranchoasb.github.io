@@ -40,7 +40,7 @@ function handleCredentialResponse(response){
     console.log("Email: " + info.email);
     console.log("hd: " + info.hd);
     //retrieve account info from google sheets
-    fetch("https://script.google.com/macros/s/AKfycby9qWGns9f47zJmJnyE9gNYCy-DtuqcsE68ClRIiaCGstEuBAQZgdGUstkqCFeFGMFf/exec?query=retrieveEmail", {
+    fetch("https://script.google.com/macros/s/AKfycbxFqlnRMtz-mR8-uJAAJmrPhcdRXQ8ui4SmkdKYJq75Y23pnVRds9UKH2NrAFiyjmRP/exec?query=retrieveEmail", {
       redirect: "follow",
       method: "GET",
       headers: {
