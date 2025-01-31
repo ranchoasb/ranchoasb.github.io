@@ -85,7 +85,7 @@ window.onload = () => {
     });
   }
   //get and parse and display info for advisement announcements (on index.html page)
-  fetch("https://script.google.com/macros/s/AKfycby9qWGns9f47zJmJnyE9gNYCy-DtuqcsE68ClRIiaCGstEuBAQZgdGUstkqCFeFGMFf/exec?query=announcements").then(e=>e.text()).then(response => {
+  fetch("https://script.google.com/macros/s/AKfycbxFqlnRMtz-mR8-uJAAJmrPhcdRXQ8ui4SmkdKYJq75Y23pnVRds9UKH2NrAFiyjmRP/exec?query=announcements").then(e=>e.text()).then(response => {
     try {
       for(let i=0;i<Math.min(3,response.match(/Advisement Announcements for /g).length);i++) {
         response = response.slice(response.indexOf('<div class="accordion-item"',1));
@@ -98,14 +98,14 @@ window.onload = () => {
     }
   });
   //get and parse and display info for upcoming events
-  fetch("https://script.google.com/macros/s/AKfycby9qWGns9f47zJmJnyE9gNYCy-DtuqcsE68ClRIiaCGstEuBAQZgdGUstkqCFeFGMFf/exec?query=upcomingEvents").then(e=>e.text()).then(response=>{
+  fetch("https://script.google.com/macros/s/AKfycbxFqlnRMtz-mR8-uJAAJmrPhcdRXQ8ui4SmkdKYJq75Y23pnVRds9UKH2NrAFiyjmRP/exec?query=upcomingEvents").then(e=>e.text()).then(response=>{
     response = response.split(".....");
     response = response.map(i=>i.split("/////"));
     upcomingEvents.innerHTML=response.map(
       i=>new Date(i[0])>new Date(+new Date()-86400000)?i[1]:""
     ).join("");});
   //get and parse and display info for posts
-  fetch("https://script.google.com/macros/s/AKfycby9qWGns9f47zJmJnyE9gNYCy-DtuqcsE68ClRIiaCGstEuBAQZgdGUstkqCFeFGMFf/exec?query=posts").then(e => e.json()).then(response => {
+  fetch("https://script.google.com/macros/s/AKfycbxFqlnRMtz-mR8-uJAAJmrPhcdRXQ8ui4SmkdKYJq75Y23pnVRds9UKH2NrAFiyjmRP/exec?query=posts").then(e => e.json()).then(response => {
     data = response;
     titles = data.map(item => item.title.replace(/['"\s]/g, '-'));
     datalen = data.length;
