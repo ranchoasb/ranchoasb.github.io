@@ -1,7 +1,7 @@
 // Note: As of August 19, 2024 it is no longer okay to say "clubs". So "clubs" has become "activities". Please do not change that.
 const info = []; //information for clubs, received from google apps script
 //get clubs data from google apps script
-fetch("https://script.google.com/macros/s/AKfycbwNyBbk8BUyqSnya5Xv3TquIx97tlLUTFsSn8-2CZdZi_KHirLs8_qQmUGNh5xOIUw/exec?query=clubs").then(response => response.json()).then(data => {
+fetch("https://script.google.com/macros/s/AKfycbxFqlnRMtz-mR8-uJAAJmrPhcdRXQ8ui4SmkdKYJq75Y23pnVRds9UKH2NrAFiyjmRP/exec?query=clubs").then(response => response.json()).then(data => {
   //parse data from google sheets
   let rows = data.slice(0, data.length);
       for (let index in rows) {
