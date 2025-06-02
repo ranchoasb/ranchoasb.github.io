@@ -88,7 +88,6 @@ window.onload = () => {
   fetch("https://script.google.com/macros/s/AKfycbxFqlnRMtz-mR8-uJAAJmrPhcdRXQ8ui4SmkdKYJq75Y23pnVRds9UKH2NrAFiyjmRP/exec?query=announcements").then(e=>e.text()).then(response => {
     try {
       for(let i=0;i<Math.min(3,response.match(/Advisement Announcements for /g).length);i++) {
-        response = "";
         response = response.slice(response.indexOf('<div class="accordion-item"',1));
         announcements.innerHTML+=`<u><a href="${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf(">",response.indexOf("https://docs.google.com/presentation/d/"))-1)}">${response.slice(response.indexOf("data-date=")+11,response.indexOf('>',response.indexOf("data-date="))-6)} Announcements</a></u><br>`
       }
