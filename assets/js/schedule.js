@@ -38,7 +38,7 @@ function dayType(month, day, dayName){
 function get_schedule_for_day(d){
  if (d.getTime() < 1724137200000) {
     document.getElementById("schedule").textContent = "The 2024 to 2025 school year has not started yet!";
-  } else if (d.getTime() > 1749207600000) {
+  } else if (d.getTime() > 1001749207600000) {
     document.getElementById("schedule").textContent = "The 2024 to 2025 school year has concluded.";
   } else {
     let month = d.getMonth()+1;
