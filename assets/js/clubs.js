@@ -1,23 +1,21 @@
 // Note: As of August 19, 2024 it is no longer okay to say "clubs". So "clubs" has become "activities". Please do not change that.
-const info = []; //information for clubs, received from google apps script
-//get clubs data from google apps script
-fetch("https://script.google.com/a/macros/iusd.org/s/AKfycbxFqlnRMtz-mR8-uJAAJmrPhcdRXQ8ui4SmkdKYJq75Y23pnVRds9UKH2NrAFiyjmRP/exec?query=clubs", {method: "GET", redirect: "follow"}).then(response => response.json()).then(data => {
-  //parse data from google sheets
-  let rows = data.slice(0, data.length);
-      for (let index in rows) {
-          let row = rows[index];
-          let name = row.name;
-          let description = row.description;
-          let location = row.location;
-          let picture = row.picture;
-          let mon = +row.monday;
-          let tue = +row.tuesday;
-          let wed = +row.wednesday;
-          let thu = +row.thursday;
-          let fri = +row.friday;
-          info.push([name, description, location, picture, mon, tue, wed, thu, fri]);
-      }
-      console.log(info); //debug
+const info = []; //information for clubs, read from the published sheet
+//get clubs data from the published sheet
+fetchSheetRows(SHEET_GIDS.clubs).then(rows => {
+  //parse rows from the sheet
+  for (let row of rows) {
+    let name = row[0];
+    let description = row[1];
+    let location = row[2];
+    let picture = row[3];
+    let mon = +row[4];
+    let tue = +row[5];
+    let wed = +row[6];
+    let thu = +row[7];
+    let fri = +row[8];
+    info.push([name, description, location, picture, mon, tue, wed, thu, fri]);
+  }
+  console.log(info); //debug
 }).then(a => {
   let current = document.getElementById("clubstext"); //clubstext is the text on the clubs page
   //description on clubs page

@@ -85,31 +85,84 @@ window.onload = () => {
     });
   }
   //get and parse and display info for advisement announcements (on index.html page)
-  fetch("https://script.google.com/a/macros/iusd.org/s/AKfycbxFqlnRMtz-mR8-uJAAJmrPhcdRXQ8ui4SmkdKYJq75Y23pnVRds9UKH2NrAFiyjmRP/exec?query=announcements").then(e=>e.text()).then(response => {
-    try {
-      for(let i=0;i<Math.min(3,response.match(/Advisement Announcements for /g).length);i++) {
-        response = response.slice(response.indexOf('<div class="accordion-item"',1));
-        announcements.innerHTML+=`<u><a href="${response.slice(response.indexOf("https://docs.google.com/presentation/d/"),response.indexOf(">",response.indexOf("https://docs.google.com/presentation/d/"))-1)}">${response.slice(response.indexOf("data-date=")+11,response.indexOf('>',response.indexOf("data-date="))-6)} Announcements</a></u><br>`
-      }
-      announcements.innerHTML+='<br>Older announcements can be found <a href="announcements">here.</a>';
-    }
-    catch(err) {
-      announcements.innerHTML+='No advisement announcements for now.';
+  fetchSheetRows(SHEET_GIDS.announcements).then(rows => {
+    let items = rows
+      .map(Row => ({ body: Row[0], date: Row[1], category: Row[2] }))
+      .filter(Row => Row.category == "Advisement Announcements")
+      .slice(0, 3);
+
+    if (items.length) {
+      announcements.innerHTML = items.map(item => {
+        let match = item.body.match(/https:\/\/docs\.google\.com\/presentation\/d\/[^\s"'<>]+/);
+        let href = match ? match[0] : "announcements";
+        let dateLabel = new Date(item.date).toLocaleDateString();
+        return `<u><a href="${href}">${dateLabel} Announcements</a></u><br>`;
+      }).join("") + '<br>Older announcements can be found <a href="announcements">here.</a>';
+    } else {
+      announcements.innerHTML = 'No advisement announcements for now.';
     }
   });
   //get and parse and display info for upcoming events
-  fetch("https://script.google.com/a/macros/iusd.org/s/AKfycbxFqlnRMtz-mR8-uJAAJmrPhcdRXQ8ui4SmkdKYJq75Y23pnVRds9UKH2NrAFiyjmRP/exec?query=upcomingEvents").then(e=>e.text()).then(response=>{
-    response = response.split(".....");
-    response = response.map(i=>i.split("/////"));
-    upcomingEvents.innerHTML=response.map(
-      i=>new Date(i[0])>new Date(+new Date()-86400000)?i[1]:""
-    ).join("");});
+  fetchSheetRows(SHEET_GIDS.upcomingEvents).then(rows => {
+    let yesterday = new Date(+new Date() - 86400000);
+
+    let items = rows.map(Row => {
+      let body = Row[0];
+      let post = Row[1];
+      let dateParts = Row[2].split("-");
+      let sortDate = dateParts[dateParts.length - 1] == "???" ? new Date("1/1/2099") : new Date(dateParts[dateParts.length - 1]);
+      let label = dateParts.length == 1 ? dateParts[0].slice(0, -3) : `${dateParts[0].slice(0, -3)}-${dateParts[1] == "???" ? "" : dateParts[1].slice(0, -3)}`;
+      let info = Row[3];
+
+      let html = post != ""
+        ? `<li style="cursor:pointer" onclick="goToPost('${post.replace(/['"\s]/g, '-')}')"><b>${label}&nbsp;&nbsp;<u style="color:#0f6fec">${body}</u></b>${info}</li>`
+        : `<li><b>${label}&nbsp;&nbsp;${body}</b>${info}</li>`;
+
+      return { sortDate, html };
+    });
+
+    upcomingEvents.innerHTML = items.filter(item => item.sortDate > yesterday).map(item => item.html).join("");
+  });
   //get and parse and display info for posts
-  fetch("https://script.google.com/a/macros/iusd.org/s/AKfycbxFqlnRMtz-mR8-uJAAJmrPhcdRXQ8ui4SmkdKYJq75Y23pnVRds9UKH2NrAFiyjmRP/exec?query=posts").then(e => e.json()).then(response => {
-    data = response;
+  fetchSheetRows(SHEET_GIDS.posts).then(rows => {
+    data = rows.map(Row => {
+      let daydata = Row[4] != "" ? Row[4].split("/") : ["0", "0", "0"];
+      let timedata = Row[5] != "" ? Row[5].split(":") : ["0", "0"];
+      let month = daydata[0] - 1;
+      let posted = new Date(parseInt(daydata[2]), parseInt(month), parseInt(daydata[1]), parseInt(timedata[0]), parseInt(timedata[1]));
+      let diff = posted.getTime() - new Date().getTime();
+
+      if (diff > 0) {
+        return {
+          title: Row[0],
+          description: Row[1],
+          category: Row[2],
+          time: Row[3],
+          hideHeader: 1,
+          hideBody: 1,
+          hideFooter: 1,
+          hideModal: 1,
+          carousel: 0,
+          banner: 0,
+        };
+      }
+      return {
+        title: Row[0],
+        description: Row[1],
+        category: Row[2],
+        time: Row[3],
+        hideHeader: Row[6] == "" ? 0 : Row[6],
+        hideBody: Row[7] == "" ? 0 : Row[7],
+        hideFooter: Row[8] == "" ? 0 : Row[8],
+        hideModal: Row[9] == "" ? 0 : Row[9],
+        carousel: Row[10] == "" ? 0 : Row[10],
+        banner: Row[11] == "" ? 0 : Row[11],
+      };
+    });
+
     titles = data.map(item => item.title.replace(/['"\s]/g, '-'));
     datalen = data.length;
-    
+
     document.querySelectorAll(".disposable").forEach(e => e.remove());
     load();
 

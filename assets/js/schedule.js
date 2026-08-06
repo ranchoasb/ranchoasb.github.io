@@ -1,22 +1,27 @@
-const info = []; //info about schedule, from google apps script
-//get info from google sheets
-fetch("https://script.google.com/a/macros/iusd.org/s/AKfycbxFqlnRMtz-mR8-uJAAJmrPhcdRXQ8ui4SmkdKYJq75Y23pnVRds9UKH2NrAFiyjmRP/exec?query=schedule").then(response => response.json()).then(data => {
-      // parse info from google sheets
-      let rows = data.slice(0, data.length);
-      for (let index in rows) {
-              let row = rows[index];
-              const input = row.date;
+const info = []; //info about schedule, read from the published sheet
+//get info from the published sheet
+fetchSheetRows(SHEET_GIDS.schedule).then(rows => {
+      // parse rows from the sheet (occasion, date, starttime, endtime, extendedday, periodlength, school, additional)
+      for (let row of rows) {
+              const occasion = row[0];
+              const input = row[1];
+              const starttime = row[2];
+              const endtime = row[3];
+              const extendedday = row[4];
+              const periodlength = row[5];
+              const school = row[6];
+              const additional = row[7];
             if(input.includes("-")){
               const startandend = input.split("-");
               var currentdate = startandend[0];
               const startdate = currentdate.split("/");
               currentdate = startandend[1];
               const enddate = currentdate.split("/");
-              info.push([row.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[1], enddate[2], row.starttime, row.endtime, row.extendedday, row.periodlength, row.school, row.additional]);
+              info.push([occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[1], enddate[2], starttime, endtime, extendedday, periodlength, school, additional]);
             } else {
                   const startdate = input.split("/");
                   const enddate = startdate;
-                  info.push([row.occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[1], enddate[2], row.starttime, row.endtime, row.extendedday, row.periodlength, row.school, row.additional]);
+                  info.push([occasion, startdate[0], startdate[1], startdate[2], enddate[0], enddate[1], enddate[2], starttime, endtime, extendedday, periodlength, school, additional]);
             }
       }
       console.log(info); //debug
