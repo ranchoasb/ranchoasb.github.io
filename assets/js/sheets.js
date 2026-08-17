@@ -1,7 +1,7 @@
 // Reads live content straight from the ASB Google Sheet, published to the web as CSV.
 // This replaces the old Google Apps Script backend, whose deployment now requires
 // visitors to be signed into a Google account (see CLAUDE.md for the full story).
-const SHEET_PUBLISHED_ID = "2PACX-1vSq4q5XkeqhETlpGdHG4kryftcMsXr45zi2WL_2z5AWcz5zm78eyrANtqJb_z0sPYUVbYeoiN1Kaorf";
+const SHEET_PUBLISHED_ID = "2PACX-1vR4YxboOPOkllKdBb0-siG2QixLxaKJSGoZ9jn5mzQnpUKIGXlDFPC13gI-8NRiiLozlWFJBYDAdAAE";
 
 const SHEET_GIDS = {
   posts: "208760621",
